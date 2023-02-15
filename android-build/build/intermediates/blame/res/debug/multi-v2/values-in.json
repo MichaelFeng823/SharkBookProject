@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-in\\values-in.xml",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-in\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "303,178,57,417",
+                        "endColumns": "112,123,119,89",
+                        "endOffsets": "411,297,172,502"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,168,292,412",
+                        "endColumns": "112,123,119,89",
+                        "endOffsets": "163,287,407,497"
+                    }
+                }
+            ]
+        }
+    ]
+}

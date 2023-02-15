@@ -1,0 +1,130 @@
+<RCC>
+    <qresource prefix="/login">
+        <file>image/Login.jpg</file>
+        <file>image/DetialTitle.jpg</file>
+    </qresource>
+    <qresource prefix="/DetialToolButton">
+        <file>image/AssetManagerToolButton.jpg</file>
+        <file>image/BillToolButton.jpg</file>
+        <file>image/BudGetToolButton.jpg</file>
+        <file>image/MoreToolButton.jpg</file>
+        <file>image/ShoppingReturnToolButton.jpg</file>
+        <file>image/calendar_arrow.jpg</file>
+    </qresource>
+    <qresource prefix="/PayTypeIcon">
+        <file>image/EatTypeIcon.jpg</file>
+    </qresource>
+    <qresource prefix="/DetailBottomIcon">
+        <file>image/AddIcon.jpg</file>
+        <file>image/DetialBottomIcon.jpg</file>
+        <file>image/FindIcon.jpg</file>
+        <file>image/MineIcon.jpg</file>
+        <file>image/PicChartIcon.jpg</file>
+        <file>image/DetialBottomIcon_Clicked.jpg</file>
+        <file>image/FindIcon_Clicked.jpg</file>
+        <file>image/MineIcon_Clicked.jpg</file>
+        <file>image/PicChartIcon_Clicked.jpg</file>
+    </qresource>
+    <qresource prefix="/MenuIcon">
+        <file>image/expand_1.jpg</file>
+        <file>image/expand_2.jpg</file>
+        <file>image/expand_3.jpg</file>
+        <file>image/expand_4.jpg</file>
+        <file>image/expand_5.jpg</file>
+        <file>image/expand_6.jpg</file>
+        <file>image/expand_7.jpg</file>
+        <file>image/expand_8.jpg</file>
+        <file>image/expand_9.jpg</file>
+        <file>image/expand_10.jpg</file>
+        <file>image/expand_11.jpg</file>
+        <file>image/expand_12.jpg</file>
+        <file>image/expand_13.jpg</file>
+        <file>image/expand_14.jpg</file>
+        <file>image/expand_15.jpg</file>
+        <file>image/expand_16.jpg</file>
+        <file>image/expand_17.jpg</file>
+        <file>image/expand_18.jpg</file>
+        <file>image/expand_19.jpg</file>
+        <file>image/expand_20.jpg</file>
+        <file>image/expand_21.jpg</file>
+        <file>image/expand_22.jpg</file>
+        <file>image/expand_23.jpg</file>
+        <file>image/expand_24.jpg</file>
+        <file>image/expand_25.jpg</file>
+        <file>image/expand_26.jpg</file>
+        <file>image/expand_27.jpg</file>
+        <file>image/expand_28.jpg</file>
+        <file>image/expand_29.jpg</file>
+        <file>image/expand_30.jpg</file>
+        <file>image/expand_31.jpg</file>
+        <file>image/expand_32.jpg</file>
+        <file>image/expand_33.jpg</file>
+        <file>image/expand_34.jpg</file>
+        <file>image/income_1.jpg</file>
+        <file>image/income_2.jpg</file>
+        <file>image/income_3.jpg</file>
+        <file>image/income_4.jpg</file>
+        <file>image/income_5.jpg</file>
+        <file>image/income_6.jpg</file>
+        <file>image/expand_1_clicked.jpg</file>
+        <file>image/expand_2_clicked.jpg</file>
+        <file>image/expand_3_clicked.jpg</file>
+        <file>image/expand_4_clicked.jpg</file>
+        <file>image/expand_5_clicked.jpg</file>
+        <file>image/expand_6_clicked.jpg</file>
+        <file>image/expand_7_clicked.jpg</file>
+        <file>image/expand_8_clicked.jpg</file>
+        <file>image/expand_9_clicked.jpg</file>
+        <file>image/expand_10_clicked.jpg</file>
+        <file>image/expand_11_clicked.jpg</file>
+        <file>image/expand_12_clicked.jpg</file>
+        <file>image/expand_13_clicked.jpg</file>
+        <file>image/expand_14_clicked.jpg</file>
+        <file>image/expand_15_clicked.jpg</file>
+        <file>image/expand_16_clicked.jpg</file>
+        <file>image/expand_17_clicked.jpg</file>
+        <file>image/expand_18_clicked.jpg</file>
+        <file>image/expand_19_clicked.jpg</file>
+        <file>image/expand_20_clicked.jpg</file>
+        <file>image/expand_21_clicked.jpg</file>
+        <file>image/expand_22_clicked.jpg</file>
+        <file>image/expand_23_clicked.jpg</file>
+        <file>image/expand_24_clicked.jpg</file>
+        <file>image/expand_25_clicked.jpg</file>
+        <file>image/expand_26_clicked.jpg</file>
+        <file>image/expand_27_clicked.jpg</file>
+        <file>image/expand_28_clicked.jpg</file>
+        <file>image/expand_29_clicked.jpg</file>
+        <file>image/expand_30_clicked.jpg</file>
+        <file>image/expand_31_clicked.jpg</file>
+        <file>image/expand_32_clicked.jpg</file>
+        <file>image/expand_33_clicked.jpg</file>
+        <file>image/income_1_clicked.jpg</file>
+        <file>image/income_2_clicked.jpg</file>
+        <file>image/income_3_clicked.jpg</file>
+        <file>image/income_4_clicked.jpg</file>
+        <file>image/income_5_clicked.jpg</file>
+    </qresource>
+    <qresource prefix="/BookkeepingInputKit">
+        <file>image/deleteicon.jpg</file>
+        <file>image/todayicon.jpg</file>
+    </qresource>
+    <qresource prefix="/public">
+        <file>image/returnarrow.jpg</file>
+        <file>image/tableview_NoData.jpg</file>
+        <file>image/returnarrowyellowbackground.jpg</file>
+        <file>image/HeadPortait.jpg</file>
+    </qresource>
+    <qresource prefix="/BillPage">
+        <file>image/BillPage_Expand_01.jpg</file>
+    </qresource>
+    <qresource prefix="/SubPage_InAndOut_TypeIcon">
+        <file>image/Expand_19_On_SubPage.jpg</file>
+    </qresource>
+    <qresource prefix="/MineArea">
+        <file>image/Pic_InMineArea.jpg</file>
+        <file>image/Pic_Two_InMineArea.jpg</file>
+        <file>image/Pic_Three_InMineArea.jpg</file>
+        <file>image/Pic_Four_InMineArea.jpg</file>
+    </qresource>
+</RCC>

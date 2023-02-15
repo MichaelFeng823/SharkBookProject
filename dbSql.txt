@@ -1,0 +1,2 @@
+create table if not exists Users(AutoID integer primary key autoincrement,  UserID varhcar(32) default '',  UserName varchar(64) default '' );
+if not exists(select * from Users where UserID ='001') begin insert into Users(UserID,UserName) values('001','MichaelFeng') end;

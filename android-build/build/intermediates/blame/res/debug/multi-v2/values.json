@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\res\\values\\libs.xml",
+                    "from": {
+                        "startLines": "-1,-1,13,-1",
+                        "startColumns": "-1,-1,4,-1",
+                        "startOffsets": "-1,-1,360,-1",
+                        "endLines": "-1,-1,19,-1",
+                        "endColumns": "-1,-1,12,-1",
+                        "endOffsets": "-1,-1,654,-1"
+                    },
+                    "to": {
+                        "startLines": "2,5,8,15",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,109,239,536",
+                        "endLines": "4,7,14,17",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "104,234,531,647"
+                    }
+                },
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "18,19,20,21",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "652,760,882,994",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "755,877,989,1087"
+                    }
+                }
+            ]
+        }
+    ]
+}

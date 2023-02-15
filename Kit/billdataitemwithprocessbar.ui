@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BillDataItemWithProcessBar</class>
+ <widget class="QWidget" name="BillDataItemWithProcessBar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1010</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="backgroundwidget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget
+{
+	background-color: rgb(255, 255, 255);
+}
+QLabel
+{
+	background-color: rgb(255, 255, 255);
+}
+
+</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,8">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_TypeIcon">
+        <property name="styleSheet">
+         <string notr="true">#label_TypeIcon
+{
+	
+	border-image: url(:/BillPage/image/BillPage_Expand_01.jpg);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QWidget" name="subwidget" native="true">
+        <property name="styleSheet">
+         <string notr="true">border-bottom:1px ;
+border-color: rgba(140,140,140,120);
+border-style: solid;</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout" rowstretch="13,2,10">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>30</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,15,2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_TypeText">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);
+font: 16pt &quot;微软雅黑&quot;;
+border:none;</string>
+             </property>
+             <property name="text">
+              <string>烟酒</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_Percent">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);
+font: 13pt &quot;微软雅黑&quot;;
+border:none;</string>
+             </property>
+             <property name="text">
+              <string>66.7%</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_Moneynum">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);
+font: 15pt &quot;微软雅黑&quot;;
+border:none;</string>
+             </property>
+             <property name="text">
+              <string>400</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <widget class="QProgressBar" name="progressBar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>10</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QProgressBar::chunk
+{
+	border-radius:7px;
+	background-color: rgb(255, 207, 11);
+}
+QProgressBar
+{
+	color:white;
+	background:white;
+	border:none;
+}
+</string>
+           </property>
+           <property name="value">
+            <number>99</number>
+           </property>
+           <property name="textVisible">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_Date">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(170, 170, 170);
+font: 14pt &quot;微软雅黑&quot;;</string>
+           </property>
+           <property name="text">
+            <string>2023年01月05日</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
