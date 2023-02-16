@@ -17,7 +17,6 @@ ChangePassWordForm::ChangePassWordForm(QWidget *parent) :
     ui->setupUi(this);
     QSize screensize = getScreenSize();
     this->setFixedSize(screensize.width(),screensize.height()/2);
-    //this->resize(screensize.width(),screensize.height()/2);
     this->move(0,screensize.height()/2);
     ui->lineEdit_Username->installEventFilter(this);
     ui->lineEdit_UserPassword->installEventFilter(this);

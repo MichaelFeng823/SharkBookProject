@@ -130,20 +130,16 @@ bool DetailedSonPageInStackwidget::eventFilter(QObject *obj, QEvent *event)
             //if(move + val < 0 || move + val > ui->textEdit->height()) return false;
             //移动
             vbar->setValue(move+val);
-            //ui->textEdit->append(QString::fromLocal8Bit("更新触摸offset_%4_val%1_step%2_move%3").arg(val).arg(step).arg(move).arg(offset));
             return true;
         }
         if(event->type() == QEvent::TouchCancel)
         {
             event->accept();
-            //ui->textEdit->append(QString::fromLocal8Bit("取消触摸"));
             return false;
-
         }
         if(event->type() == QEvent::TouchEnd)
         {
            event->accept();
-           //ui->textEdit->append(QString::fromLocal8Bit("结束触摸"));
             return false;
         }
 

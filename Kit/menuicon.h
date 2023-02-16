@@ -30,11 +30,6 @@ signals:
 private:
     int m_Id;
     QString m_Name;
-
-
-
-
-
 };
 
 #endif // MENUICON_H

@@ -27,13 +27,7 @@ int AppPageManager::initPage()
 
      if(getUserInfoAfterSuccessLogin())
      {
-//         mainarea  = new MainArea;
-//         LOG("MainArea objectname:%s",mainarea->objectName().toStdString().c_str());
-//         connect(mainarea,&MainArea::receiveSignalStr,this,&AppPageManager::receiveSignal);
-//         mainarea->raise();
-//         mainarea->show();
          LOG("arrive main.cpp 15line");
-
          return QApplication::exec();
      }
      else
@@ -49,19 +43,12 @@ bool AppPageManager::getUserInfoAfterSuccessLogin()
     if(login != nullptr){
         if(login->exec() == QDialog::Accepted){
             login = nullptr;
-
             return true;
         }
-        else{
-            return false;
-        }
     }
-    else
-    {
-        return false;
-    }
+    return false;
 }
-//页面管理界面收到信号 字符串格式 "close *** page->open *** page"
+//页面管理类 收到信号 字符串格式 "close *** page->open *** page"
 void AppPageManager::receiveSignal(QString str)
 {
     LOG("Apppagemanager recieve signal message!\n content is :%s",str.toStdString().c_str());

@@ -76,9 +76,6 @@ void InAndOutDetailPage::receiveGetBillInfoSignal(BillTableStruct billinfo)
     QPointer<BillDetailItemEditSubPage> pointer = new BillDetailItemEditSubPage(billinfo);
     connect(pointer,&BillDetailItemEditSubPage::callApplyModify,this,&InAndOutDetailPage::onReceiveModifyBillInfoSignal);
     connect(pointer,&BillDetailItemEditSubPage::callApplyDeleteSuccessUpdateParent,this,&InAndOutDetailPage::onReceiveAfterDeleteUpdatePage);
-
-    //emit callModifyBillInfo(billinfo);
-    //this->close();
 }
  //返回按钮按下槽函数
 void InAndOutDetailPage::onReturnButtonClicked()

@@ -174,8 +174,6 @@ void PersonDetailInfoSubPage::onEditButtonClicked()
 {
     LOG("编辑");
     setInputStatus(true);
-
-
 }
 //当保存按钮点击槽函数
 void PersonDetailInfoSubPage::onSaveButtonClicked()

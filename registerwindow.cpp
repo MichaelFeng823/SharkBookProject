@@ -74,8 +74,8 @@ void RegisterWindow::onCancelButtonClicked()
 {
     this->close();
 }
-
-void RegisterWindow::generate_Expression()       //随机生成验证表达式
+//随机生成验证表达式
+void RegisterWindow::generate_Expression()
 {
     qsrand(time(NULL));
 

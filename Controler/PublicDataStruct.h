@@ -51,15 +51,4 @@ struct MailTableStruct
     int userId = -1;         //所属/填写用户ID
     MailDetailInfo maildetailinfo;    //详细信息
 };
-
-
-
-
-
-
-
-
-
-
-
 #endif // PUBLICDATASTRUCT_H

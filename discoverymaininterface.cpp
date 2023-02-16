@@ -35,21 +35,12 @@ DiscoveryMainInterface::DiscoveryMainInterface(QWidget *parent) :
     std::sort(m_maillist.begin(),m_maillist.end(),DiscoveryMainInterface::orderByDefault);
     initTableview();
 
-//    QStringList nameList = {"封俊"};
-//    QStringList telList = {"19173489702"};
-
-////    for(int i = 0; i < m_maillist.size(); i++){
-////        nameList.append(m_maillist.at(i).personName);
-////        telList.append(m_maillist.at(i).tel);
-////    }
-
 //    QCompleter *completerName = new QCompleter(nameList, this);
 //    //completerName->setFilterMode(Qt::MatchContains);
 //    completerName->setCompletionMode(QCompleter::PopupCompletion);
 //    QCompleter *completerTel = new QCompleter(telList, this);
 //    //completerTel->setFilterMode(Qt::MatchContains);
 //    completerTel->setCompletionMode(QCompleter::PopupCompletion);
-
 //    ui->LineEdit_Serch->setCompleter(completerName);
 //    ui->LineEdit_Serch->setCompleter(completerTel);
 }
@@ -60,7 +51,6 @@ void DiscoveryMainInterface::initTableview()
     model->setColumnCount(1);
     model->setRowCount(m_maillist.size());
     ui->tableView->setColumnWidth(0,getScreenSize().width());
-    //std::sort(m_BillList.begin(),m_BillList.end(),DetailedSonPageInStackwidget::sortBillInfoByDate);
     if(m_maillist.isEmpty()){
         LOG("no data");
         ui->tableView->setStyleSheet("QTableView, QHeaderView, QTableView::item {background: white;} QTableView::item:selected { /*被选中的index*/color: black;background: white;} QTableView{border-image:url(:/public/image/tableview_NoData.jpg);}");
@@ -166,7 +156,7 @@ void DiscoveryMainInterface::onLineEditInput(QString str)
         break;
     }
     case strType::Number:
-    {\
+    {
         LOG("number sort!");
         std::sort(m_maillist.begin(),m_maillist.end(),DiscoveryMainInterface::orderByNumber);
         initTableview();
@@ -206,23 +196,8 @@ strType DiscoveryMainInterface::checkStrType(QString str)
 //通过汉字名称首字符排序
 bool DiscoveryMainInterface::orderByChinese(MailTableStruct mailFirst,MailTableStruct mailSecond)
 {
-    //int indexFirst = mailFirst.personName.indexOf(comparedChar);
-    //int indexSecond = mailSecond.personName.indexOf(comparedChar);
-
     int indexFirst = mailFirst.personName.contains(comparedChar);
     int indexSecond = mailSecond.personName.contains(comparedChar);
-
-//    LOG("comparedChar:%s",comparedChar.toStdString().c_str());
-//    LOG("indexFirst:%d",indexFirst);
-//    LOG("indexSecond:%d",indexSecond);
-
-//    if(indexFirst == -1){
-//        return indexFirst > indexSecond;
-//    }
-
-//    if(indexSecond == -1){
-//        return indexFirst < indexSecond;
-//    }
 
     return indexFirst > indexSecond;
 }

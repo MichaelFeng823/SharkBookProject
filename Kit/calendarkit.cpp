@@ -15,7 +15,7 @@ CalendarKit::CalendarKit(QWidget *parent) : QWidget(parent)
    gridlayout.setColumnStretch(1,1);
    gridlayout.setSpacing(0);
    gridlayout.setMargin(0);
-   //this->setFixedSize(200,120);
+
    this->setLayout(&gridlayout);
    this->setYear(QString::number(QDate::currentDate().year()));
    this->setMonth(QString::number(QDate::currentDate().month()));
@@ -23,8 +23,7 @@ CalendarKit::CalendarKit(QWidget *parent) : QWidget(parent)
    QString str = "#m_labelyear{background:rgb(0,0,0);color:rgb(255,0,0)} #m_labelmonth{background:rgb(0,0,0);color:rgb(255,0,0)}";
    this->setStyleSheet("background:rgb(249,219,97);");
    m_labelyear.setStyleSheet("color:rgba(0,0,0,125);font-size:14pt;");
-//color:rgb(0,0,0);
-//	background-color: rgb(255, 217, 24);
+
    m_labelmonth.setStyleSheet("color:rgb(0,0,0);font-size:20pt");
    m_labelyear.setAlignment(Qt::AlignCenter);
    m_labelmonth.setAlignment(Qt::AlignCenter);

@@ -93,29 +93,6 @@ void ScrollAreaKit::buildvector()
     }
     Buttom = m_vector.size();
 }
-////设置日期
-//void ScrollAreaKit::setdate()
-//{
-//    if(m_thistype == thisType::yearType)
-//    {
-//        LOG("arrived line 91");
-//        m_currentIndex = m_vector.indexOf(QDate::currentDate().year());
-//        LOG("arrived line 93");
-//    }
-//    else if(m_thistype == thisType::monthType)
-//    {
-//        LOG("arrived line 95");
-//        m_currentIndex = m_vector.indexOf(QDate::currentDate().month());
-//        LOG("arrived line 97");
-//    }
-//    else if(m_thistype == thisType::dayType)
-//    {
-//        LOG("arrived line 101");
-//        m_currentIndex = m_vector.indexOf(QDate::currentDate().day());
-//        LOG("arrived line 103");
-//    }
-//    setcontent();
-//}
 
 //设置日期
 void ScrollAreaKit::setdate(int datenum)

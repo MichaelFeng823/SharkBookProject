@@ -45,6 +45,10 @@ protected:
 
     void initTablecontent();    //初始化表格内容
 
+    void initExpandMenuButton();  //初始化支出菜单按钮
+
+    void initIncomeMenuButton();  //初始化收入菜单按钮
+
 public slots:
     void onExpanditurePageClicked();
 

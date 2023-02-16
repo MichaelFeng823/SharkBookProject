@@ -127,6 +127,12 @@ void BookkeepingSelectArea::initMenu()
  //初始化表格内容
 void BookkeepingSelectArea::initTablecontent()
 {
+    initExpandMenuButton();
+    initIncomeMenuButton();
+}
+ //初始化支出菜单按钮
+void BookkeepingSelectArea::initExpandMenuButton()
+{
     QStandardItemModel * expandituremodel = new QStandardItemModel();
     expandituremodel->setColumnCount(4);
     int rowcounts = expandituremenuvector.size()/4;
@@ -149,7 +155,6 @@ void BookkeepingSelectArea::initTablecontent()
                 break;
             QModelIndex index = expandituremodel->index(i,j);
             QString str = QString("QPushButton{border-image: url(:/MenuIcon/image/expand_%1.jpg);} QPushButton:disabled{border-image: url(:/MenuIcon/image/expand_%1_clicked.jpg);}").arg(QString::number(curindex+1)).arg(QString::number(curindex+1));
-            //QString str = QString("background:rgb(255,255,%1);").arg(QString::number((curindex+1)*2));
             QPushButton * button = new QPushButton;
             button->setProperty("Id",curindex+1);
             button->setProperty("Name",expandituremenuvector[curindex]);
@@ -157,53 +162,52 @@ void BookkeepingSelectArea::initTablecontent()
             connect(button,&QPushButton::clicked,this,&BookkeepingSelectArea::onMenuIconButtonClicked);
             button->setStyleSheet(str);
             m_ExpandButtonList.append(button);
-            //MenuIcon * button = new MenuIcon(str);
-            //button->setid(curindex);
-           // button->setname(expandituremenuvector[curindex]);
             LOG("str is :%s",str.toStdString().c_str());
-            //button->setStyleSheet(str);
             expanditureview->setIndexWidget(index,button);
             LOG("build the %d button",curindex);
             curindex++;
         }
     }
-     QStandardItemModel * incomemodel = new QStandardItemModel();
-     incomemodel->setColumnCount(4);
-     rowcounts = incomemenuvector.size()/4;
-     if(incomemenuvector.size()%4 != 0)
-         rowcounts+=1;
-     incomemodel->setRowCount(rowcounts);
-     incomeview->setModel(incomemodel);
+}
+ //初始化收入菜单按钮
+void BookkeepingSelectArea::initIncomeMenuButton()
+{
+    QStandardItemModel * incomemodel = new QStandardItemModel();
+    incomemodel->setColumnCount(4);
+    int rowcounts = incomemenuvector.size()/4;
+    if(incomemenuvector.size()%4 != 0)
+        rowcounts+=1;
+    incomemodel->setRowCount(rowcounts);
+    incomeview->setModel(incomemodel);
 
-     incomeview->setColumnWidth(0,getScreenSize().width()/4);
-     incomeview->setColumnWidth(1,getScreenSize().width()/4);
-     incomeview->setColumnWidth(2,getScreenSize().width()/4);
-     incomeview->setColumnWidth(3,getScreenSize().width()/4);
+    incomeview->setColumnWidth(0,getScreenSize().width()/4);
+    incomeview->setColumnWidth(1,getScreenSize().width()/4);
+    incomeview->setColumnWidth(2,getScreenSize().width()/4);
+    incomeview->setColumnWidth(3,getScreenSize().width()/4);
 
-     LOG("incomemenuvector size is:%d",incomemenuvector.size());
-     curindex = 0;
-     for(int i = 0; i < rowcounts; i++){
-         incomeview->setRowHeight(i,getScreenSize().height()/35*33/7.5+25);
-         for(int j = 0; j < 4; j++){
-             if(curindex == incomemenuvector.size())
-                 break;
-             QModelIndex index = incomemodel->index(i,j);
-             QString str = QString("QPushButton{border-image: url(:/MenuIcon/image/income_%1.jpg);}QPushButton:disabled{border-image: url(:/MenuIcon/image/income_%2_clicked.jpg);}").arg(QString::number(curindex+1)).arg(QString::number(curindex+1));
-             //QString str = QString("background:rgb(255,255,%1);").arg(QString::number((curindex+1)*2));
-             QPushButton * button = new QPushButton;
-             button->setProperty("Id",curindex+1);
-             button->setProperty("Name",incomemenuvector[curindex]);
-             button->setProperty("Type","InCome");
-             connect(button,&QPushButton::clicked,this,&BookkeepingSelectArea::onMenuIconButtonClicked);
-             button->setStyleSheet(str);
-             m_IncomeButtonList.append(button);
-             LOG("str is :%s",str.toStdString().c_str());
-             //button->setStyleSheet(str);
-             incomeview->setIndexWidget(index,button);
-             LOG("build the %d button",curindex);
-             curindex++;
-         }
-     }
+    LOG("incomemenuvector size is:%d",incomemenuvector.size());
+    int curindex = 0;
+    for(int i = 0; i < rowcounts; i++){
+        incomeview->setRowHeight(i,getScreenSize().height()/35*33/7.5+25);
+        for(int j = 0; j < 4; j++){
+            if(curindex == incomemenuvector.size())
+                break;
+            QModelIndex index = incomemodel->index(i,j);
+            QString str = QString("QPushButton{border-image: url(:/MenuIcon/image/income_%1.jpg);}QPushButton:disabled{border-image: url(:/MenuIcon/image/income_%2_clicked.jpg);}").arg(QString::number(curindex+1)).arg(QString::number(curindex+1));
+            QPushButton * button = new QPushButton;
+            button->setProperty("Id",curindex+1);
+            button->setProperty("Name",incomemenuvector[curindex]);
+            button->setProperty("Type","InCome");
+            connect(button,&QPushButton::clicked,this,&BookkeepingSelectArea::onMenuIconButtonClicked);
+            button->setStyleSheet(str);
+            m_IncomeButtonList.append(button);
+            LOG("str is :%s",str.toStdString().c_str());
+            //button->setStyleSheet(str);
+            incomeview->setIndexWidget(index,button);
+            LOG("build the %d button",curindex);
+            curindex++;
+        }
+    }
 }
 
 void BookkeepingSelectArea::onExpanditurePageClicked()
