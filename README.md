@@ -1,12 +1,16 @@
 # SharkBookProject
  Qt C++ 安卓开发 高仿鲨鱼记账APP 
  
- 开发环境 :Qt5.14.2 
-          Jdk1.8.0_92 
-          Android-SDK25.2.5
-          Andioid-NDK21.4
-          逍遥模拟器（开发调试使用）
-
+ 开发环境 :<br/>
+<br/>Qt5.14.2
+<br/>Jdk1.8.0_92
+<br/>Android-SDK25.2.5
+<br/>Andioid-NDK21.4
+<br/>逍遥模拟器（开发调试使用）
+<br/>
+<br/>
+<br/>
+<br/>
 **运行界面如下**<br/>
 1.登录界面<br/>
 		![](https://github.com/MichaelFeng823/SharkBookProject/raw/main/ProgramScreenShot/1.png)
