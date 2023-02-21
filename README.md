@@ -3,6 +3,7 @@
  
  开发环境 :<br/>
 <br/>Qt5.14.2
+<br/>构建套件：Android for armeabi-v7a arm64-v8a x86 x86_64(clang Qt 5.14.2 for Android)
 <br/>Jdk1.8.0_92
 <br/>Android-SDK25.2.5
 <br/>Andioid-NDK21.4
