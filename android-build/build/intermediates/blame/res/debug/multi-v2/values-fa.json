@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
             "map": [
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-fa\\strings.xml",

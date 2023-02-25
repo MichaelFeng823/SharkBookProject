@@ -24,6 +24,8 @@ SOURCES += \
     Kit/billdetailitemeditsubpage.cpp \
     Kit/billsubarea.cpp \
     Kit/bookkeepinginputkit.cpp \
+    Kit/budgetmasksubpage.cpp \
+    Kit/budgetsubpage.cpp \
     Kit/calendarkit.cpp \
     Kit/chinese2pinyin.cpp \
     Kit/inandoutkit.cpp \
@@ -58,6 +60,8 @@ HEADERS += \
     Kit/billdetailitemeditsubpage.h \
     Kit/billsubarea.h \
     Kit/bookkeepinginputkit.h \
+    Kit/budgetmasksubpage.h \
+    Kit/budgetsubpage.h \
     Kit/calendarkit.h \
     Kit/chinese2pinyin.h \
     Kit/inandoutkit.h \
@@ -84,6 +88,8 @@ FORMS += \
     Kit/billdetailitemeditsubpage.ui \
     Kit/billsubarea.ui \
     Kit/bookkeepinginputkit.ui \
+    Kit/budgetmasksubpage.ui \
+    Kit/budgetsubpage.ui \
     Kit/persondetailinfosubpage.ui \
     Kit/personinfodisplaykit.ui \
     bookkeepingselectarea.ui \

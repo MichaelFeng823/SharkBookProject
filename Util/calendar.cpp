@@ -17,7 +17,14 @@ Calendar::Calendar(CalendarType type,int year,int month,QWidget *parent) : QDial
     this->raise();
     this->show();
 }
-
+Calendar::Calendar(CalendarType type,int year,QWidget *parent) : QDialog(parent),m_thisType(type),m_year(year)
+{
+    //this->setAttribute(Qt::WA_DeleteOnClose,true);
+    buildLayout();
+    buildStyle();
+    this->raise();
+    this->show();
+}
 //构建布局
 void Calendar::buildLayout()
 {
@@ -37,6 +44,10 @@ void Calendar::buildLayout()
         monthkit = new ScrollAreaKit(thisType::monthType,m_month);
         midwidgetlayout.addWidget(yearkit,0,0);
         midwidgetlayout.addWidget(monthkit,0,1);
+    }
+    else if(m_thisType == CalendarType::Year){
+         yearkit = new ScrollAreaKit(thisType::yearType,m_year);
+         midwidgetlayout.addWidget(yearkit,0,0);
     }
     midwidgetlayout.setSpacing(50);
     midwidgetlayout.setMargin(0);
@@ -90,7 +101,11 @@ void Calendar::buildLayout()
     }
     else if (m_thisType == CalendarType::YearMonth)
     {
-         settitle(QString::fromLocal8Bit("选择月份"));
+        settitle(QString::fromLocal8Bit("选择月份"));
+    }
+    else if(m_thisType == CalendarType::Year)
+    {
+        settitle(QString::fromLocal8Bit("选择年份"));
     }
 
     //--------------------------------------------------mainwidget---------------------------------------------------
@@ -129,22 +144,27 @@ void Calendar::buildStyle()
     makeSureButton->setStyleSheet("border:none;color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:18pt;");
     titlelabel->setStyleSheet("border:none;color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:18pt;");
 }
-
-void Calendar::onMakeSureButtonClicked()       //确认按钮槽函数
+//确认按钮槽函数
+void Calendar::onMakeSureButtonClicked()
 {
     m_year = yearkit->getCurrentValue();
-    m_month = monthkit->getCurrentValue();
+
     if(m_thisType == CalendarType::YearMonthDay){
         m_day = daykit->getCurrentValue();
+        m_month = monthkit->getCurrentValue();
         emit returnTimeInfoToYearMonthDay(m_year,m_month,m_day);
     }
     else if(m_thisType == CalendarType::YearMonth){
+        m_month = monthkit->getCurrentValue();
         emit returnTimeInfo(m_year,m_month);
+    }
+    else if(m_thisType == CalendarType::Year){
+        emit returnTimeInfoYear(m_year);
     }
     this->accept();
 }
-
-void Calendar::onCancelButtonClicked()         //取消按钮槽函数
+//取消按钮槽函数
+void Calendar::onCancelButtonClicked()
 {
     this->close();
 }

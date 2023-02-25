@@ -29,6 +29,7 @@ class Calendar : public QDialog
 {
     Q_OBJECT
 public:
+    explicit Calendar(CalendarType type,int year,QWidget *parent = nullptr);
     explicit Calendar(CalendarType type,int year,int month,QWidget *parent = nullptr);
     explicit Calendar(CalendarType type,int year,int month,int day,QWidget *parent = nullptr);
     ~Calendar();
@@ -68,9 +69,11 @@ public slots:
    void onCancelButtonClicked();                  //取消按钮槽函数
 
 signals:
-   void returnTimeInfo(int year,int month);                         //返回时间信息
+   void returnTimeInfo(int year,int month);                         //返回时间信息(年、月)
 
-   void returnTimeInfoToYearMonthDay(int year,int month,int day);             //返回时间信息
+   void returnTimeInfoToYearMonthDay(int year,int month,int day);   //返回时间信息(年、月、日)
+
+   void returnTimeInfoYear(int year);                               //返回时间信息(年)
 
 private:
    CalendarType m_thisType;                      //当前类型

@@ -16,7 +16,7 @@
 /// @author  : MichaelFeng
 /// @date    : 2022/12/16
 /// @file    : DetailedSonPageInStackwidget.h
-/// @brief   : 明细主界面在stavkwidget中
+/// @brief   : 明细主界面在stackwidget中
 ///----------------------------------------------------------------------------
 ///                           Change History
 ///----------------------------------------------------------------------------
@@ -46,8 +46,14 @@ public slots:
 
     void receiveUpdateBillInfoSignal(bool status); //收到刷新账单信息的信号
 
+    void onBillSubButtonClicked();                 //打开账单子界面槽函数
+
+    void onBudgetButtonclicked();                  //打开预算子界面槽函数
+
 protected:
     void buildUiLayout();     //构建UI布局
+
+    void buildConnect();      //建立槽函数连接
 
     void getBilldata();       //获取账单数据
 
@@ -84,6 +90,7 @@ private:
     bool hasConnected;
 private:
     QVector<BillTableStruct> m_BillList;             //账单列表
+    QVector<BillTableStruct> m_BillListOfYear;       //近一年的账单列表
     QVector<BillDataItem *> m_BillDateItemList;       //itemlist;
     double m_Current_InNumber = 0.00;                //当前收入数据
     double m_Current_OutNumber = 0.00;               //当前支出数据

@@ -7,6 +7,8 @@
 #include "Controler/PublicDbFunc.h"
 #include "Controler/databaseobj.h"
 #include "inandoutdetailpage.h"
+#include "Kit/billsubarea.h"
+#include "Kit/budgetsubpage.h"
 #include <QPointer>
 using namespace ScreenFunc;
 using namespace DataQuery;
@@ -17,6 +19,7 @@ DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
     ui->setupUi(this);
     hasConnected = DataBaseObj::getConnecttion(coon);
     buildUiLayout();
+    buildConnect();
     m_CurrentDate = QDate::currentDate();
     getBilldata();
     initTableview();
@@ -70,6 +73,12 @@ DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
      this->setLayout(&outterlayout);
  }
 
+ //建立槽函数连接
+ void DetailedSonPageInStackwidget::buildConnect()
+ {
+     connect(ui->pushButton_Bill,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onBillSubButtonClicked);
+     connect(ui->pushButton_Budget,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onBudgetButtonclicked);
+ }
 //初始化表格内容
 void DetailedSonPageInStackwidget::initTableview()
 {
@@ -99,6 +108,7 @@ void DetailedSonPageInStackwidget::getBilldata()
 {
       QSqlQuery query(coon);
       billQurey(query,UserInfo::UserID,m_CurrentDate,m_BillList);
+      billQureyOfYear(query,UserInfo::UserID,m_CurrentDate,m_BillListOfYear);
 }
 bool DetailedSonPageInStackwidget::eventFilter(QObject *obj, QEvent *event)
 {
@@ -213,6 +223,18 @@ void DetailedSonPageInStackwidget::receiveUpdateBillInfoSignal(bool status)
         UpdateBillContent();
         UpdateBillDetailPage();
     }
+}
+//打开账单子界面槽函数
+void DetailedSonPageInStackwidget::onBillSubButtonClicked()
+{
+    QPointer<BillSubArea> pointer;
+    pointer = new BillSubArea(m_BillListOfYear);
+}
+//打开预算子界面槽函数
+void DetailedSonPageInStackwidget::onBudgetButtonclicked()
+{
+    QPointer<BudGetSubPage> pointer;
+    pointer = new BudGetSubPage();
 }
 DetailedSonPageInStackwidget::~DetailedSonPageInStackwidget()
 {

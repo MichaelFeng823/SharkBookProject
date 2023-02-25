@@ -1,310 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-rs_values-rs.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-rs\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "294,176,57,413",
-                        "endColumns": "117,116,117,92",
-                        "endOffsets": "407,288,170,501"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,173,290,408",
-                        "endColumns": "117,116,117,92",
-                        "endOffsets": "168,285,403,496"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-ja_values-ja.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-ja\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "248,150,57,325",
-                        "endColumns": "75,96,91,84",
-                        "endOffsets": "319,242,144,405"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,131,228,320",
-                        "endColumns": "75,96,91,84",
-                        "endOffsets": "126,223,315,400"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-nl_values-nl.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-nl\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "309,180,57,441",
-                        "endColumns": "130,127,121,103",
-                        "endOffsets": "435,303,174,540"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,186,314,436",
-                        "endColumns": "130,127,121,103",
-                        "endOffsets": "181,309,431,535"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
-            "map": [
-                {
-                    "source": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\res\\values\\libs.xml",
-                    "from": {
-                        "startLines": "-1,-1,13,-1",
-                        "startColumns": "-1,-1,4,-1",
-                        "startOffsets": "-1,-1,360,-1",
-                        "endLines": "-1,-1,19,-1",
-                        "endColumns": "-1,-1,12,-1",
-                        "endOffsets": "-1,-1,654,-1"
-                    },
-                    "to": {
-                        "startLines": "2,5,8,15",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,109,239,536",
-                        "endLines": "4,7,14,17",
-                        "endColumns": "12,12,12,12",
-                        "endOffsets": "104,234,531,647"
-                    }
-                },
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1"
-                    },
-                    "to": {
-                        "startLines": "18,19,20,21",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "652,760,882,994",
-                        "endColumns": "107,121,111,97",
-                        "endOffsets": "755,877,989,1087"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-zh-rCN_values-zh-rCN.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-zh-rCN\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "211,136,57,279",
-                        "endColumns": "66,73,77,70",
-                        "endOffsets": "273,205,130,345"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,122,196,274",
-                        "endColumns": "66,73,77,70",
-                        "endOffsets": "117,191,269,340"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-ms_values-ms.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-ms\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "298,171,57,404",
-                        "endColumns": "104,125,112,89",
-                        "endOffsets": "398,292,165,489"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,160,286,399",
-                        "endColumns": "104,125,112,89",
-                        "endOffsets": "155,281,394,484"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-et_values-et.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-et\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "282,171,57,386",
-                        "endColumns": "102,109,112,91",
-                        "endOffsets": "380,276,165,473"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,158,268,381",
-                        "endColumns": "102,109,112,91",
-                        "endOffsets": "153,263,376,468"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-de_values-de.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-de\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "311,186,57,453",
-                        "endColumns": "140,123,127,101",
-                        "endOffsets": "447,305,180,550"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,196,320,448",
-                        "endColumns": "140,123,127,101",
-                        "endOffsets": "191,315,443,545"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-fa_values-fa.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-fa\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "293,168,57,408",
-                        "endColumns": "113,123,109,92",
-                        "endOffsets": "402,287,162,496"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,169,293,403",
-                        "endColumns": "113,123,109,92",
-                        "endOffsets": "164,288,398,491"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-pl_values-pl.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-pl\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "300,189,57,400",
-                        "endColumns": "98,109,130,96",
-                        "endOffsets": "394,294,183,492"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,154,264,395",
-                        "endColumns": "98,109,130,96",
-                        "endOffsets": "149,259,390,487"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-nb_values-nb.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-nb\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "296,175,57,398",
-                        "endColumns": "100,119,116,96",
-                        "endOffsets": "392,290,169,490"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,156,276,393",
-                        "endColumns": "100,119,116,96",
-                        "endOffsets": "151,271,388,485"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-fr_values-fr.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-fr\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "307,184,57,426",
-                        "endColumns": "117,121,125,102",
-                        "endOffsets": "420,301,178,524"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,173,295,421",
-                        "endColumns": "117,121,125,102",
-                        "endOffsets": "168,290,416,519"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-zh-rTW_values-zh-rTW.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-zh-rTW\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "211,136,57,279",
-                        "endColumns": "66,73,77,70",
-                        "endOffsets": "273,205,130,345"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,122,196,274",
-                        "endColumns": "66,73,77,70",
-                        "endOffsets": "117,191,269,340"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-it_values-it.arsc.flat",
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-it_values-it.arsc.flat",
             "map": [
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-it\\strings.xml",
@@ -326,29 +23,7 @@
             ]
         },
         {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-es_values-es.arsc.flat",
-            "map": [
-                {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-es\\strings.xml",
-                    "from": {
-                        "startLines": "4,3,2,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "282,174,57,394",
-                        "endColumns": "110,106,115,97",
-                        "endOffsets": "388,276,168,487"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,166,273,389",
-                        "endColumns": "110,106,115,97",
-                        "endOffsets": "161,268,384,482"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-ru_values-ru.arsc.flat",
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-ru_values-ru.arsc.flat",
             "map": [
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-ru\\strings.xml",
@@ -370,7 +45,95 @@
             ]
         },
         {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-in_values-in.arsc.flat",
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-es_values-es.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-es\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "282,174,57,394",
+                        "endColumns": "110,106,115,97",
+                        "endOffsets": "388,276,168,487"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,166,273,389",
+                        "endColumns": "110,106,115,97",
+                        "endOffsets": "161,268,384,482"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-et_values-et.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-et\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "282,171,57,386",
+                        "endColumns": "102,109,112,91",
+                        "endOffsets": "380,276,165,473"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,158,268,381",
+                        "endColumns": "102,109,112,91",
+                        "endOffsets": "153,263,376,468"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-fa_values-fa.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-fa\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "293,168,57,408",
+                        "endColumns": "113,123,109,92",
+                        "endOffsets": "402,287,162,496"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,169,293,403",
+                        "endColumns": "113,123,109,92",
+                        "endOffsets": "164,288,398,491"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-zh-rTW_values-zh-rTW.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-zh-rTW\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "211,136,57,279",
+                        "endColumns": "66,73,77,70",
+                        "endOffsets": "273,205,130,345"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,122,196,274",
+                        "endColumns": "66,73,77,70",
+                        "endOffsets": "117,191,269,340"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-in_values-in.arsc.flat",
             "map": [
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-in\\strings.xml",
@@ -392,7 +155,7 @@
             ]
         },
         {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-ro_values-ro.arsc.flat",
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-ro_values-ro.arsc.flat",
             "map": [
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-ro\\strings.xml",
@@ -414,7 +177,180 @@
             ]
         },
         {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-el_values-el.arsc.flat",
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-ms_values-ms.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-ms\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "298,171,57,404",
+                        "endColumns": "104,125,112,89",
+                        "endOffsets": "398,292,165,489"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,160,286,399",
+                        "endColumns": "104,125,112,89",
+                        "endOffsets": "155,281,394,484"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-nl_values-nl.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-nl\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "309,180,57,441",
+                        "endColumns": "130,127,121,103",
+                        "endOffsets": "435,303,174,540"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,186,314,436",
+                        "endColumns": "130,127,121,103",
+                        "endOffsets": "181,309,431,535"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "E:\\Git-backup\\SharkBookProject\\android-build\\res\\values\\libs.xml",
+                    "from": {
+                        "startLines": "9,21,13,2",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "301,662,360,57",
+                        "endLines": "11,23,19,4",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "352,789,654,170"
+                    },
+                    "to": {
+                        "startLines": "2,5,8,15",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,109,239,536",
+                        "endLines": "4,7,14,17",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "104,234,531,647"
+                    }
+                },
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "5,4,3,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "324,201,88,433",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "427,318,195,526"
+                    },
+                    "to": {
+                        "startLines": "18,19,20,21",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "652,760,882,994",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "755,877,989,1087"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-zh-rCN_values-zh-rCN.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-zh-rCN\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "211,136,57,279",
+                        "endColumns": "66,73,77,70",
+                        "endOffsets": "273,205,130,345"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,122,196,274",
+                        "endColumns": "66,73,77,70",
+                        "endOffsets": "117,191,269,340"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-rs_values-rs.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-rs\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "294,176,57,413",
+                        "endColumns": "117,116,117,92",
+                        "endOffsets": "407,288,170,501"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,173,290,408",
+                        "endColumns": "117,116,117,92",
+                        "endOffsets": "168,285,403,496"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-pt-rBR_values-pt-rBR.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-pt-rBR\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "302,187,57,407",
+                        "endColumns": "103,113,128,95",
+                        "endOffsets": "401,296,181,498"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,159,273,402",
+                        "endColumns": "103,113,128,95",
+                        "endOffsets": "154,268,397,493"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-ja_values-ja.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-ja\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "248,150,57,325",
+                        "endColumns": "75,96,91,84",
+                        "endOffsets": "319,242,144,405"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,131,228,320",
+                        "endColumns": "75,96,91,84",
+                        "endOffsets": "126,223,315,400"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-el_values-el.arsc.flat",
             "map": [
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-el\\strings.xml",
@@ -436,23 +372,89 @@
             ]
         },
         {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\res\\merged\\debug\\values-pt-rBR_values-pt-rBR.arsc.flat",
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-fr_values-fr.arsc.flat",
             "map": [
                 {
-                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-pt-rBR\\strings.xml",
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-fr\\strings.xml",
                     "from": {
                         "startLines": "4,3,2,5",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "302,187,57,407",
-                        "endColumns": "103,113,128,95",
-                        "endOffsets": "401,296,181,498"
+                        "startOffsets": "307,184,57,426",
+                        "endColumns": "117,121,125,102",
+                        "endOffsets": "420,301,178,524"
                     },
                     "to": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "55,159,273,402",
-                        "endColumns": "103,113,128,95",
-                        "endOffsets": "154,268,397,493"
+                        "startOffsets": "55,173,295,421",
+                        "endColumns": "117,121,125,102",
+                        "endOffsets": "168,290,416,519"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-de_values-de.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-de\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "311,186,57,453",
+                        "endColumns": "140,123,127,101",
+                        "endOffsets": "447,305,180,550"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,196,320,448",
+                        "endColumns": "140,123,127,101",
+                        "endOffsets": "191,315,443,545"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-nb_values-nb.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-nb\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "296,175,57,398",
+                        "endColumns": "100,119,116,96",
+                        "endOffsets": "392,290,169,490"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,156,276,393",
+                        "endColumns": "100,119,116,96",
+                        "endOffsets": "151,271,388,485"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\values-pl_values-pl.arsc.flat",
+            "map": [
+                {
+                    "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values-pl\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,2,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "300,189,57,400",
+                        "endColumns": "98,109,130,96",
+                        "endOffsets": "394,294,183,492"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,154,264,395",
+                        "endColumns": "98,109,130,96",
+                        "endOffsets": "149,259,390,487"
                     }
                 }
             ]

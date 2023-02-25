@@ -6,22 +6,22 @@
 6    android:versionName="1.0" >
 7
 8    <uses-sdk
-8-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:3:5-73
+8-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:5-73
 9        android:minSdkVersion="21"
-9-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:3:15-41
+9-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:15-41
 10        android:targetSdkVersion="28" />
-10-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:3:42-71
+10-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:42-71
 11
 12    <!--
 13         The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
 14         Remove the comment if you do not require these default permissions.
 15    -->
 16    <uses-permission android:name="android.permission.INTERNET" />
-16-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:7:5-66
-16-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:7:22-64
+16-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:7:5-66
+16-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:7:22-64
 17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-17-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:8:5-80
-17-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:8:22-78
+17-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:8:5-80
+17-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:8:22-78
 18
 19    <!--
 20         The following comment will be replaced upon deployment with default features based on the dependencies of the application.
@@ -29,50 +29,50 @@
 22    -->
 23
 24    <supports-screens
-24-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:14:5-135
+24-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:5-135
 25        android:anyDensity="true"
-25-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:14:80-105
+25-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:80-105
 26        android:largeScreens="true"
-26-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:14:23-50
+26-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:23-50
 27        android:normalScreens="true"
-27-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:14:51-79
+27-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:51-79
 28        android:smallScreens="true" />
-28-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:14:106-133
+28-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:106-133
 29
 30    <application
-30-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:16:5-86:19
+30-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:5-86:19
 31        android:name="org.qtproject.qt5.android.bindings.QtApplication"
-31-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:16:53-116
+31-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:53-116
 32        android:debuggable="true"
 33        android:extractNativeLibs="true"
-33-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:16:138-170
+33-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:138-170
 34        android:hardwareAccelerated="true"
-34-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:16:18-52
+34-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:18-52
 35        android:icon="@drawable/icon"
-35-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:16:171-200
+35-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:171-200
 36        android:label="鲨鱼记账" >
-36-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:16:117-137
+36-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:117-137
 37        <activity
-37-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:17:9-82:16
+37-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:9-82:16
 38            android:name="org.qtproject.qt5.android.bindings.QtActivity"
-38-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:17:189-249
+38-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:189-249
 39            android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density"
-39-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:17:19-188
+39-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:19-188
 40            android:label="鲨鱼记账"
-40-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:17:250-270
+40-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:250-270
 41            android:launchMode="singleTop"
-41-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:17:311-341
+41-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:311-341
 42            android:screenOrientation="unspecified" >
-42-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:17:271-310
+42-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:271-310
 43            <intent-filter>
-43-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:18:13-21:29
+43-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:18:13-21:29
 44                <action android:name="android.intent.action.MAIN" />
-44-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:19:17-68
-44-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:19:25-66
+44-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:19:17-68
+44-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:19:25-66
 45
 46                <category android:name="android.intent.category.LAUNCHER" />
-46-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:20:17-76
-46-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:20:27-74
+46-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:20:17-76
+46-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:20:27-74
 47            </intent-filter>
 48
 49            <!-- Application arguments -->
@@ -80,101 +80,101 @@
 51            <!-- Application arguments -->
 52
 53            <meta-data
-53-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:27:13-98
+53-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:13-98
 54                android:name="android.app.lib_name"
-54-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:27:24-59
+54-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:24-59
 55                android:value="SharkBookkeepingBook" />
-55-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:27:60-96
+55-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:60-96
 56            <meta-data
-56-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:28:13-112
+56-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:13-112
 57                android:name="android.app.qt_sources_resource_id"
-57-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:28:24-73
+57-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:24-73
 58                android:resource="@array/qt_sources" />
-58-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:28:74-110
+58-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:74-110
 59            <meta-data
-59-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:29:13-87
+59-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:13-87
 60                android:name="android.app.repository"
-60-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:29:24-61
+60-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:24-61
 61                android:value="default" />
-61-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:29:62-85
+61-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:62-85
 62            <meta-data
-62-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:30:13-106
+62-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:13-106
 63                android:name="android.app.qt_libs_resource_id"
-63-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:30:24-70
+63-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:24-70
 64                android:resource="@array/qt_libs" />
-64-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:30:71-104
+64-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:71-104
 65            <meta-data
-65-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:31:13-116
+65-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:13-116
 66                android:name="android.app.bundled_libs_resource_id"
-66-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:31:24-75
+66-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:24-75
 67                android:resource="@array/bundled_libs" />
-67-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:31:76-114
+67-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:76-114
 68            <!-- Deploy Qt libs as part of package -->
 69            <meta-data
-69-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:33:13-91
+69-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:13-91
 70                android:name="android.app.bundle_local_qt_libs"
-70-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:33:24-71
+70-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:24-71
 71                android:value="1" />
-71-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:33:72-89
+71-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:72-89
 72
 73            <!-- Run with local libs -->
 74            <meta-data
-74-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:36:13-88
+74-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:13-88
 75                android:name="android.app.use_local_qt_libs"
-75-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:36:24-68
+75-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:24-68
 76                android:value="1" />
-76-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:36:69-86
+76-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:69-86
 77            <meta-data
-77-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:37:13-100
+77-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:13-100
 78                android:name="android.app.libs_prefix"
-78-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:37:24-62
+78-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:24-62
 79                android:value="/data/local/tmp/qt/" />
-79-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:37:63-98
+79-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:63-98
 80            <meta-data
-80-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:38:13-122
+80-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:13-122
 81                android:name="android.app.load_local_libs_resource_id"
-81-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:38:24-78
+81-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:24-78
 82                android:resource="@array/load_local_libs" />
-82-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:38:79-120
+82-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:79-120
 83            <meta-data
-83-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:39:13-102
+83-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:13-102
 84                android:name="android.app.load_local_jars"
-84-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:39:24-66
+84-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:24-66
 85                android:value="jar/QtAndroid.jar" />
-85-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:39:67-100
+85-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:67-100
 86            <meta-data
-86-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:40:13-89
+86-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:13-89
 87                android:name="android.app.static_init_classes"
-87-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:40:24-70
+87-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:24-70
 88                android:value="" />
-88-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:40:71-87
+88-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:71-87
 89            <!-- Used to specify custom system library path to run with local system libs -->
 90            <!-- <meta-data android:name="android.app.system_libs_prefix" android:value="/system/lib/"/> -->
 91            <!-- Messages maps -->
 92            <meta-data
-92-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:44:13-122
+92-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:13-122
 93                android:name="android.app.ministro_not_found_msg"
-93-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:44:71-120
+93-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:71-120
 94                android:value="@string/ministro_not_found_msg" />
-94-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:44:24-70
+94-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:24-70
 95            <meta-data
-95-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:45:13-116
+95-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:13-116
 96                android:name="android.app.ministro_needed_msg"
-96-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:45:68-114
+96-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:68-114
 97                android:value="@string/ministro_needed_msg" />
-97-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:45:24-67
+97-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:24-67
 98            <meta-data
-98-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:46:13-108
+98-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:13-108
 99                android:name="android.app.fatal_error_msg"
-99-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:46:64-106
+99-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:64-106
 100                android:value="@string/fatal_error_msg" />
-100-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:46:24-63
+100-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:24-63
 101            <meta-data
-101-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:47:13-132
+101-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:13-132
 102                android:name="android.app.unsupported_android_version"
-102-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:47:76-130
+102-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:76-130
 103                android:value="@string/unsupported_android_version" />
-103-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:47:24-75
+103-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:24-75
 104            <!-- Messages maps -->
 105
 106
@@ -200,21 +200,21 @@
 126                          signal is sent!
 127            -->
 128            <meta-data
-128-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:66:13-93
+128-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:13-93
 129                android:name="android.app.background_running"
-129-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:66:24-69
+129-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:24-69
 130                android:value="false" />
-130-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:66:70-91
+130-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:70-91
 131            <!-- Background running -->
 132
 133
 134            <!-- auto screen scale factor -->
 135            <meta-data
-135-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:70:13-99
+135-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:13-99
 136                android:name="android.app.auto_screen_scale_factor"
-136-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:70:24-75
+136-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:24-75
 137                android:value="false" />
-137-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:70:76-97
+137-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:76-97
 138            <!-- auto screen scale factor -->
 139
 140
@@ -227,11 +227,11 @@
 147                * none - useful for apps that don't use any of the above Qt modules
 148            -->
 149            <meta-data
-149-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:80:13-98
+149-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:13-98
 150                android:name="android.app.extract_android_style"
-150-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:80:24-72
+150-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:24-72
 151                android:value="default" />
-151-->E:\Qt_5.14.2_Project_Save\SharkBookkeepingBook\android-build\AndroidManifest.xml:80:73-96
+151-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:73-96
 152            <!-- extract android style -->
 153        </activity>
 154

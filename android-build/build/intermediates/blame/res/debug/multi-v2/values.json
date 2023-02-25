@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "E:\\Qt_5.14.2_Project_Save\\SharkBookkeepingBook\\android-build\\res\\values\\libs.xml",
+                    "source": "E:\\Git-backup\\SharkBookProject\\android-build\\res\\values\\libs.xml",
                     "from": {
-                        "startLines": "-1,-1,13,-1",
-                        "startColumns": "-1,-1,4,-1",
-                        "startOffsets": "-1,-1,360,-1",
-                        "endLines": "-1,-1,19,-1",
-                        "endColumns": "-1,-1,12,-1",
-                        "endOffsets": "-1,-1,654,-1"
+                        "startLines": "9,21,13,2",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "301,662,360,57",
+                        "endLines": "11,23,19,4",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "352,789,654,170"
                     },
                     "to": {
                         "startLines": "2,5,8,15",
@@ -25,9 +25,11 @@
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1"
+                        "startLines": "5,4,3,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "324,201,88,433",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "427,318,195,526"
                     },
                     "to": {
                         "startLines": "18,19,20,21",

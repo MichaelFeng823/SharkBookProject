@@ -127,4 +127,7 @@
         <file>image/Pic_Three_InMineArea.jpg</file>
         <file>image/Pic_Four_InMineArea.jpg</file>
     </qresource>
+    <qresource prefix="/Budget">
+        <file>image/NoBudget.jpg</file>
+    </qresource>
 </RCC>

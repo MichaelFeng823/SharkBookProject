@@ -8,9 +8,9 @@
    "tool-prefix": "llvm",
    "ndk-host": "windows-x86_64",
    "architectures": {"armeabi-v7a":"arm-linux-androideabi"},
-   "android-package-source-directory": "E:/Qt_5.14.2_Project_Save/SharkBookkeepingBook/android-build/android_sources",
-   "qml-root-path": "E:/Qt_5.14.2_Project_Save/SharkBookkeepingBook",
+   "android-package-source-directory": "E:/Git-backup/SharkBookProject/android-build/android_sources",
+   "qml-root-path": "E:/Git-backup/SharkBookProject",
    "stdcpp-path": "T:\\AndroidEnvironment\\android-ndk-r21e-windows-x86_64\\android-ndk-r21e/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/",
-   "qrcFiles": "E:/Qt_5.14.2_Project_Save/SharkBookkeepingBook/Pic.qrc",
+   "qrcFiles": "E:/Git-backup/SharkBookProject/Pic.qrc",
    "application-binary": "SharkBookkeepingBook"
 }

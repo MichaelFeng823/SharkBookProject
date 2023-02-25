@@ -123,6 +123,39 @@ namespace DataQuery {
         return queryCounts;
     }
 
+    inline int billQureyOfYear(QSqlQuery & query,int UserId, QDate date, QVector<BillTableStruct> & billList)
+    {
+        billList.clear();
+        int queryCounts = 0;
+        QString sql = QString("select * from BillTable where UserId = %1 and Year = %2;").arg(UserId).arg(date.year());
+        query.prepare(sql);
+        if(!query.exec()){
+            LOG("File:%sLine:%d",__FILE__,__LINE__);
+            LOG("billQurey Error:query.exec() = False");
+            LOG("the sql is:%s",sql.toStdString().c_str());
+        }
+        else{
+            while(query.next()){
+                queryCounts++;
+                BillTableStruct billtable;
+                billtable.billNo = query.value("BillNo").toInt();
+                int year = query.value("Year").toInt();
+                int month = query.value("Month").toInt();
+                int day = query.value("Day").toInt();
+                billtable.date.setDate(year,month,day);
+                billtable.moneyAmount = query.value("MoneyAmount").toDouble();
+                billtable.remarks = query.value("Remark").toString();
+                billtable.userId = query.value("UserId").toInt();
+                billList.append(billtable);
+                LOG("get bill data!");
+                LOG("queryCounts:%d",queryCounts);
+            }
+        }
+        LOG("queryCounts:%d",queryCounts);
+        LOG("the sql is:%s",sql.toStdString().c_str());
+        return queryCounts;
+    }
+
     //通讯录数据查询
     inline int mailQurey(QSqlQuery & query,int UserId,QVector<MailTableStruct> & mailList)
     {

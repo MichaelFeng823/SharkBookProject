@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="bundled_libs">
+        
+    </array>
+    <array name="load_local_libs">
+        <item>armeabi-v7a;libplugins_platforms_qtforandroid_armeabi-v7a.so</item>
+    </array>
+    <array name="qt_libs">
+        <item>armeabi-v7a;c++_shared</item>
+        <item>armeabi-v7a;Qt5Core_armeabi-v7a</item>
+        <item>armeabi-v7a;Qt5Gui_armeabi-v7a</item>
+        <item>armeabi-v7a;Qt5Sql_armeabi-v7a</item>
+        <item>armeabi-v7a;Qt5Widgets_armeabi-v7a</item>
+    </array>
+    <array name="qt_sources">
+        <item>https://download.qt.io/ministro/android/qt5/qt-5.14</item>
+    </array>
+    <string name="fatal_error_msg">Your application encountered a fatal error and cannot continue.</string>
+    <string name="ministro_needed_msg">This application requires Ministro service. Would you like to install it?</string>
+    <string name="ministro_not_found_msg">Can\'t find Ministro service.\nThe application can\'t start.</string>
+    <string name="unsupported_android_version">This version of Android is not supported.</string>
+</resources>
