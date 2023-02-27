@@ -48,7 +48,7 @@
 }
 </string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,14">
+     <layout class="QGridLayout" name="gridLayout_2">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -66,6 +66,12 @@
       </property>
       <item row="0" column="0">
        <widget class="QWidget" name="titlewidget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>100</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(249, 219, 97);
 color:rgb(0,0,0);</string>
@@ -227,7 +233,7 @@ border-radius:15px;</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="2" rowspan="2">
+         <item row="1" column="2">
           <spacer name="horizontalSpacer_2">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -254,6 +260,20 @@ border-radius:15px;</string>
           </spacer>
          </item>
         </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QWidget" name="widget_AnnualTypeBudget" native="true">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(110, 255, 94);</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QWidget" name="widget_MonthlyTypeBudget" native="true">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(62, 155, 255);</string>
+        </property>
        </widget>
       </item>
      </layout>

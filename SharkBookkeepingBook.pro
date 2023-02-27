@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Controler/apppagemanager.cpp \
     Controler/databaseobj.cpp \
+    Kit/addbudgetpane.cpp \
     Kit/billdataitem.cpp \
     Kit/billdataitemcopy.cpp \
     Kit/billdataitemwithprocessbar.cpp \
@@ -54,6 +55,7 @@ HEADERS += \
     Controler/PublicUerInfo.h \
     Controler/apppagemanager.h \
     Controler/databaseobj.h \
+    Kit/addbudgetpane.h \
     Kit/billdataitem.h \
     Kit/billdataitemcopy.h \
     Kit/billdataitemwithprocessbar.h \
@@ -84,6 +86,7 @@ HEADERS += \
     registerwindow.h
 
 FORMS += \
+    Kit/addbudgetpane.ui \
     Kit/billdataitemwithprocessbar.ui \
     Kit/billdetailitemeditsubpage.ui \
     Kit/billsubarea.ui \
