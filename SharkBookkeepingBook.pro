@@ -19,6 +19,7 @@ SOURCES += \
     Controler/apppagemanager.cpp \
     Controler/databaseobj.cpp \
     Kit/addbudgetpane.cpp \
+    Kit/assetmanagerpage.cpp \
     Kit/billdataitem.cpp \
     Kit/billdataitemcopy.cpp \
     Kit/billdataitemwithprocessbar.cpp \
@@ -56,6 +57,7 @@ HEADERS += \
     Controler/apppagemanager.h \
     Controler/databaseobj.h \
     Kit/addbudgetpane.h \
+    Kit/assetmanagerpage.h \
     Kit/billdataitem.h \
     Kit/billdataitemcopy.h \
     Kit/billdataitemwithprocessbar.h \
@@ -87,6 +89,7 @@ HEADERS += \
 
 FORMS += \
     Kit/addbudgetpane.ui \
+    Kit/assetmanagerpage.ui \
     Kit/billdataitemwithprocessbar.ui \
     Kit/billdetailitemeditsubpage.ui \
     Kit/billsubarea.ui \

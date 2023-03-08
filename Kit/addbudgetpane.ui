@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">background-color: rgb(212, 212, 212);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <property name="leftMargin">
@@ -35,9 +35,14 @@
    <item row="0" column="0">
     <widget class="QWidget" name="backgroundwidget" native="true">
      <property name="styleSheet">
-      <string notr="true">color: rgb(0, 0, 0);</string>
+      <string notr="true">#backgroundwidget
+{   color: rgb(0, 0, 0);
+	border:1px ;
+	border-color: rgba(140,140,140,120);
+	border-style: solid;
+}</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,4,4">
+     <layout class="QGridLayout" name="gridLayout_2">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -48,16 +53,20 @@
        <number>0</number>
       </property>
       <property name="bottomMargin">
-       <number>20</number>
+       <number>0</number>
       </property>
       <property name="spacing">
        <number>0</number>
       </property>
       <item row="0" column="0">
        <widget class="QWidget" name="titlewidget" native="true">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 219, 74);
+color: rgb(0, 0, 0);</string>
+        </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="label_Space">
            <property name="maximumSize">
             <size>
              <width>50</width>
@@ -70,9 +79,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="label_title">
            <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+            <string notr="true">font: 22pt &quot;微软雅黑&quot;;</string>
            </property>
            <property name="text">
             <string>每月总预算</string>
@@ -83,7 +92,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="label_close">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -97,7 +106,7 @@
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+            <string notr="true">font: 22pt &quot;微软雅黑&quot;;</string>
            </property>
            <property name="text">
             <string>X</string>
@@ -112,12 +121,12 @@
       </item>
       <item row="1" column="0">
        <widget class="QWidget" name="inputwidget" native="true">
-        <layout class="QVBoxLayout" name="verticalLayout" stretch="1,2,1,2,1">
-         <property name="leftMargin">
-          <number>25</number>
-         </property>
-         <property name="rightMargin">
-          <number>25</number>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout" stretch="2,3,2,2,2">
+         <property name="spacing">
+          <number>0</number>
          </property>
          <item>
           <spacer name="verticalSpacer_3">
@@ -133,26 +142,60 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(109, 109, 109);
-background-color: rgba(193, 193, 193, 80);
-border-radius:5px;
+          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,8,2">
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(76, 76, 76);
+font: 26pt &quot;微软雅黑&quot;;
+background-color: rgba(212, 212, 212,150);
+border-radius:15px;
 padding-left:10px;</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-           <property name="placeholderText">
-            <string>请输入预算金额</string>
-           </property>
-          </widget>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>请输入预算金额</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </item>
          <item>
           <spacer name="verticalSpacer">
@@ -168,7 +211,7 @@ padding-left:10px;</string>
           </spacer>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,5,2">
+          <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,3,2">
            <item>
             <spacer name="horizontalSpacer">
              <property name="orientation">
@@ -183,7 +226,7 @@ padding-left:10px;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="pushButton_Ok">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
@@ -191,10 +234,31 @@ padding-left:10px;</string>
               </sizepolicy>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgba(202, 202, 202, 150);
-font: 11pt &quot;微软雅黑&quot;;
-color: rgb(129, 129, 129);
-border-radius:17px;</string>
+              <string notr="true">QPushButton
+{	
+	background-color: rgb(255, 213, 42);
+	font: 18pt &quot;微软雅黑&quot;;
+	color: rgb(67, 67, 67);
+	border-radius:25px;
+}
+
+QPushButton:clicked
+{
+	background-color: rgb(207, 173, 34);
+	font: 18pt &quot;微软雅黑&quot;;
+	color: rgb(67, 67, 67);
+	border-radius:25px;
+}
+
+QPushButton:disabled
+{
+	
+	background-color: rgba(129, 129, 129, 180);
+	font: 18pt &quot;微软雅黑&quot;;
+	color: rgb(67, 67, 67);
+	border-radius:25px;
+}
+</string>
              </property>
              <property name="text">
               <string>确定</string>
@@ -233,9 +297,11 @@ border-radius:17px;</string>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QWidget" name="widget" native="true">
+       <widget class="QWidget" name="Keywidget" native="true">
         <property name="styleSheet">
-         <string notr="true">font: 14pt &quot;微软雅黑&quot;;</string>
+         <string notr="true">font: 22pt &quot;微软雅黑&quot;;
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
         </property>
         <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1,1">
          <property name="leftMargin">
@@ -410,8 +476,11 @@ border-radius:17px;</string>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="styleSheet">
+            <string notr="true">border-image: url(:/Budget/image/deleteIcon_In_AddBudgetPane.jpg);</string>
+           </property>
            <property name="text">
-            <string>X</string>
+            <string/>
            </property>
           </widget>
          </item>

@@ -9,6 +9,7 @@
 #include "inandoutdetailpage.h"
 #include "Kit/billsubarea.h"
 #include "Kit/budgetsubpage.h"
+#include "Kit/assetmanagerpage.h"
 #include <QPointer>
 using namespace ScreenFunc;
 using namespace DataQuery;
@@ -77,7 +78,8 @@ DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
  void DetailedSonPageInStackwidget::buildConnect()
  {
      connect(ui->pushButton_Bill,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onBillSubButtonClicked);
-     connect(ui->pushButton_Budget,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onBudgetButtonclicked);
+     connect(ui->pushButton_Budget,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onBudgetButtonClicked);
+     connect(ui->pushButton_AssetManager,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onAssetManagerButtonClicked);
  }
 //初始化表格内容
 void DetailedSonPageInStackwidget::initTableview()
@@ -231,10 +233,16 @@ void DetailedSonPageInStackwidget::onBillSubButtonClicked()
     pointer = new BillSubArea(m_BillListOfYear);
 }
 //打开预算子界面槽函数
-void DetailedSonPageInStackwidget::onBudgetButtonclicked()
+void DetailedSonPageInStackwidget::onBudgetButtonClicked()
 {
     QPointer<BudGetSubPage> pointer;
     pointer = new BudGetSubPage();
+}
+//打开资产管理子界面槽函数
+void DetailedSonPageInStackwidget::onAssetManagerButtonClicked()
+{
+    QPointer<AssetManagerPage> pointer;
+    pointer = new AssetManagerPage();
 }
 DetailedSonPageInStackwidget::~DetailedSonPageInStackwidget()
 {

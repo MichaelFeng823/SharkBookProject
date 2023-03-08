@@ -2,16 +2,11 @@
 #define BUDGETMASKSUBPAGE_H
 
 #include <QWidget>
+#include "Controler/PublicDataStruct.h"
 
 namespace Ui {
 class BudgetMaskSubpage;
 }
-
-enum TypeBudget
-{
-  MonthlyBudget = 1,
-  YearBudget
-};
 
 class BudgetMaskSubpage : public QWidget
 {

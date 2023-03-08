@@ -48,7 +48,9 @@ public slots:
 
     void onBillSubButtonClicked();                 //打开账单子界面槽函数
 
-    void onBudgetButtonclicked();                  //打开预算子界面槽函数
+    void onBudgetButtonClicked();                  //打开预算子界面槽函数
+
+    void onAssetManagerButtonClicked();            //打开资产管理子界面槽函数
 
 protected:
     void buildUiLayout();     //构建UI布局

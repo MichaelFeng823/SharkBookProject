@@ -129,5 +129,6 @@
     </qresource>
     <qresource prefix="/Budget">
         <file>image/NoBudget.jpg</file>
+        <file>image/deleteIcon_In_AddBudgetPane.jpg</file>
     </qresource>
 </RCC>

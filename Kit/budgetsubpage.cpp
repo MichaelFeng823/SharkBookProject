@@ -2,6 +2,7 @@
 #include "ui_budgetsubpage.h"
 #include <QPointer>
 #include "Util/clog.h"
+#include "Kit/addbudgetpane.h"
 
 BudGetSubPage::BudGetSubPage(QWidget *parent) :
     QWidget(parent),
@@ -149,6 +150,13 @@ void BudGetSubPage::openAnnualBudgetWidget()
 //    layout->setEnabled(false);
 //    initAnnualBudgetWidgetContent();
 }
+//打开添加预算界面
+void BudGetSubPage::openAddBudgetPane()
+{
+    LOG("打开添加预算界面");
+    QPointer<AddBudgetPane> pointer;
+    pointer = new AddBudgetPane(m_TypeBudget,this);
+}
 //初始化月预算界面内容
 void BudGetSubPage::initMonthlyBudgetWidgetContent()
 {
@@ -215,19 +223,22 @@ void BudGetSubPage::openAddBudget()
     layout->setRowStretch(1,20);
     layout->setRowStretch(2,0);
     layout->setRowStretch(3,0);
+    onAddBudgetClicked();
 }
 //点击添加预算槽函数
 void BudGetSubPage::onAddBudgetClicked()
 {
     if(m_TypeBudget == TypeBudget::MonthlyBudget){
         if(m_IsEmptyOfMonthltyBudget){
-            m_IsEmptyOfMonthltyBudget = !m_IsEmptyOfMonthltyBudget;
+            openAddBudgetPane();
+            //m_IsEmptyOfMonthltyBudget = !m_IsEmptyOfMonthltyBudget;
         }
     }
     else if(m_TypeBudget == TypeBudget::YearBudget){
        if(m_IsEmptyOfAnuualBudget){
-           m_IsEmptyOfAnuualBudget = !m_IsEmptyOfAnuualBudget;
+           openAddBudgetPane();
+           //m_IsEmptyOfAnuualBudget = !m_IsEmptyOfAnuualBudget;
        }
     }
-    CheckBeforeOpen();
+    //CheckBeforeOpen();
 }

@@ -20,6 +20,12 @@ enum InOrOut{
     Expand
 };
 
+enum TypeBudget
+{
+  MonthlyBudget = 1,
+  YearBudget
+};
+
 struct BillTableStruct
 {
     int billNo;     //账单号

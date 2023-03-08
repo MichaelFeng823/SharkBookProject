@@ -30,6 +30,7 @@ protected:
     void openAddBudget();                               //打开添加预算界面
     void openMonthlyBudgetWidget();                     //打开月预算界面
     void openAnnualBudgetWidget();                      //打开年预算界面
+    void openAddBudgetPane();                           //打开添加预算界面
 
     void initMonthlyBudgetWidgetContent();              //初始化月预算界面内容
     void initAnnualBudgetWidgetContent();              //初始化月预算界面内容
