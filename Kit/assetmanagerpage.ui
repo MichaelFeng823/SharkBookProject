@@ -31,7 +31,7 @@
    </property>
    <item>
     <widget class="QWidget" name="backgroundwidget" native="true">
-     <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,9,1">
+     <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,12,1">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -59,7 +59,7 @@
          <string notr="true">background-color: rgb(249, 219, 97);
 color:rgb(0,0,0);</string>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,3,3">
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,5,3">
          <property name="leftMargin">
           <number>15</number>
          </property>
@@ -68,6 +68,12 @@ color:rgb(0,0,0);</string>
          </property>
          <item>
           <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -75,6 +81,12 @@ color:rgb(0,0,0);</string>
          </item>
          <item>
           <widget class="QLabel" name="label_title">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="styleSheet">
             <string notr="true">font: 24pt &quot;造字工房悦黑（非商用）细长体&quot;;</string>
            </property>
@@ -82,14 +94,14 @@ color:rgb(0,0,0);</string>
             <string>资产管家</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QWidget" name="widget_Help" native="true">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -98,6 +110,12 @@ color:rgb(0,0,0);</string>
             <size>
              <width>200</width>
              <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>80</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -157,11 +175,11 @@ border-radius:15px;</string>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QStackedWidget" name="stackedWidget">
+       <widget class="QStackedWidget" name="stackedWidget_outside">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
-        <widget class="QWidget" name="page">
+        <widget class="QWidget" name="page_Asset">
          <layout class="QGridLayout" name="gridLayout_4" rowstretch="2,8">
           <property name="leftMargin">
            <number>0</number>
@@ -200,7 +218,8 @@ border-radius:15px;</string>
              <item>
               <widget class="QLabel" name="label_2">
                <property name="styleSheet">
-                <string notr="true">color: rgb(127, 127, 127);</string>
+                <string notr="true">color: rgb(127, 127, 127);
+font: 20pt &quot;微软雅黑&quot;;</string>
                </property>
                <property name="text">
                 <string>净资产</string>
@@ -227,7 +246,7 @@ border-radius:15px;</string>
               <widget class="QLabel" name="label_3">
                <property name="styleSheet">
                 <string notr="true">color: rgb(0, 0, 0);
-font: 16pt &quot;微软雅黑&quot;;</string>
+font: 34pt &quot;微软雅黑&quot;;</string>
                </property>
                <property name="text">
                 <string>1655.00</string>
@@ -266,12 +285,18 @@ font: 16pt &quot;微软雅黑&quot;;</string>
                 </spacer>
                </item>
                <item>
-                <layout class="QVBoxLayout" name="verticalLayout">
-                 <item>
+                <layout class="QGridLayout" name="gridLayout_6">
+                 <item row="0" column="0">
                   <widget class="QLabel" name="label_4">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">color: rgb(127, 127, 127);
-font: 11pt &quot;微软雅黑&quot;;</string>
+font: 19pt &quot;微软雅黑&quot;;</string>
                    </property>
                    <property name="text">
                     <string>资产</string>
@@ -281,11 +306,17 @@ font: 11pt &quot;微软雅黑&quot;;</string>
                    </property>
                   </widget>
                  </item>
-                 <item>
+                 <item row="1" column="0">
                   <widget class="QLabel" name="label_5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">color: rgb(0, 0, 0);
-font: 12pt &quot;微软雅黑&quot;;</string>
+font: 20pt &quot;微软雅黑&quot;;</string>
                    </property>
                    <property name="text">
                     <string>1655.00</string>
@@ -340,23 +371,35 @@ font: 12pt &quot;微软雅黑&quot;;</string>
                 </spacer>
                </item>
                <item>
-                <layout class="QVBoxLayout" name="verticalLayout_2">
-                 <item>
+                <layout class="QGridLayout" name="gridLayout_7">
+                 <item row="0" column="0">
                   <widget class="QLabel" name="label_6">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">color: rgb(127, 127, 127);
-font: 11pt &quot;微软雅黑&quot;;</string>
+font: 19pt &quot;微软雅黑&quot;;</string>
                    </property>
                    <property name="text">
                     <string>负债</string>
                    </property>
                   </widget>
                  </item>
-                 <item>
+                 <item row="1" column="0">
                   <widget class="QLabel" name="label_7">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="styleSheet">
                     <string notr="true">color: rgb(0, 0, 0);
-font: 12pt &quot;微软雅黑&quot;;</string>
+font: 20pt &quot;微软雅黑&quot;;</string>
                    </property>
                    <property name="text">
                     <string>0.00</string>
@@ -388,7 +431,7 @@ font: 12pt &quot;微软雅黑&quot;;</string>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="page_2">
+        <widget class="QWidget" name="page_chart">
          <widget class="QWidget" name="widget" native="true">
           <property name="geometry">
            <rect>
@@ -415,43 +458,68 @@ font: 12pt &quot;微软雅黑&quot;;</string>
             <number>0</number>
            </property>
            <item row="0" column="0">
-            <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,8">
+            <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,10">
              <property name="spacing">
               <number>0</number>
              </property>
              <item row="0" column="0">
-              <widget class="QWidget" name="widget_2" native="true">
+              <widget class="QWidget" name="widget_inside_menubar" native="true">
                <property name="styleSheet">
-                <string notr="true">background-color: rgb(249, 219, 97);
-color:rgb(0,0,0);</string>
+                <string notr="true">QWidget
+{
+	background-color: rgb(249, 219, 97);
+	color:rgb(0,0,0);
+}
+
+QPushButton
+{
+	background-color: rgb(249, 219, 97);
+	color:rgb(0,0,0);
+    border:3px solid;
+	border-color:rgb(0,0,0);
+	font: 19pt &quot;微软雅黑&quot;;
+}
+</string>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_4">
                 <property name="spacing">
                  <number>0</number>
                 </property>
                 <property name="leftMargin">
-                 <number>0</number>
+                 <number>30</number>
                 </property>
                 <property name="topMargin">
                  <number>10</number>
                 </property>
                 <property name="rightMargin">
-                 <number>0</number>
+                 <number>30</number>
                 </property>
                 <property name="bottomMargin">
                  <number>10</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="pushButton_3">
+                 <widget class="QPushButton" name="pushButton_asset">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>90</height>
+                   </size>
+                  </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(0, 0, 0);
-font: 10pt &quot;微软雅黑&quot;;</string>
+                   <string notr="true">
+</string>
                   </property>
                   <property name="text">
                    <string>资产</string>
@@ -459,16 +527,34 @@ font: 10pt &quot;微软雅黑&quot;;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_4">
+                 <widget class="QPushButton" name="pushButton_BeInDebt">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="sizeIncrement">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(0, 0, 0);
-font: 10pt &quot;微软雅黑&quot;;</string>
+                   <string notr="true">
+</string>
                   </property>
                   <property name="text">
                    <string>负债</string>
@@ -476,16 +562,27 @@ font: 10pt &quot;微软雅黑&quot;;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_5">
+                 <widget class="QPushButton" name="pushButton_NetAssets">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>90</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>90</height>
+                   </size>
+                  </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(0, 0, 0);
-font: 10pt &quot;微软雅黑&quot;;</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
                    <string>净资产</string>
@@ -496,11 +593,11 @@ font: 10pt &quot;微软雅黑&quot;;</string>
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QStackedWidget" name="stackedWidget_2">
+              <widget class="QStackedWidget" name="stackedWidget_inside">
                <property name="currentIndex">
-                <number>2</number>
+                <number>0</number>
                </property>
-               <widget class="QWidget" name="page_3">
+               <widget class="QWidget" name="page_chart_assets">
                 <widget class="QLabel" name="label_10">
                  <property name="geometry">
                   <rect>
@@ -517,9 +614,12 @@ font: 30pt &quot;迷你简雪峰&quot;;</string>
                  <property name="text">
                   <string>资产图表子界面</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
                 </widget>
                </widget>
-               <widget class="QWidget" name="page_4">
+               <widget class="QWidget" name="page_BeInDebt">
                 <widget class="QLabel" name="label_9">
                  <property name="geometry">
                   <rect>
@@ -536,9 +636,12 @@ font: 28pt &quot;迷你简齿轮&quot;;</string>
                  <property name="text">
                   <string>负债图表子界面</string>
                  </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
                 </widget>
                </widget>
-               <widget class="QWidget" name="page_5">
+               <widget class="QWidget" name="page_NetAssets">
                 <widget class="QLabel" name="label_8">
                  <property name="geometry">
                   <rect>
@@ -554,6 +657,9 @@ font: 30pt &quot;.Heiti GB18030PUA&quot;;</string>
                  </property>
                  <property name="text">
                   <string>净资产图表子界面</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
                  </property>
                 </widget>
                </widget>
@@ -585,7 +691,7 @@ font: 30pt &quot;.Heiti GB18030PUA&quot;;</string>
           <number>0</number>
          </property>
          <item row="0" column="0">
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="pushButton_assets_mainarea">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -602,7 +708,7 @@ font: 14pt &quot;微软雅黑&quot;;</string>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="pushButton_Chart">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>

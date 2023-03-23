@@ -82,6 +82,12 @@ color: rgb(0, 0, 0);</string>
            </property>
            <item>
             <widget class="QWidget" name="widget_2" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="styleSheet">
               <string notr="true">border:none;
 color: rgb(0, 0, 0);</string>
@@ -152,6 +158,12 @@ font: 18pt &quot;微软雅黑&quot;;</string>
            </item>
            <item>
             <widget class="QWidget" name="widget_Help" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: rgb(251, 234, 154);
 border-radius:15px;</string>
