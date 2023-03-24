@@ -131,4 +131,24 @@
         <file>image/NoBudget.jpg</file>
         <file>image/deleteIcon_In_AddBudgetPane.jpg</file>
     </qresource>
+    <qresource prefix="/MorePage">
+        <file>image/AssetManagerButtonIcon_InMorePage.jpg</file>
+        <file>image/BillButtonIcon_InMorePage.jpg</file>
+        <file>image/BillHelperButtonIcon_InMorePage.jpg</file>
+        <file>image/BillManagerButtonIcon_InMorePage.jpg</file>
+        <file>image/BudgetButtonIcon_InMorePage.jpg</file>
+        <file>image/ExchangeRateCalculateButtonIcon_InMorePage.jpg</file>
+        <file>image/FamilyBillButtonIcon_InMorePage.jpg</file>
+        <file>image/HousingLoanCalculateButtonIcon_InMorePage.jpg</file>
+        <file>image/MangeAssetKonwlageButtonIcon_InMorePage.jpg</file>
+        <file>image/ShopingButtonIcon_InMorePage.jpg</file>
+    </qresource>
+    <qresource prefix="/AssetsManager">
+        <file>image/AssetButtonIcon_Normal.jpg</file>
+        <file>image/ChartButtonIcon_Clicked.jpg</file>
+        <file>image/AssetButtonIcon_Clicked.jpg</file>
+        <file>image/AssetMainArea_BackgroundInEmptyData.jpg</file>
+        <file>image/ChartButtonIcon_normal.jpg</file>
+    </qresource>
+    <qresource prefix="/qml"/>
 </RCC>

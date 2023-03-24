@@ -31,7 +31,7 @@
    </property>
    <item>
     <widget class="QWidget" name="backgroundwidget" native="true">
-     <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,12,1">
+     <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,13,1">
       <property name="leftMargin">
        <number>0</number>
       </property>
@@ -177,7 +177,7 @@ border-radius:15px;</string>
       <item row="1" column="0">
        <widget class="QStackedWidget" name="stackedWidget_outside">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="page_Asset">
          <layout class="QGridLayout" name="gridLayout_4" rowstretch="2,8">
@@ -427,7 +427,11 @@ font: 20pt &quot;微软雅黑&quot;;</string>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QWidget" name="contentwidget" native="true"/>
+           <widget class="QWidget" name="contentwidget" native="true">
+            <property name="styleSheet">
+             <string notr="true">border-image: url(:/AssetsManager/image/AssetMainArea_BackgroundInEmptyData.jpg);</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -518,8 +522,7 @@ QPushButton
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">
-</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
                    <string>资产</string>
@@ -553,8 +556,7 @@ QPushButton
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">
-</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
                    <string>负债</string>
@@ -595,7 +597,7 @@ QPushButton
              <item row="1" column="0">
               <widget class="QStackedWidget" name="stackedWidget_inside">
                <property name="currentIndex">
-                <number>0</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="page_chart_assets">
                 <widget class="QLabel" name="label_10">
@@ -699,11 +701,12 @@ font: 30pt &quot;.Heiti GB18030PUA&quot;;</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-font: 14pt &quot;微软雅黑&quot;;</string>
+            <string notr="true">border-image: url(:/AssetsManager/image/AssetButtonIcon_Normal.jpg);
+
+</string>
            </property>
            <property name="text">
-            <string>资产</string>
+            <string/>
            </property>
           </widget>
          </item>
@@ -716,11 +719,11 @@ font: 14pt &quot;微软雅黑&quot;;</string>
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(0, 0, 0);
-font: 14pt &quot;微软雅黑&quot;;</string>
+            <string notr="true">border-image: url(:/AssetsManager/image/ChartButtonIcon_normal.jpg);
+</string>
            </property>
            <property name="text">
-            <string>图表</string>
+            <string/>
            </property>
           </widget>
          </item>

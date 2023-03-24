@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql webview
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -32,9 +32,11 @@ SOURCES += \
     Kit/chinese2pinyin.cpp \
     Kit/inandoutkit.cpp \
     Kit/menuicon.cpp \
+    Kit/morepage.cpp \
     Kit/persondetailinfosubpage.cpp \
     Kit/personinfodisplaykit.cpp \
     Kit/scrollareakit.cpp \
+    Kit/shoppage.cpp \
     Util/calendar.cpp \
     bookkeepingselectarea.cpp \
     changepasswordform.cpp \
@@ -70,9 +72,11 @@ HEADERS += \
     Kit/chinese2pinyin.h \
     Kit/inandoutkit.h \
     Kit/menuicon.h \
+    Kit/morepage.h \
     Kit/persondetailinfosubpage.h \
     Kit/personinfodisplaykit.h \
     Kit/scrollareakit.h \
+    Kit/shoppage.h \
     Util/calendar.h \
     Util/clog.h \
     bookkeepingselectarea.h \
@@ -96,8 +100,10 @@ FORMS += \
     Kit/bookkeepinginputkit.ui \
     Kit/budgetmasksubpage.ui \
     Kit/budgetsubpage.ui \
+    Kit/morepage.ui \
     Kit/persondetailinfosubpage.ui \
     Kit/personinfodisplaykit.ui \
+    Kit/shoppage.ui \
     bookkeepingselectarea.ui \
     changepasswordform.ui \
     chartmaininterface.ui \

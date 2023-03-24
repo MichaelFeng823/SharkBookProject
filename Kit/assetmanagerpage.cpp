@@ -105,7 +105,6 @@ void AssetManagerPage::on_ButtonGroup_In_Chart_Clicked(int pagetype)
         case PageTypeInChartPage::NetAssets:{
             setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
             ui->stackedWidget_inside->setCurrentWidget(ui->page_NetAssets);
-            ui->stackedWidget_inside->setCurrentWidget(ui->page_chart_assets);
             break;};
     }
 }
@@ -130,12 +129,16 @@ void AssetManagerPage::setButtonStyleOnNormal(QPushButton * button)
 void AssetManagerPage::on_Button_AssetsMainArea_Clicked()
 {
     ui->stackedWidget_outside->setCurrentWidget(ui->page_Asset);
+    ui->pushButton_assets_mainarea->setStyleSheet("border-image: url(:/AssetsManager/image/AssetButtonIcon_Clicked.jpg);");
+    ui->pushButton_Chart->setStyleSheet("border-image: url(:/AssetsManager/image/ChartButtonIcon_normal.jpg);");
     ui->label_title->setText("资产管家");
 }
 //图表按钮点击槽函数
 void AssetManagerPage::on_Button_Chart_Clicked()
 {
     ui->stackedWidget_outside->setCurrentWidget(ui->page_chart);
+    ui->pushButton_assets_mainarea->setStyleSheet("border-image: url(:/AssetsManager/image/AssetButtonIcon_Normal.jpg);");
+    ui->pushButton_Chart->setStyleSheet("border-image: url(:/AssetsManager/image/ChartButtonIcon_Clicked.jpg);");
     ui->label_title->setText("图表");
 }
 //事件过滤器

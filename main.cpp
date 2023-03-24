@@ -1,6 +1,7 @@
 #include <QApplication>
 #include "Controler/apppagemanager.h"
 #include <QGridLayout>
+#include <QtWebView/QtWebView>
 #include "Kit/billdataitem.h"
 #include "Kit/chinese2pinyin.h"
 #include "Util/clog.h"
@@ -17,6 +18,8 @@ int main(int argc, char *argv[])
     LOG("%s",Chinese2Pinyin::getFullChars(input).toStdString().c_str());
     //多音字,暂不支持
     LOG("%s",Chinese2Pinyin::getCamelChars(input).at(0).toStdString().c_str());
+
+    QtWebView::initialize();
 
     return AppPageManager::instance()->initPage();
 #else

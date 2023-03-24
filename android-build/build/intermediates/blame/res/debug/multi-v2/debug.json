@@ -226,37 +226,35 @@
                 {
                     "source": "E:\\Git-backup\\SharkBookProject\\android-build\\res\\values\\libs.xml",
                     "from": {
-                        "startLines": "9,21,13,2",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "301,662,360,57",
-                        "endLines": "11,23,19,4",
-                        "endColumns": "12,12,12,12",
-                        "endOffsets": "352,789,654,170"
+                        "startLines": "-1,26,13,-1",
+                        "startColumns": "-1,4,4,-1",
+                        "startOffsets": "-1,938,360,-1",
+                        "endLines": "-1,28,24,-1",
+                        "endColumns": "-1,12,12,-1",
+                        "endOffsets": "-1,1165,930,-1"
                     },
                     "to": {
-                        "startLines": "2,5,8,15",
+                        "startLines": "2,5,8,20",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "55,109,239,536",
-                        "endLines": "4,7,14,17",
+                        "startOffsets": "55,109,339,912",
+                        "endLines": "4,7,19,22",
                         "endColumns": "12,12,12,12",
-                        "endOffsets": "104,234,531,647"
+                        "endOffsets": "104,334,907,1023"
                     }
                 },
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "5,4,3,6",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "324,201,88,433",
-                        "endColumns": "107,121,111,97",
-                        "endOffsets": "427,318,195,526"
+                        "startLines": "-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1"
                     },
                     "to": {
-                        "startLines": "18,19,20,21",
+                        "startLines": "23,24,25,26",
                         "startColumns": "4,4,4,4",
-                        "startOffsets": "652,760,882,994",
+                        "startOffsets": "1028,1136,1258,1370",
                         "endColumns": "107,121,111,97",
-                        "endOffsets": "755,877,989,1087"
+                        "endOffsets": "1131,1253,1365,1463"
                     }
                 }
             ]

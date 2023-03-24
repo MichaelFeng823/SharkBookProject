@@ -52,6 +52,10 @@ public slots:
 
     void onAssetManagerButtonClicked();            //打开资产管理子界面槽函数
 
+    void onShopPageButtonClicked();                //打开购物返现界面槽函数
+
+    void onMoreButtonClicked();                    //打开更多功能子界面槽函数
+
 protected:
     void buildUiLayout();     //构建UI布局
 

@@ -10,6 +10,8 @@
 #include "Kit/billsubarea.h"
 #include "Kit/budgetsubpage.h"
 #include "Kit/assetmanagerpage.h"
+#include "Kit/morepage.h"
+#include "Kit/shoppage.h"
 #include <QPointer>
 using namespace ScreenFunc;
 using namespace DataQuery;
@@ -80,6 +82,8 @@ DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
      connect(ui->pushButton_Bill,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onBillSubButtonClicked);
      connect(ui->pushButton_Budget,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onBudgetButtonClicked);
      connect(ui->pushButton_AssetManager,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onAssetManagerButtonClicked);
+     connect(ui->pushButton_More,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onMoreButtonClicked);
+     connect(ui->pushButton_Return,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onShopPageButtonClicked);
  }
 //初始化表格内容
 void DetailedSonPageInStackwidget::initTableview()
@@ -243,6 +247,19 @@ void DetailedSonPageInStackwidget::onAssetManagerButtonClicked()
 {
     QPointer<AssetManagerPage> pointer;
     pointer = new AssetManagerPage();
+}
+//打开购物返现界面槽函数
+void DetailedSonPageInStackwidget::onShopPageButtonClicked()
+{
+    LOG("打开购物界面");
+    QPointer<ShopPage> pointer;
+    pointer = new ShopPage();
+}
+//打开更多功能子界面槽函数
+void DetailedSonPageInStackwidget::onMoreButtonClicked()
+{
+    QPointer<MorePage> pointer;
+    pointer = new MorePage();
 }
 DetailedSonPageInStackwidget::~DetailedSonPageInStackwidget()
 {
