@@ -40,7 +40,7 @@
 	background-color: rgb(255, 255, 255);
 	font: 16pt &quot;微软雅黑&quot;;
 	color: rgb(0, 0, 0);
-	border:10px;
+	border:15px;
 	border-color: rgb(209, 209, 209);
 	border-style: solid;
 }

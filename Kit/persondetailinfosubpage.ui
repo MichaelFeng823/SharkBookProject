@@ -14,20 +14,48 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <item row="0" column="0">
     <widget class="QWidget" name="backgroundwidget" native="true">
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
+      <string notr="true">background-color: rgb(249, 219, 97);
 color: rgb(0, 0, 0);</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
+     <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1,1,1,1,1,1,1,1,10,1">
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>6</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>15</number>
+      </property>
       <item row="0" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
          <widget class="QPushButton" name="ButtonReturn">
           <property name="styleSheet">
            <string notr="true">border:none;
-font: 22pt &quot;微软雅黑&quot;;</string>
+font: 28pt &quot;微软雅黑&quot;;
+</string>
           </property>
           <property name="text">
            <string>&lt;-</string>
@@ -51,12 +79,29 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="1" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,2">
+        <property name="spacing">
+         <number>30</number>
+        </property>
         <item>
          <layout class="QFormLayout" name="formLayout">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>姓名：</string>
@@ -65,8 +110,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_PersonName">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -74,10 +127,24 @@ font: 22pt &quot;微软雅黑&quot;;</string>
         </item>
         <item>
          <layout class="QFormLayout" name="formLayout_2">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>性别：</string>
@@ -86,8 +153,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QComboBox" name="comboBox_Sex">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -97,12 +172,29 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="2" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="4,2">
+        <property name="spacing">
+         <number>30</number>
+        </property>
         <item>
          <layout class="QFormLayout" name="formLayout_11">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_11">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>昵称：</string>
@@ -111,8 +203,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_NickName">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -120,10 +220,24 @@ font: 22pt &quot;微软雅黑&quot;;</string>
         </item>
         <item>
          <layout class="QFormLayout" name="formLayout_3">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>年龄：</string>
@@ -132,8 +246,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_Age">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -143,12 +265,29 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="3" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,1">
+        <property name="spacing">
+         <number>30</number>
+        </property>
         <item>
          <layout class="QFormLayout" name="formLayout_4">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>生日：</string>
@@ -157,8 +296,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_Birthday">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -166,10 +313,24 @@ font: 22pt &quot;微软雅黑&quot;;</string>
         </item>
         <item>
          <layout class="QFormLayout" name="formLayout_5">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_5">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>行业：</string>
@@ -178,8 +339,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_Industry">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -189,12 +358,29 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="4" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1">
+        <property name="spacing">
+         <number>30</number>
+        </property>
         <item>
          <layout class="QFormLayout" name="formLayout_6">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>职位：</string>
@@ -203,8 +389,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_Occupation">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -212,10 +406,24 @@ font: 22pt &quot;微软雅黑&quot;;</string>
         </item>
         <item>
          <layout class="QFormLayout" name="formLayout_7">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_7">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>Tel:</string>
@@ -224,8 +432,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_Tel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -235,12 +451,26 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="5" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="2,3">
+        <property name="spacing">
+         <number>30</number>
+        </property>
         <item>
          <layout class="QFormLayout" name="formLayout_8">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_8">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>QQ：</string>
@@ -249,8 +479,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_QQ">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 16pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -258,10 +496,24 @@ font: 22pt &quot;微软雅黑&quot;;</string>
         </item>
         <item>
          <layout class="QFormLayout" name="formLayout_9">
+          <property name="horizontalSpacing">
+           <number>0</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_9">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
             <property name="text">
              <string>邮箱：</string>
@@ -270,8 +522,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
           </item>
           <item row="0" column="1">
            <widget class="QLineEdit" name="lineEdit_Email">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+             <string notr="true">font: 16pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
             </property>
            </widget>
           </item>
@@ -281,20 +541,45 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="6" column="0">
        <layout class="QFormLayout" name="formLayout_10">
+        <property name="horizontalSpacing">
+         <number>0</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label_10">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
           </property>
           <property name="text">
            <string>住址：</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="lineEdit_Address">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
           </property>
          </widget>
         </item>
@@ -302,20 +587,45 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="7" column="0">
        <layout class="QFormLayout" name="formLayout_12">
+        <property name="horizontalSpacing">
+         <number>0</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label_12">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
           </property>
           <property name="text">
            <string>爱好：</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="lineEdit_Hobby">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
           </property>
          </widget>
         </item>
@@ -323,20 +633,45 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="8" column="0">
        <layout class="QFormLayout" name="formLayout_13">
+        <property name="horizontalSpacing">
+         <number>0</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label_13">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
           </property>
           <property name="text">
            <string>优点：</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="lineEdit_Advantage">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
           </property>
          </widget>
         </item>
@@ -344,27 +679,52 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="9" column="0">
        <layout class="QFormLayout" name="formLayout_14">
+        <property name="horizontalSpacing">
+         <number>0</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>0</number>
+        </property>
         <item row="0" column="0">
          <widget class="QLabel" name="label_14">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
           </property>
           <property name="text">
            <string>缺点：</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="lineEdit_ShortComming">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
           </property>
          </widget>
         </item>
        </layout>
       </item>
       <item row="10" column="0">
-       <layout class="QVBoxLayout" name="verticalLayout">
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10">
         <property name="spacing">
          <number>10</number>
         </property>
@@ -373,8 +733,14 @@ font: 22pt &quot;微软雅黑&quot;;</string>
         </property>
         <item>
          <widget class="QLabel" name="label_15">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
-           <string notr="true">font: 10pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 20pt &quot;微软雅黑&quot;;</string>
           </property>
           <property name="text">
            <string>主要事件与成就</string>
@@ -384,7 +750,10 @@ font: 22pt &quot;微软雅黑&quot;;</string>
         <item>
          <widget class="QTextEdit" name="textEdit_MajorEvent">
           <property name="styleSheet">
-           <string notr="true">font: 12pt &quot;微软雅黑&quot;;</string>
+           <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);
+border-radius:10px;</string>
           </property>
          </widget>
         </item>
@@ -392,8 +761,21 @@ font: 22pt &quot;微软雅黑&quot;;</string>
       </item>
       <item row="11" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <property name="spacing">
+         <number>20</number>
+        </property>
         <item>
          <widget class="QPushButton" name="Button_Edit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
+          </property>
           <property name="text">
            <string>编辑</string>
           </property>
@@ -401,6 +783,16 @@ font: 22pt &quot;微软雅黑&quot;;</string>
         </item>
         <item>
          <widget class="QPushButton" name="Button_Save">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);</string>
+          </property>
           <property name="text">
            <string>保存</string>
           </property>

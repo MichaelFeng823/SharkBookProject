@@ -96,9 +96,9 @@ color: rgb(0, 0, 0);</string>
             </property>
             <property name="styleSheet">
              <string notr="true">border:none;
-background-color: rgb(204, 204, 0);
-color: rgb(255, 255, 255);
-font: 26pt &quot;微软雅黑&quot;;
+font: 22pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);
 border-radius:15px;</string>
             </property>
             <property name="text">
@@ -132,9 +132,9 @@ background-color: rgb(255, 255, 204);</string>
             </property>
             <property name="styleSheet">
              <string notr="true">border:none;
-color: rgb(255, 255, 255);
-font: 15pt &quot;微软雅黑&quot;;
-background-color: rgb(204, 204, 0);
+font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);
 border-radius:15px;</string>
             </property>
             <property name="text">
@@ -165,9 +165,9 @@ border-radius:15px;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">border:none;
-background-color: rgb(204, 204, 0);
-color: rgb(255, 255, 255);
 font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);
 border-radius:15px;</string>
             </property>
             <property name="text">
@@ -185,9 +185,9 @@ border-radius:15px;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">border:none;
-background-color: rgb(204, 204, 0);
-color: rgb(255, 255, 255);
 font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);
 border-radius:15px;</string>
             </property>
             <property name="text">
@@ -205,9 +205,9 @@ border-radius:15px;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">border:none;
-background-color: rgb(204, 204, 0);
-color: rgb(255, 255, 255);
 font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);
 border-radius:15px;</string>
             </property>
             <property name="text">
@@ -225,9 +225,9 @@ border-radius:15px;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">border:none;
-background-color: rgb(204, 204, 0);
-color: rgb(255, 255, 255);
 font: 18pt &quot;微软雅黑&quot;;
+background-color: rgb(37, 37, 37);
+color: rgb(249, 219, 97);
 border-radius:15px;</string>
             </property>
             <property name="text">
