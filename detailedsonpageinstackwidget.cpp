@@ -6,6 +6,7 @@
 #include "Util/clog.h"
 #include "Controler/PublicDbFunc.h"
 #include "Controler/databaseobj.h"
+#include "Controler/GlobalDocumentPath.h"
 #include "inandoutdetailpage.h"
 #include "Kit/billsubarea.h"
 #include "Kit/budgetsubpage.h"
@@ -15,12 +16,14 @@
 #include <QPointer>
 using namespace ScreenFunc;
 using namespace DataQuery;
+using namespace DocPath;
 DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DetailedSonPageInStackwidget)
 {
     ui->setupUi(this);
     hasConnected = DataBaseObj::getConnecttion(coon);
+    initMenuSettingIni();
     buildUiLayout();
     buildConnect();
     m_CurrentDate = QDate::currentDate();
@@ -85,6 +88,42 @@ DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
      connect(ui->pushButton_More,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onMoreButtonClicked);
      connect(ui->pushButton_Return,&QPushButton::clicked,this,&DetailedSonPageInStackwidget::onShopPageButtonClicked);
  }
+ //初始化菜单配置文件
+ void DetailedSonPageInStackwidget::initMenuSettingIni()
+ {
+     QFile file(android_local_menuproperty_dir);
+     if(!file.exists()||file.size() == 0){
+         QString infostr = QString::fromLocal8Bit("File is not exsit,bulit it! and path:%1").arg(android_local_menuproperty_dir);
+         LOG("%s",infostr.toStdString().c_str());
+         file.copy("assets:/MenuSetting.ini",android_local_menuproperty_dir);      //拷到安卓本地目录
+         file.setPermissions(QFile::WriteOwner | QFile::ReadOwner); //以读写的方式进行拷贝
+         file.close();
+     }
+     //创建操作对象
+     QSettings config(android_local_menuproperty_dir,QSettings::IniFormat);
+     config.setIniCodec("utf8");
+     config.beginGroup("keycounts");
+     int expanditurecounts = config.value("expanditurecounts").toInt();
+     int incomecounts = config.value("incomecounts").toInt();
+     LOG("expanditurecounts = %d,incomecounts = %d",expanditurecounts,incomecounts);
+     config.endGroup();
+     config.beginGroup("expanditure");
+     for(int i = 1; i <= expanditurecounts;i++){
+          QString value = config.value(QString("menuname_%1").arg(QString::number(i))).toString();
+          expandituremenuvector.append(value);
+     }
+     QStringList menulist = config.childKeys();
+     config.endGroup();
+     LOG("menulist size is :%d",menulist.size());
+     config.beginGroup("income");
+     for(int i = expanditurecounts; i <expanditurecounts+incomecounts;i++){
+          QString value = config.value(QString("menuname_%1").arg(QString::number(i))).toString();
+          incomemenuvector.append(value);
+     }
+     menulist = config.childKeys();
+     config.endGroup();
+     LOG("menulist size is :%d",menulist.size());
+ }
 //初始化表格内容
 void DetailedSonPageInStackwidget::initTableview()
 {
@@ -100,10 +139,24 @@ void DetailedSonPageInStackwidget::initTableview()
     for(int i = 0; i < m_BillList.size(); i++){
         tableview->setRowHeight(i,getScreenSize().height()/32*30/30*22/6);
         QModelIndex index = model->index(i,0);
-        QPointer<BillDataItem> item = new BillDataItem;
+        QPointer<BillDataItem> item = new BillDataItem((InAndOutType)m_BillList[i].InOrOut);
         item->setDate(m_BillList[i].date);
         item->setTitlePayNum(m_BillList[i].moneyAmount);
-        item->setPayType("餐饮");
+        if(m_BillList[i].InOrOut == InAndOutType::InType){
+            if( m_BillList[i].typeId - expandituremenuvector.size() <= incomemenuvector.size()){
+                m_BillList[i].PayType = incomemenuvector[m_BillList[i].typeId];
+                m_BillList[i].IconPath = QString(":/BillPage/image/Bill_Income_%1.jpg").arg(m_BillList[i].typeId);
+            }
+        }
+        else if (m_BillList[i].InOrOut == InAndOutType::OutType){
+            if(m_BillList[i].typeId <= expandituremenuvector.size()){
+                m_BillList[i].PayType = expandituremenuvector[m_BillList[i].typeId-1];
+                m_BillList[i].IconPath = QString(":/BillPage/image/BillPage_Expand_%1.jpg").arg(m_BillList[i].typeId);
+            }
+        }
+        LOG("IconPath:%s", m_BillList[i].IconPath.toStdString().c_str());
+        item->setPayType(m_BillList[i].PayType);
+        item->setIcon(m_BillList[i].IconPath);
         item->setDetialPayNum(m_BillList[i].moneyAmount);
         item->setPayDetailSoucres(m_BillList[i].remarks);
         tableview->setIndexWidget(index,item);
@@ -169,9 +222,9 @@ void DetailedSonPageInStackwidget::initInAndOutKitContent()
      m_Current_InNumber = 0.00;                //当前收入数据
      m_Current_OutNumber = 0.00;               //当前支出数据
      for(int i = 0; i < m_BillList.size();i++){
-         if(m_BillList[i].InOrOut == 1)
-             m_Current_OutNumber+=m_BillList[i].moneyAmount;
-         else if(m_BillList[i].InOrOut == 2)
+         if(m_BillList[i].InOrOut == InAndOutType::InType)
+             m_Current_InNumber+=m_BillList[i].moneyAmount;
+         else if(m_BillList[i].InOrOut == InAndOutType::OutType)
              m_Current_OutNumber+=m_BillList[i].moneyAmount;
      }
 

@@ -3,6 +3,7 @@
 #include <QSettings>
 #include <QFile>
 #include <QStandardItemModel>
+#include <QMessageBox>
 #include "Controler/GlobalDocumentPath.h"
 #include "Controler/PublicDbFunc.h"
 #include "Util/clog.h"
@@ -32,7 +33,7 @@ BookkeepingSelectArea::BookkeepingSelectArea(QWidget *parent) :
 
 BookkeepingSelectArea::BookkeepingSelectArea(BillTableStruct billinfo,bool isModify,QWidget *parent):
     QWidget(parent),
-    ui(new Ui::BookkeepingSelectArea)
+    ui(new Ui::BookkeepingSelectArea),m_Billinfo(billinfo)
 {
     ui->setupUi(this);
      m_IsModify = isModify;
@@ -44,10 +45,10 @@ BookkeepingSelectArea::BookkeepingSelectArea(BillTableStruct billinfo,bool isMod
     this->show();
     if(m_IsModify)
     {
-        if(billinfo.InOrOut == InAndOutType::OutType){
+        if(m_Billinfo.InOrOut == InAndOutType::OutType){
             onExpanditurePageClicked();
         }
-        else if(billinfo.InOrOut == InAndOutType::InType){
+        else if(m_Billinfo.InOrOut == InAndOutType::InType){
             onIncomePageClicked();
         }
         if(bookkeepinginputkit != nullptr)
@@ -55,8 +56,26 @@ BookkeepingSelectArea::BookkeepingSelectArea(BillTableStruct billinfo,bool isMod
         bookkeepinginputkit = new BookkeepingInputKit(billinfo,true,this);
         connect(bookkeepinginputkit,&BookkeepingInputKit::finishBookkeepingInputAndModify,this,&BookkeepingSelectArea::onReceiveBillInfoModify);
     }
+    resetMenuButtonstatus();
 
 }
+//重置/恢复按钮的状态---用于修改时先预选中对应的菜单按钮
+void BookkeepingSelectArea::resetMenuButtonstatus()
+{
+    if(m_Billinfo.InOrOut == InAndOutType::OutType){
+        for(QPushButton * button : m_ExpandButtonList){
+            if(button->property("Id").toInt() == m_Billinfo.typeId)
+                button->click();
+        }
+    }
+    else if(m_Billinfo.InOrOut == InAndOutType::InType){
+        for(QPushButton * button : m_IncomeButtonList){
+            if(button->property("Id").toInt() == m_Billinfo.typeId)
+                button->click();
+        }
+    }
+}
+
 //构建布局
 void BookkeepingSelectArea::buildLayout()
 {
@@ -115,7 +134,7 @@ void BookkeepingSelectArea::initMenu()
     config.endGroup();
     LOG("menulist size is :%d",menulist.size());
     config.beginGroup("income");
-    for(int i = expanditurecounts; i <expanditurecounts+incomecounts;i++){
+    for(int i = expanditurecounts+1; i <= expanditurecounts+incomecounts;i++){
          QString value = config.value(QString("menuname_%1").arg(QString::number(i))).toString();
          incomemenuvector.append(value);
     }
@@ -133,6 +152,7 @@ void BookkeepingSelectArea::initTablecontent()
  //初始化支出菜单按钮
 void BookkeepingSelectArea::initExpandMenuButton()
 {
+    m_ExpandButtonList.clear();
     QStandardItemModel * expandituremodel = new QStandardItemModel();
     expandituremodel->setColumnCount(4);
     int rowcounts = expandituremenuvector.size()/4;
@@ -172,6 +192,7 @@ void BookkeepingSelectArea::initExpandMenuButton()
  //初始化收入菜单按钮
 void BookkeepingSelectArea::initIncomeMenuButton()
 {
+    m_IncomeButtonList.clear();
     QStandardItemModel * incomemodel = new QStandardItemModel();
     incomemodel->setColumnCount(4);
     int rowcounts = incomemenuvector.size()/4;
@@ -213,6 +234,7 @@ void BookkeepingSelectArea::initIncomeMenuButton()
 void BookkeepingSelectArea::onExpanditurePageClicked()
 {
     initExpandMenuButtonStyle();
+    m_InOrOut = InAndOutType::OutType;
     ui->expenditurebutton->setStyleSheet("border:none;border-top:1px;border-color:rgb(0,0,0);color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:22pt;");
     ui->incomebutton->setStyleSheet("border:none;border-top:1px;border-color:rgb(0,0,0);color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:20pt;");
     ui->stackedWidget->setCurrentIndex(0);
@@ -229,6 +251,7 @@ void BookkeepingSelectArea::onExpanditurePageClicked()
 void BookkeepingSelectArea::onIncomePageClicked()
 {
     initIncomeMenuButtonStyle();
+    m_InOrOut = InAndOutType::InType;
     ui->expenditurebutton->setStyleSheet("border:none;border-top:1px;border-color:rgb(0,0,0);color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:20pt;");
     ui->incomebutton->setStyleSheet("border:none;border-top:1px;border-color:rgb(0,0,0);color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:22pt;");
     ui->stackedWidget->setCurrentIndex(1);
@@ -260,8 +283,14 @@ void BookkeepingSelectArea::onMenuIconButtonClicked()
     int Id = btn->property("Id").toInt();
     QString Name = btn->property("Name").toString();
     QString Type = btn->property("Type").toString();
+
+
     if(Type == "Expand")
     {
+        if(Id == 34){
+            QMessageBox::warning(0,"warning","该设置暂时无用,后续待扩展");
+            return;
+        }
         for(int i = 0; i < m_ExpandButtonList.size(); i++){
             if(m_ExpandButtonList.at(i)->property("Id").toInt() != Id){
                 m_ExpandButtonList.at(i)->setEnabled(true);
@@ -272,6 +301,10 @@ void BookkeepingSelectArea::onMenuIconButtonClicked()
         }
     }
     else if(Type == "InCome"){
+        if(Id == 6){
+            QMessageBox::warning(0,"warning","该设置暂时无用,后续待扩展");
+            return;
+        }
         for(int i = 0; i < m_IncomeButtonList.size(); i++){
             if(m_IncomeButtonList.at(i)->property("Id").toInt() != Id){
                 m_IncomeButtonList.at(i)->setEnabled(true);
@@ -281,6 +314,7 @@ void BookkeepingSelectArea::onMenuIconButtonClicked()
             }
         }
     }
+    m_CurrentTypeId = Id;
     LOG("the Clicked Button Id is %d and Name is %s",Id,Name.toStdString().c_str());
     if(!m_IsModify){
         if(bookkeepinginputkit != nullptr)
@@ -315,6 +349,8 @@ void BookkeepingSelectArea::onReceiveBillInfo(QDate date,double num,QString Rema
          billinfo.userId = UserInfo::UserID;
          billinfo.remarks = Remarkstr;
          billinfo.moneyAmount = num;
+         billinfo.typeId = m_CurrentTypeId;
+         billinfo.InOrOut = m_InOrOut;
 
         if(billInsert(coon,query,billinfo) > 0){
              LOG("BillInsert Success!");
@@ -346,6 +382,8 @@ void BookkeepingSelectArea::onReceiveBillInfoModify(int billno,QDate date,double
         billinfo.remarks = Remarkstr;
         billinfo.moneyAmount = num;
         billinfo.billNo = billno;
+        billinfo.typeId = m_CurrentTypeId;
+        billinfo.InOrOut = m_InOrOut;
 
        if(billUpdate(coon,query,billinfo) > 0){
             LOG("billUpdate Success!");

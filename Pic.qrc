@@ -11,9 +11,7 @@
         <file>image/ShoppingReturnToolButton.jpg</file>
         <file>image/calendar_arrow.jpg</file>
     </qresource>
-    <qresource prefix="/PayTypeIcon">
-        <file>image/EatTypeIcon.jpg</file>
-    </qresource>
+    <qresource prefix="/PayTypeIcon"/>
     <qresource prefix="/DetailBottomIcon">
         <file>image/AddIcon.jpg</file>
         <file>image/DetialBottomIcon.jpg</file>
@@ -115,12 +113,6 @@
         <file>image/returnarrowyellowbackground.jpg</file>
         <file>image/HeadPortait.jpg</file>
     </qresource>
-    <qresource prefix="/BillPage">
-        <file>image/BillPage_Expand_01.jpg</file>
-    </qresource>
-    <qresource prefix="/SubPage_InAndOut_TypeIcon">
-        <file>image/Expand_19_On_SubPage.jpg</file>
-    </qresource>
     <qresource prefix="/MineArea">
         <file>image/Pic_InMineArea.jpg</file>
         <file>image/Pic_Two_InMineArea.jpg</file>
@@ -150,5 +142,81 @@
         <file>image/AssetMainArea_BackgroundInEmptyData.jpg</file>
         <file>image/ChartButtonIcon_normal.jpg</file>
     </qresource>
-    <qresource prefix="/qml"/>
+    <qresource prefix="/BillPage">
+        <file>image/Expand_33_On_SubPage.jpg</file>
+        <file>image/Expand_32_On_SubPage.jpg</file>
+        <file>image/Expand_31_On_SubPage.jpg</file>
+        <file>image/Expand_30_On_SubPage.jpg</file>
+        <file>image/Expand_29_On_SubPage.jpg</file>
+        <file>image/Expand_28_On_SubPage.jpg</file>
+        <file>image/Expand_27_On_SubPage.jpg</file>
+        <file>image/Expand_26_On_SubPage.jpg</file>
+        <file>image/Expand_25_On_SubPage.jpg</file>
+        <file>image/Expand_24_On_SubPage.jpg</file>
+        <file>image/Expand_23_On_SubPage.jpg</file>
+        <file>image/Expand_22_On_SubPage.jpg</file>
+        <file>image/Expand_21_On_SubPage.jpg</file>
+        <file>image/Expand_17_On_SubPage.jpg</file>
+        <file>image/Expand_20_On_SubPage.jpg</file>
+        <file>image/Expand_18_On_SubPage.jpg</file>
+        <file>image/Expand_16_On_SubPage.jpg</file>
+        <file>image/Expand_15_On_SubPage.jpg</file>
+        <file>image/Expand_14_On_SubPage.jpg</file>
+        <file>image/Expand_13_On_SubPage.jpg</file>
+        <file>image/Expand_12_On_SubPage.jpg</file>
+        <file>image/Expand_11_On_SubPage.jpg</file>
+        <file>image/Expand_10_On_SubPage.jpg</file>
+        <file>image/BillPage_Expand_33.jpg</file>
+        <file>image/BillPage_Expand_24.jpg</file>
+        <file>image/BillPage_Expand_10.jpg</file>
+        <file>image/BillPage_Expand_11.jpg</file>
+        <file>image/BillPage_Expand_12.jpg</file>
+        <file>image/BillPage_Expand_13.jpg</file>
+        <file>image/BillPage_Expand_14.jpg</file>
+        <file>image/BillPage_Expand_15.jpg</file>
+        <file>image/BillPage_Expand_16.jpg</file>
+        <file>image/BillPage_Expand_17.jpg</file>
+        <file>image/BillPage_Expand_18.jpg</file>
+        <file>image/BillPage_Expand_19.jpg</file>
+        <file>image/BillPage_Expand_20.jpg</file>
+        <file>image/BillPage_Expand_21.jpg</file>
+        <file>image/BillPage_Expand_22.jpg</file>
+        <file>image/BillPage_Expand_23.jpg</file>
+        <file>image/BillPage_Expand_25.jpg</file>
+        <file>image/BillPage_Expand_26.jpg</file>
+        <file>image/BillPage_Expand_27.jpg</file>
+        <file>image/BillPage_Expand_28.jpg</file>
+        <file>image/BillPage_Expand_29.jpg</file>
+        <file>image/BillPage_Expand_30.jpg</file>
+        <file>image/BillPage_Expand_31.jpg</file>
+        <file>image/BillPage_Expand_32.jpg</file>
+        <file>image/Bill_Income_1.jpg</file>
+        <file>image/Bill_Income_2.jpg</file>
+        <file>image/Bill_Income_3.jpg</file>
+        <file>image/Bill_Income_4.jpg</file>
+        <file>image/Bill_Income_5.jpg</file>
+        <file>image/BillPage_Expand_2.jpg</file>
+        <file>image/BillPage_Expand_3.jpg</file>
+        <file>image/BillPage_Expand_4.jpg</file>
+        <file>image/BillPage_Expand_5.jpg</file>
+        <file>image/BillPage_Expand_6.jpg</file>
+        <file>image/BillPage_Expand_7.jpg</file>
+        <file>image/BillPage_Expand_8.jpg</file>
+        <file>image/BillPage_Expand_9.jpg</file>
+        <file>image/BillPage_Expand_1.jpg</file>
+        <file>image/Income_1_On_Subpage.jpg</file>
+        <file>image/Income_2_On_Subpage.jpg</file>
+        <file>image/Income_3_On_Subpage.jpg</file>
+        <file>image/Income_4_On_Subpage.jpg</file>
+        <file>image/Income_5_On_Subpage.jpg</file>
+        <file>image/Expand_9_On_SubPage.jpg</file>
+        <file>image/Expand_8_On_SubPage.jpg</file>
+        <file>image/Expand_7_On_SubPage.jpg</file>
+        <file>image/Expand_6_On_SubPage.jpg</file>
+        <file>image/Expand_5_On_SubPage.jpg</file>
+        <file>image/Expand_4_On_SubPage.jpg</file>
+        <file>image/Expand_3_On_SubPage.jpg</file>
+        <file>image/Expand_2_On_SubPage.jpg</file>
+        <file>image/Expand_1_On_SubPage.jpg</file>
+    </qresource>
 </RCC>

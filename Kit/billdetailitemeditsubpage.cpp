@@ -27,16 +27,32 @@ BillDetailItemEditSubPage::BillDetailItemEditSubPage(BillTableStruct billinfo,QW
     connect(ui->editButton,&QPushButton::clicked,this,&BillDetailItemEditSubPage::onEditButtonClicked);
     connect(ui->deleteButton,&QPushButton::clicked,this,&BillDetailItemEditSubPage::onDeleteButtonClicked);
     m_billiteminfo = billinfo;
-    if(m_billiteminfo.InOrOut == InAndOutType::InType)
-        setInAndOutTypeText("收入");
-    else if(m_billiteminfo.InOrOut == InAndOutType::InType)
-        setInAndOutTypeText("支出");
+    setType();
+    setTypeIcon(getIconPath());
     setMoneyText(QString::number(m_billiteminfo.moneyAmount,'f',2));
     setDateText(m_billiteminfo.date);
     setRemarks(m_billiteminfo.remarks);
-
+    setTypetext(m_billiteminfo.PayType);
     this->raise();
     this->show();
+}
+//获取IconPath
+QString BillDetailItemEditSubPage::getIconPath()
+{
+    QString iconpath;
+    if(m_billiteminfo.InOrOut == InAndOutType::OutType)
+        iconpath = QString(":/BillPage/image/Expand_%1_On_SubPage.jpg").arg(m_billiteminfo.typeId);
+    else if(m_billiteminfo.InOrOut == InAndOutType::InType)
+        iconpath = QString(":/BillPage/image/Income_%1_On_Subpage.jpg").arg(m_billiteminfo.typeId);
+    return iconpath;
+}
+//获取类型
+void BillDetailItemEditSubPage::setType()
+{
+    if(m_billiteminfo.InOrOut == InAndOutType::InType)
+        setInAndOutTypeText("收入");
+    else if(m_billiteminfo.InOrOut == InAndOutType::OutType)
+        setInAndOutTypeText("支出");
 }
 //设置支出和收入类型
 void BillDetailItemEditSubPage::setInAndOutTypeText(QString str)
@@ -59,6 +75,17 @@ void BillDetailItemEditSubPage::setDateText(QDate date)
 void BillDetailItemEditSubPage::setRemarks(QString str)
 {
     ui->label_Remark->setText(str);
+}
+//设置类型内容
+void BillDetailItemEditSubPage::setTypetext(QString typetext)
+{
+    ui->label_Type->setText(typetext);
+}
+//设置类型图标
+void BillDetailItemEditSubPage::setTypeIcon(QString iconpath)
+{
+    LOG("iconpath:%s",iconpath.toStdString().c_str());
+    ui->label_TypeIcon->setStyleSheet(QString("border-image: url(%1);").arg(iconpath));
 }
 //返回按钮槽函数
 void BillDetailItemEditSubPage::onReturnButtonClicked()

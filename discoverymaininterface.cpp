@@ -29,6 +29,7 @@ DiscoveryMainInterface::DiscoveryMainInterface(QWidget *parent) :
     connect(ui->ButtonAdd,&QPushButton::clicked,this,&DiscoveryMainInterface::onAddButtonClicked);
     connect(ui->LineEdit_Serch,&QLineEdit::textEdited,this,&DiscoveryMainInterface::onLineEditInput);
     connect(ui->ButtonQuery,&QPushButton::clicked,this,&DiscoveryMainInterface::onQueryButtonClicked);
+    connect(ui->MenuButtonone,&QPushButton::clicked,this,&DiscoveryMainInterface::onAboutButtonClicked);
     model =new QStandardItemModel();
     ui->tableView->setModel(model);
     getMailInfo();
@@ -192,6 +193,18 @@ strType DiscoveryMainInterface::checkStrType(QString str)
         comparedChar = "";
         return strType::none;
     }
+}
+//关于按钮按下槽函数
+void DiscoveryMainInterface::onAboutButtonClicked()
+{
+    QString detail = QString("此页面主要功能为通讯录功能:\n"
+                             "1.记录您以及朋友的基本信息\n"
+                             "2.记录您以及朋友的爱好\n"
+                             "3.记录您以及朋友的优/缺点\n"
+                             "4.记录您以及朋友的荣誉等事件\n"
+                             "5.搜索框支持人名/QQ/电话的模糊查询\n\n"
+                             "copyright@MichaelFeng");
+     QMessageBox::information(0,"about",detail);
 }
 //通过汉字名称首字符排序
 bool DiscoveryMainInterface::orderByChinese(MailTableStruct mailFirst,MailTableStruct mailSecond)

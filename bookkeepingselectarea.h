@@ -49,6 +49,8 @@ protected:
 
     void initIncomeMenuButton();  //初始化收入菜单按钮
 
+    void resetMenuButtonstatus(); //重置/恢复按钮的状态---用于修改时先预选中对应的菜单按钮
+
 public slots:
     void onExpanditurePageClicked();
 
@@ -87,6 +89,10 @@ private:
     QVector<QString> incomemenuvector;  //记账菜单容器
     QVector<QPushButton*> m_ExpandButtonList;  //支出按钮容器
     QVector<QPushButton*> m_IncomeButtonList;  //收入按钮容器
+
+    int m_InOrOut = 1; //1-收入，2-支出
+    int m_CurrentTypeId = 0;
+    BillTableStruct m_Billinfo;
 
     Ui::BookkeepingSelectArea *ui;
 };

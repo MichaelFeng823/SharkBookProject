@@ -171,7 +171,7 @@ font: 18pt &quot;微软雅黑&quot;;
 border-radius:15px;</string>
             </property>
             <property name="text">
-             <string>菜单一</string>
+             <string>关于</string>
             </property>
            </widget>
           </item>

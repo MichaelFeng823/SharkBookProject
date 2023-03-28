@@ -68,7 +68,7 @@ QLabel
          <string notr="true">#label_TypeIcon
 {
 	
-	border-image: url(:/BillPage/image/BillPage_Expand_01.jpg);
+	border-image: url(:/BillPage/image/BillPage_Expand_1.jpg);
 }</string>
         </property>
         <property name="text">

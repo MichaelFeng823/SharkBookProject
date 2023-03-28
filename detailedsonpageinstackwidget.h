@@ -61,6 +61,8 @@ protected:
 
     void buildConnect();      //建立槽函数连接
 
+    void initMenuSettingIni(); //初始化菜单配置文件
+
     void getBilldata();       //获取账单数据
 
     void initTableview();     //初始化表格内容
@@ -98,6 +100,8 @@ private:
     QVector<BillTableStruct> m_BillList;             //账单列表
     QVector<BillTableStruct> m_BillListOfYear;       //近一年的账单列表
     QVector<BillDataItem *> m_BillDateItemList;       //itemlist;
+    QVector<QString> expandituremenuvector;         //记账支出菜单容器
+    QVector<QString> incomemenuvector;              //记账收入菜单容器
     double m_Current_InNumber = 0.00;                //当前收入数据
     double m_Current_OutNumber = 0.00;               //当前支出数据
     InAndOutType m_currentOpenType;

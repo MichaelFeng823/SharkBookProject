@@ -127,7 +127,7 @@ border-image: url(:/public/image/returnarrowyellowbackground.jpg);</string>
            <item>
             <widget class="QLabel" name="label_TypeIcon">
              <property name="styleSheet">
-              <string notr="true">border-image: url(:/SubPage_InAndOut_TypeIcon/image/Expand_19_On_SubPage.jpg);</string>
+              <string notr="true">border-image: url(:/BillPage/image/Expand_1_On_SubPage.jpg);</string>
              </property>
              <property name="text">
               <string/>
@@ -195,7 +195,7 @@ font: 17pt &quot;微软雅黑&quot;;</string>
             <string notr="true">font: 20pt &quot;微软雅黑&quot;;</string>
            </property>
            <property name="text">
-            <string>烟酒</string>
+            <string>餐饮</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>

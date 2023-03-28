@@ -35,6 +35,10 @@ struct BillTableStruct
     int userId;         //所属用户ID
     int typeId;         //消费类型ID
     int InOrOut = 2;    //(1-收入,2-支出)
+
+    //---------------------------------
+    QString PayType;     //类型
+    QString IconPath;   //对应类型图片路径
 };
 
 struct MailDetailInfo

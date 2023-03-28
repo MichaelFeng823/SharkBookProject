@@ -14,7 +14,7 @@ class BillDataItemWithProcessBar : public QWidget
     Q_OBJECT
 
 public:
-    explicit BillDataItemWithProcessBar(QWidget *parent = nullptr);
+    explicit BillDataItemWithProcessBar(BillTableStruct billinfo,QWidget *parent = nullptr);
     ~BillDataItemWithProcessBar();
 
     void setTypeText(QString typetext);                   //设置收费支出类型文本

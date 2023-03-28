@@ -49,6 +49,8 @@ public slots:
 
     void onLineEditInput(QString str);                           //当搜索输入框输入时
 
+    void onAboutButtonClicked();                                 //关于按钮按下槽函数
+
 private:
     void initTableview();               //初始化表格
     void getMailInfo();                 //获取通讯数据信息

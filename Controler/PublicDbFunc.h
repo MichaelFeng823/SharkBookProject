@@ -109,10 +109,14 @@ namespace DataQuery {
                 int year = query.value("Year").toInt();
                 int month = query.value("Month").toInt();
                 int day = query.value("Day").toInt();
+                int type = query.value("TypeId").toInt();
+                int inorout = query.value("InOrOut").toInt();
                 billtable.date.setDate(year,month,day);
                 billtable.moneyAmount = query.value("MoneyAmount").toDouble();
                 billtable.remarks = query.value("Remark").toString();
                 billtable.userId = query.value("UserId").toInt();
+                billtable.typeId = type;
+                billtable.InOrOut = inorout;
                 billList.append(billtable);
                 LOG("get bill data!");
                 LOG("queryCounts:%d",queryCounts);
@@ -142,10 +146,14 @@ namespace DataQuery {
                 int year = query.value("Year").toInt();
                 int month = query.value("Month").toInt();
                 int day = query.value("Day").toInt();
+                int type = query.value("TypeId").toInt();
+                int inorout = query.value("InOrOut").toInt();
                 billtable.date.setDate(year,month,day);
                 billtable.moneyAmount = query.value("MoneyAmount").toDouble();
                 billtable.remarks = query.value("Remark").toString();
                 billtable.userId = query.value("UserId").toInt();
+                billtable.typeId = type;
+                billtable.InOrOut = inorout;
                 billList.append(billtable);
                 LOG("get bill data!");
                 LOG("queryCounts:%d",queryCounts);
@@ -236,8 +244,8 @@ namespace DataInsert {
     inline int billInsert(QSqlDatabase & database,QSqlQuery & query,BillTableStruct & billStrcut)
     {
         int queryResult = -1;
-        QString sql = QString("insert into BillTable(Year,Month,Day,MoneyAmount,Remark,UserId) values('%1','%2','%3','%4','%5','%6');").arg(billStrcut.date.year())
-                .arg(billStrcut.date.month()).arg(billStrcut.date.day()).arg(billStrcut.moneyAmount).arg(billStrcut.remarks).arg(billStrcut.userId);
+        QString sql = QString("insert into BillTable(Year,Month,Day,MoneyAmount,Remark,UserId,TypeId,InOrOut) values('%1','%2','%3','%4','%5','%6','%7','%8');").arg(billStrcut.date.year())
+                .arg(billStrcut.date.month()).arg(billStrcut.date.day()).arg(billStrcut.moneyAmount).arg(billStrcut.remarks).arg(billStrcut.userId).arg(billStrcut.typeId).arg(billStrcut.InOrOut);
         query.prepare(sql);
         if(!query.exec()){
             LOG("File:%sLine:%d",__FILE__,__LINE__);
@@ -341,8 +349,8 @@ namespace DataUpdate {
     inline int billUpdate(QSqlDatabase & database,QSqlQuery & query,BillTableStruct & billStrcut)
     {
         int queryResult = -1;
-        QString sql = QString("update BillTable set Year = '%1',Month = '%2',Day = '%3',MoneyAmount = '%4',Remark = '%5',UserId = '%6' where BillNo = '%7';").arg(billStrcut.date.year())
-                .arg(billStrcut.date.month()).arg(billStrcut.date.day()).arg(billStrcut.moneyAmount).arg(billStrcut.remarks).arg(billStrcut.userId).arg(billStrcut.billNo);
+        QString sql = QString("update BillTable set Year = '%1',Month = '%2',Day = '%3',MoneyAmount = '%4',Remark = '%5',UserId = '%6',TypeId = '%7',InOrOut = '%8' where BillNo = '%9';").arg(billStrcut.date.year())
+                .arg(billStrcut.date.month()).arg(billStrcut.date.day()).arg(billStrcut.moneyAmount).arg(billStrcut.remarks).arg(billStrcut.userId).arg(billStrcut.typeId).arg(billStrcut.InOrOut).arg(billStrcut.billNo);
         query.prepare(sql);
         if(!query.exec()){
             LOG("File:%sLine:%d",__FILE__,__LINE__);
@@ -523,5 +531,7 @@ namespace ReadWriteIni {
            }
     }
 }
+
+
 
 #endif // PUBLICDBFUNC_H

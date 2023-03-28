@@ -3,12 +3,16 @@
 #include "Util/clog.h"
 #include <QDate>
 
-BillDataItemWithProcessBar::BillDataItemWithProcessBar(QWidget *parent) :
+BillDataItemWithProcessBar::BillDataItemWithProcessBar(BillTableStruct billinfo,QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::BillDataItemWithProcessBar)
+    ui(new Ui::BillDataItemWithProcessBar),m_BillItemInfo(billinfo)
 {
     ui->setupUi(this);
     this->installEventFilter(this);
+    this->setTypeText(m_BillItemInfo.PayType);
+    this->setMoneynum(m_BillItemInfo.moneyAmount);
+    this->setDate(m_BillItemInfo.date);
+    this->setTypeIcon(m_BillItemInfo.IconPath);
     this->show();
 }
 bool BillDataItemWithProcessBar::eventFilter(QObject *obj, QEvent *event)
@@ -60,12 +64,12 @@ void BillDataItemWithProcessBar::setTypeText(QString typetext)
 //设置收费支出图标
 void BillDataItemWithProcessBar::setTypeIcon(QString typeiconurl)
 {
-
+    ui->label_TypeIcon->setStyleSheet(QString("#label_TypeIcon{border-image: url(%1);}").arg(typeiconurl));
 }
  //设置收费支出金额
 void BillDataItemWithProcessBar::setMoneynum(double num)
 {
-    m_BillItemInfo.moneyAmount = num;
+    //m_BillItemInfo.moneyAmount = num;
     ui->label_Moneynum->setText(QString::number(num,'f',2));
 }
 
@@ -83,7 +87,7 @@ void BillDataItemWithProcessBar::setProgressBarvalue(int value)
 //设置日期
 void BillDataItemWithProcessBar::setDate(QDate date)
 {
-    m_BillItemInfo.date = date;
+    //m_BillItemInfo.date = date;
     ui->label_Date->setText(QString("%1年%2月%3日").arg(date.year()).arg(date.month()).arg(date.day()));
 }
 BillDataItemWithProcessBar::~BillDataItemWithProcessBar()

@@ -93,7 +93,6 @@ void BillDataItem::setDate(QDate date)
 void BillDataItem::setTitlePayNum(double num)
 {
     if(currenttype == InAndOutType::OutType){
-        num = num * -1;
         strTitlePayNum = QString("支出: %1").arg(QString::number(num));
     }
     else{
@@ -113,11 +112,16 @@ void BillDataItem::setIcon(QString strIcon)
 {
     strIconstyle = strIcon;
     //IconButton.setIcon()
-    QString stylesheet = QString("QLabel{border-iamge:url(%1);}").arg(strIconstyle);
+    QString stylesheet = QString("QLabel{border-image:url(%1);}").arg(strIconstyle);
+    //border-image: url(:/PayTypeIcon/image/EatTypeIcon.jpg);
+    //:/BillPage/image/BillPage_Expand_03.jpg
+    LOG("stylesheet:%s",stylesheet.toStdString().c_str());
     IconLabel->setStyleSheet(stylesheet);
 }
 void BillDataItem::setDetialPayNum(double num)
 {
+    if(currenttype == InAndOutType::OutType){
+             num = num * -1;}
     strPayNum = QString::number(num);
     PaynumLabel->setText(strPayNum);
     PaynumLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);

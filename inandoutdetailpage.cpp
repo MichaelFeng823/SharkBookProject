@@ -56,15 +56,10 @@ void InAndOutDetailPage::initTableview()
    for(int i = 0; i < m_BillList.size(); i++){
        ui->detailview->setRowHeight(i,getScreenSize().height()/12);
        QModelIndex index = model->index(i,0);
-       QPointer<BillDataItemWithProcessBar> item = new BillDataItemWithProcessBar();
+       QPointer<BillDataItemWithProcessBar> item = new BillDataItemWithProcessBar(m_BillList[i]);
+       item->setPercent(calculatePercent(m_BillList[i].moneyAmount));
        m_Itemlist.append(item);
        connect(item,&BillDataItemWithProcessBar::getDetailBillInfo,this,&InAndOutDetailPage::receiveGetBillInfoSignal);
-       item->setTypeText("餐饮");
-       item->setPercent(calculatePercent(m_BillList[i].moneyAmount));
-       item->setMoneynum(m_BillList[i].moneyAmount);
-       item->setDate(m_BillList[i].date);
-       item->setBillNo(m_BillList[i].billNo);
-       item->setBillRemark(m_BillList[i].remarks);
        ui->detailview->setIndexWidget(index,item);
        LOG("billno:%d",m_BillList[i].billNo);
    }

@@ -26,6 +26,10 @@ public:
     BillDetailItemEditSubPage(BillTableStruct billinfo, QWidget *parent = nullptr);
     ~BillDetailItemEditSubPage();
 public:
+    QString getIconPath();    //获取IconPath
+
+    void setType();                          //设置类型
+
     void setInAndOutTypeText(QString str);   //设置支出和收入类型
 
     void setMoneyText(QString str);           //设置金额
@@ -33,6 +37,10 @@ public:
     void setDateText(QDate date);            //设置日期
 
     void setRemarks(QString str);            //设置备注
+
+    void setTypetext(QString typetext);      //设置类型内容
+
+    void setTypeIcon(QString iconpath);      //设置类型图表
 
     bool deleteBillInfo(BillTableStruct billinfo); //删除账单信息
 
