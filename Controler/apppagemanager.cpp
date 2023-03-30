@@ -2,12 +2,13 @@
 #include "Util/clog.h"
 #include "Controler/PublicUerInfo.h"
 #include "Controler/PublicDbFunc.h"
+#include <QtAndroid>
 using namespace ScreenFunc;
 AppPageManager * AppPageManager::self = nullptr;
 QMutex AppPageManager::my_Mutex;
 AppPageManager::AppPageManager(QObject *parent) : QObject(parent)
 {
-
+    SYSTEMSTATE::NETWORKSTATE = requestPermission();
 }
 
 AppPageManager * AppPageManager::instance()
@@ -17,6 +18,21 @@ AppPageManager * AppPageManager::instance()
         self = new AppPageManager;
     }
     return self;
+}
+//请求网络权限
+bool AppPageManager::requestPermission()
+{
+    QtAndroid::PermissionResult r = QtAndroid::checkPermission("android.permission.INTERNET");
+        if(r == QtAndroid::PermissionResult::Denied) {
+            QtAndroid::requestPermissionsSync( QStringList() << "android.permission.INTERNET" );
+            r = QtAndroid::checkPermission("android.permission.INTERNET");
+            if(r == QtAndroid::PermissionResult::Denied) {
+                LOG("Request Net Permission Fail");
+                 return false;
+            }
+       }
+       LOG("Request Net Permission Success");
+       return true;
 }
 //初始化界面
 int AppPageManager::initPage()

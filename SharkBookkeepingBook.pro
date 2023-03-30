@@ -1,4 +1,5 @@
-QT       += core gui sql webview
+QT       += core gui sql network
+QT       += androidextras
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -37,6 +38,7 @@ SOURCES += \
     Kit/personinfodisplaykit.cpp \
     Kit/scrollareakit.cpp \
     Kit/shoppage.cpp \
+    Net/msgqueue.cpp \
     Util/calendar.cpp \
     bookkeepingselectarea.cpp \
     changepasswordform.cpp \
@@ -77,6 +79,7 @@ HEADERS += \
     Kit/personinfodisplaykit.h \
     Kit/scrollareakit.h \
     Kit/shoppage.h \
+    Net/msgqueue.h \
     Util/calendar.h \
     Util/clog.h \
     bookkeepingselectarea.h \

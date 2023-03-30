@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>439</width>
     <height>871</height>
    </rect>
   </property>
@@ -396,7 +396,7 @@ color: rgb(249, 219, 97);</string>
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+             <string notr="true">font: 16pt &quot;微软雅黑&quot;;
 background-color: rgb(37, 37, 37);
 color: rgb(249, 219, 97);</string>
             </property>
@@ -439,7 +439,7 @@ color: rgb(249, 219, 97);</string>
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 18pt &quot;微软雅黑&quot;;
+             <string notr="true">font: 16pt &quot;微软雅黑&quot;;
 background-color: rgb(37, 37, 37);
 color: rgb(249, 219, 97);</string>
             </property>
@@ -486,7 +486,7 @@ color: rgb(249, 219, 97);</string>
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 16pt &quot;微软雅黑&quot;;
+             <string notr="true">font: 15pt &quot;微软雅黑&quot;;
 background-color: rgb(37, 37, 37);
 color: rgb(249, 219, 97);</string>
             </property>
@@ -529,7 +529,7 @@ color: rgb(249, 219, 97);</string>
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 16pt &quot;微软雅黑&quot;;
+             <string notr="true">font: 15pt &quot;微软雅黑&quot;;
 background-color: rgb(37, 37, 37);
 color: rgb(249, 219, 97);</string>
             </property>

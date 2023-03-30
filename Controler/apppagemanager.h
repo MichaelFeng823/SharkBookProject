@@ -37,6 +37,8 @@ private:
     MainArea * mainarea = nullptr;
 private:
      AppPageManager(QObject *parent = nullptr);
+     bool requestPermission();
+
 private:
      static AppPageManager * self;
      static QMutex my_Mutex;

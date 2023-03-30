@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-88:12
-INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-88:12
+ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
+INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
+INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
+INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
+INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
 	package
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:11-63
 	android:versionName
@@ -53,6 +53,8 @@ ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:5
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:18-52
 	android:icon
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:171-200
+	android:networkSecurityConfig
+		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:201-261
 	android:name
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:53-116
 activity#org.qtproject.qt5.android.bindings.QtActivity
@@ -168,9 +170,9 @@ ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:1
 	android:name
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:76-130
 meta-data#android.app.background_running
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:13-93
+ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:13-92
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:70-91
+		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:70-90
 	android:name
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:24-69
 meta-data#android.app.auto_screen_scale_factor
@@ -180,8 +182,12 @@ ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:1
 	android:name
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:24-75
 meta-data#android.app.extract_android_style
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:13-98
+ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:13-99
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:73-96
+		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:73-97
 	android:name
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:24-72
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:90:5-79
+	android:name
+		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:90:22-76

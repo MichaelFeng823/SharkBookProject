@@ -186,6 +186,7 @@ void PersonDetailInfoSubPage::onSaveButtonClicked()
     if(m_IsAdd == false)
     {
         if(InputIsEmptyCheck()){
+            getInputData();
             if(mailUpdate(coon,query,m_mailInfo)){
                 callApplyUpdateSignal(true);
                 LOG("保存成功");

@@ -8,7 +8,7 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="28" />
+        android:targetSdkVersion="26" />
 
     <!--
          The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
@@ -28,13 +28,18 @@
         android:normalScreens="true"
         android:smallScreens="true" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name="org.qtproject.qt5.android.bindings.QtApplication"
         android:debuggable="true"
         android:extractNativeLibs="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/icon"
-        android:label="鲨鱼记账" >
+        android:label="鲨鱼记账"
+        android:networkSecurityConfig="@xml/network_security_config" >
         <activity
             android:name="org.qtproject.qt5.android.bindings.QtActivity"
             android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density"
@@ -128,7 +133,7 @@
             -->
             <meta-data
                 android:name="android.app.background_running"
-                android:value="false" />
+                android:value="true" />
             <!-- Background running -->
 
 
@@ -149,7 +154,7 @@
             -->
             <meta-data
                 android:name="android.app.extract_android_style"
-                android:value="default" />
+                android:value="default " />
             <!-- extract android style -->
         </activity>
 

@@ -11,6 +11,10 @@ public:
     inline static QString RemmberPassState;
     inline static QString AutoLogin;
 };
+class SYSTEMSTATE{
+public:
+    inline static bool NETWORKSTATE;
+};
 enum InAndOutType
 {
     InType = 1,

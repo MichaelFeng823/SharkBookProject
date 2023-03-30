@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\xml_network_security_config.xml.flat",
+        "source": "E:\\Git-backup\\SharkBookProject\\android-build\\res\\xml\\network_security_config.xml"
+    },
+    {
         "merged": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icon.png.flat",
         "source": "E:\\Git-backup\\SharkBookProject\\android-build\\res\\drawable-ldpi\\icon.png"
     },

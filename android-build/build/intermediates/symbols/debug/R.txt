@@ -8,3 +8,4 @@ int string fatal_error_msg 0x7f040000
 int string ministro_needed_msg 0x7f040001
 int string ministro_not_found_msg 0x7f040002
 int string unsupported_android_version 0x7f040003
+int xml network_security_config 0x7f050000

@@ -15,6 +15,15 @@ public:
     explicit ShopPage(QWidget *parent = nullptr);
     ~ShopPage();
 
+protected:
+    bool requestPermission();                   //请求网络权限
+    QString parsingData(QByteArray * data);     //解析数据
+    QString mergeData(QJsonObject object_data); //合并数据
+
+public slots:
+    void onQueryButtonClicked();                //当查询按钮被点击是的槽函数
+    void onRecvMsg(QByteArray data, QObject * obj); //当收到消息时的槽函数
+
 private:
     Ui::ShopPage *ui;
 };

@@ -4,18 +4,15 @@
         
     </array>
     <array name="load_local_libs">
-        <item>armeabi-v7a;libplugins_bearer_qandroidbearer_armeabi-v7a.so:libplugins_platforms_qtforandroid_armeabi-v7a.so:libplugins_webview_qtwebview_android_armeabi-v7a.so</item>
+        <item>armeabi-v7a;libplugins_platforms_qtforandroid_armeabi-v7a.so:libplugins_bearer_qandroidbearer_armeabi-v7a.so</item>
     </array>
     <array name="qt_libs">
         <item>armeabi-v7a;c++_shared</item>
         <item>armeabi-v7a;Qt5Core_armeabi-v7a</item>
+        <item>armeabi-v7a;Qt5AndroidExtras_armeabi-v7a</item>
         <item>armeabi-v7a;Qt5Gui_armeabi-v7a</item>
-        <item>armeabi-v7a;Qt5Sql_armeabi-v7a</item>
         <item>armeabi-v7a;Qt5Network_armeabi-v7a</item>
-        <item>armeabi-v7a;Qt5Qml_armeabi-v7a</item>
-        <item>armeabi-v7a;Qt5QmlModels_armeabi-v7a</item>
-        <item>armeabi-v7a;Qt5Quick_armeabi-v7a</item>
-        <item>armeabi-v7a;Qt5WebView_armeabi-v7a</item>
+        <item>armeabi-v7a;Qt5Sql_armeabi-v7a</item>
         <item>armeabi-v7a;Qt5Widgets_armeabi-v7a</item>
     </array>
     <array name="qt_sources">

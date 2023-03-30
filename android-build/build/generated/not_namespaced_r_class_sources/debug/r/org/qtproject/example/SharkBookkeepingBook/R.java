@@ -26,4 +26,7 @@ public final class R {
     public static final int ministro_not_found_msg=0x7f040002;
     public static final int unsupported_android_version=0x7f040003;
   }
+  public static final class xml {
+    public static final int network_security_config=0x7f050000;
+  }
 }

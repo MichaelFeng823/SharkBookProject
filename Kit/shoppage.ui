@@ -34,33 +34,52 @@
    </property>
    <item row="0" column="0">
     <widget class="QWidget" name="backgroundwidget" native="true">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="spacing">
-       <number>0</number>
-      </property>
+     <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,9">
       <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_query">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);
+font: 22pt &quot;微软雅黑&quot;;</string>
+          </property>
+          <property name="text">
+           <string>查询</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
        <widget class="QLabel" name="label">
         <property name="styleSheet">
-         <string notr="true">font: 36pt &quot;微软雅黑&quot;;
+         <string notr="true">font: 24pt &quot;微软雅黑&quot;;
 color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>购物返现界面</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

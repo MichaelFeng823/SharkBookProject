@@ -134,7 +134,7 @@ bool DataBaseObj::getConnecttion(QSqlDatabase & conn)
                    "insert into Users(UserID,UserName,UserPassword) Select '0','MichaelFeng','fj082300'"
                    "where not exists(select 1 from Users where UserID = '0');:\n"
 
-                   "drop Table if exists BillTable;:\n"
+                   //"drop Table if exists BillTable;:\n"
 
                    "create table if not exists BillTable ("
                    "BillNo INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -153,8 +153,8 @@ bool DataBaseObj::getConnecttion(QSqlDatabase & conn)
                    "insert into BillTable(BillNo,Year,Month,Day,MoneyAmount,Remark,UserId,TypeId,InOrOut)"
                    "Select '4','2023','2','5','300.5','测试0106','0','2','2' where not exists(select 1 from BillTable where BillNo = '4');:\n"
 
-                   "drop Table if exists MailTable;:\n"
-                   "drop Table if exists MailDetailInfo;:\n"
+                   //"drop Table if exists MailTable;:\n"
+                   //"drop Table if exists MailDetailInfo;:\n"
 
                    "create table if not exists MailTable ("
                     "MailId            INTEGER    PRIMARY KEY ASC AUTOINCREMENT,"
