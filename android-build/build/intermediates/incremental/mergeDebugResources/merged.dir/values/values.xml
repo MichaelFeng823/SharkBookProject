@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="bundled_libs">
-        
+        <item>armeabi-v7a;crypto_1_1</item>
+        <item>armeabi-v7a;ssl_1_1</item>
     </array>
     <array name="load_local_libs">
         <item>armeabi-v7a;libplugins_platforms_qtforandroid_armeabi-v7a.so:libplugins_bearer_qandroidbearer_armeabi-v7a.so</item>

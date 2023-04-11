@@ -8,7 +8,8 @@
          not be edited manually. -->
 
     <array name="bundled_libs">
-        
+        <item>armeabi-v7a;crypto_1_1</item>
+        <item>armeabi-v7a;ssl_1_1</item>
     </array>
 
     <array name="qt_libs">

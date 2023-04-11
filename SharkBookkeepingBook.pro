@@ -11,112 +11,116 @@ CONFIG += c++11
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+android: include(./android_openssl-master/openssl.pri)
+
 # You can also make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Controler/apppagemanager.cpp \
-    Controler/databaseobj.cpp \
-    Kit/addbudgetpane.cpp \
-    Kit/assetmanagerpage.cpp \
-    Kit/billdataitem.cpp \
-    Kit/billdataitemcopy.cpp \
-    Kit/billdataitemwithprocessbar.cpp \
-    Kit/billdetailitemeditsubpage.cpp \
-    Kit/billsubarea.cpp \
-    Kit/bookkeepinginputkit.cpp \
-    Kit/budgetmasksubpage.cpp \
-    Kit/budgetsubpage.cpp \
-    Kit/calendarkit.cpp \
-    Kit/chinese2pinyin.cpp \
-    Kit/inandoutkit.cpp \
-    Kit/menuicon.cpp \
-    Kit/morepage.cpp \
-    Kit/persondetailinfosubpage.cpp \
-    Kit/personinfodisplaykit.cpp \
-    Kit/scrollareakit.cpp \
-    Kit/shoppage.cpp \
-    Net/msgqueue.cpp \
-    Util/calendar.cpp \
-    bookkeepingselectarea.cpp \
-    changepasswordform.cpp \
-    chartmaininterface.cpp \
-    detailedsonpageinstackwidget.cpp \
-    detialtableview.cpp \
-    discoverymaininterface.cpp \
-    inandoutdetailpage.cpp \
-    loginform.cpp \
-    main.cpp \
-    mainarea.cpp \
-    minewidagetinstackwidget.cpp \
-    registerwindow.cpp
+    BaseClass/circulardiagram.cpp \
+    BaseClass/detialtableview.cpp \
+    Controler/APPControl/apppagemanager.cpp \
+    Controler/DataControl/databaseobj.cpp \
+    Kit/Calendar/SubCtrls/scrollareakit.cpp \
+    Kit/Calendar/calendar.cpp \
+    Kit/Chinese2PinYin/chinese2pinyin.cpp \
+    LoginAbout/ChangePassWord/changepasswordform.cpp \
+    LoginAbout/Login/loginform.cpp \
+    LoginAbout/Register/registerwindow.cpp \
+    Main/BookPage/MainUi/bookkeepingselectarea.cpp \
+    Main/BookPage/SubCtrls/bookkeepinginputkit.cpp \
+    Main/BookPage/SubCtrls/menuicon.cpp \
+    Main/ChartPage/MainUi/chartmaininterface.cpp \
+    Main/DetaiPage/MainUi/SubCtrls/calendarkit.cpp \
+    Main/DetaiPage/MainUi/SubCtrls/inandoutkit.cpp \
+    Main/DetaiPage/MainUi/detailedsonpageinstackwidget.cpp \
+    Main/DetaiPage/SubPage/AssertManage/assetmanagerpage.cpp \
+    Main/DetaiPage/SubPage/Bill/SubCtrls/billdataitem.cpp \
+    Main/DetaiPage/SubPage/Bill/billsubarea.cpp \
+    Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.cpp \
+    Main/DetaiPage/SubPage/Budget/SubCtrls/budgetitemctrl.cpp \
+    Main/DetaiPage/SubPage/Budget/addbudgetpane.cpp \
+    Main/DetaiPage/SubPage/Budget/budgetmasksubpage.cpp \
+    Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.cpp \
+    Main/DetaiPage/SubPage/Income/SubCtrls/billdataitemwithprocessbar.cpp \
+    Main/DetaiPage/SubPage/Income/SubPage/billdetailitemeditsubpage.cpp \
+    Main/DetaiPage/SubPage/More/morepage.cpp \
+    Main/DetaiPage/SubPage/Shopping/shoppage.cpp \
+    Main/DiscoveryPage/MainUi/discoverymaininterface.cpp \
+    Main/DiscoveryPage/SubPage/persondetailinfosubpage.cpp \
+    Main/DiscoveryPage/SubPage/personinfodisplaykit.cpp \
+    Main/MainFrame/mainarea.cpp \
+    Main/MinePage/MainUi/minewidagetinstackwidget.cpp \
+    Main/main.cpp \
+    NetCore/msgqueue.cpp
 
 HEADERS += \
-    Controler/GlobalDocumentPath.h \
-    Controler/PublicDataStruct.h \
-    Controler/PublicDbFunc.h \
-    Controler/PublicUerInfo.h \
-    Controler/apppagemanager.h \
-    Controler/databaseobj.h \
-    Kit/addbudgetpane.h \
-    Kit/assetmanagerpage.h \
-    Kit/billdataitem.h \
-    Kit/billdataitemcopy.h \
-    Kit/billdataitemwithprocessbar.h \
-    Kit/billdetailitemeditsubpage.h \
-    Kit/billsubarea.h \
-    Kit/bookkeepinginputkit.h \
-    Kit/budgetmasksubpage.h \
-    Kit/budgetsubpage.h \
-    Kit/calendarkit.h \
-    Kit/chinese2pinyin.h \
-    Kit/inandoutkit.h \
-    Kit/menuicon.h \
-    Kit/morepage.h \
-    Kit/persondetailinfosubpage.h \
-    Kit/personinfodisplaykit.h \
-    Kit/scrollareakit.h \
-    Kit/shoppage.h \
-    Net/msgqueue.h \
-    Util/calendar.h \
-    Util/clog.h \
-    bookkeepingselectarea.h \
-    changepasswordform.h \
-    chartmaininterface.h \
-    detailedsonpageinstackwidget.h \
-    detialtableview.h \
-    discoverymaininterface.h \
-    inandoutdetailpage.h \
-    loginform.h \
-    mainarea.h \
-    minewidagetinstackwidget.h \
-    registerwindow.h
+    BaseClass/circulardiagram.h \
+    BaseClass/detialtableview.h \
+    Controler/APPControl/apppagemanager.h \
+    Controler/DataControl/databaseobj.h \
+    Controler/DataStruct/PublicDataStruct.h \
+    Controler/GlobalInfo/GlobalDocumentPath.h \
+    Controler/GlobalInfo/PublicUerInfo.h \
+    Controler/PublicApi/PublicDbFunc.h \
+    Kit/Calendar/SubCtrls/scrollareakit.h \
+    Kit/Calendar/calendar.h \
+    Kit/Chinese2PinYin/chinese2pinyin.h \
+    Kit/LogInfo/clog.h \
+    LoginAbout/ChangePassWord/changepasswordform.h \
+    LoginAbout/Login/loginform.h \
+    LoginAbout/Register/registerwindow.h \
+    Main/BookPage/MainUi/bookkeepingselectarea.h \
+    Main/BookPage/SubCtrls/bookkeepinginputkit.h \
+    Main/BookPage/SubCtrls/menuicon.h \
+    Main/ChartPage/MainUi/chartmaininterface.h \
+    Main/DetaiPage/MainUi/SubCtrls/calendarkit.h \
+    Main/DetaiPage/MainUi/SubCtrls/inandoutkit.h \
+    Main/DetaiPage/MainUi/detailedsonpageinstackwidget.h \
+    Main/DetaiPage/SubPage/AssertManage/assetmanagerpage.h \
+    Main/DetaiPage/SubPage/Bill/SubCtrls/billdataitem.h \
+    Main/DetaiPage/SubPage/Bill/billsubarea.h \
+    Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.h \
+    Main/DetaiPage/SubPage/Budget/SubCtrls/budgetitemctrl.h \
+    Main/DetaiPage/SubPage/Budget/addbudgetpane.h \
+    Main/DetaiPage/SubPage/Budget/budgetmasksubpage.h \
+    Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.h \
+    Main/DetaiPage/SubPage/Income/SubCtrls/billdataitemwithprocessbar.h \
+    Main/DetaiPage/SubPage/Income/SubPage/billdetailitemeditsubpage.h \
+    Main/DetaiPage/SubPage/More/morepage.h \
+    Main/DetaiPage/SubPage/Shopping/shoppage.h \
+    Main/DiscoveryPage/MainUi/discoverymaininterface.h \
+    Main/DiscoveryPage/SubPage/persondetailinfosubpage.h \
+    Main/DiscoveryPage/SubPage/personinfodisplaykit.h \
+    Main/MainFrame/mainarea.h \
+    Main/MinePage/MainUi/minewidagetinstackwidget.h \
+    NetCore/msgqueue.h
 
 FORMS += \
-    Kit/addbudgetpane.ui \
-    Kit/assetmanagerpage.ui \
-    Kit/billdataitemwithprocessbar.ui \
-    Kit/billdetailitemeditsubpage.ui \
-    Kit/billsubarea.ui \
-    Kit/bookkeepinginputkit.ui \
-    Kit/budgetmasksubpage.ui \
-    Kit/budgetsubpage.ui \
-    Kit/morepage.ui \
-    Kit/persondetailinfosubpage.ui \
-    Kit/personinfodisplaykit.ui \
-    Kit/shoppage.ui \
-    bookkeepingselectarea.ui \
-    changepasswordform.ui \
-    chartmaininterface.ui \
-    detailedsonpageinstackwidget.ui \
-    discoverymaininterface.ui \
-    inandoutdetailpage.ui \
-    loginform.ui \
-    mainarea.ui \
-    minewidagetinstackwidget.ui \
-    registerwindow.ui
+    LoginAbout/ChangePassWord/changepasswordform.ui \
+    LoginAbout/Login/loginform.ui \
+    LoginAbout/Register/registerwindow.ui \
+    Main/BookPage/MainUi/bookkeepingselectarea.ui \
+    Main/BookPage/SubCtrls/bookkeepinginputkit.ui \
+    Main/ChartPage/MainUi/chartmaininterface.ui \
+    Main/DetaiPage/MainUi/detailedsonpageinstackwidget.ui \
+    Main/DetaiPage/SubPage/AssertManage/assetmanagerpage.ui \
+    Main/DetaiPage/SubPage/Bill/billsubarea.ui \
+    Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.ui \
+    Main/DetaiPage/SubPage/Budget/addbudgetpane.ui \
+    Main/DetaiPage/SubPage/Budget/budgetmasksubpage.ui \
+    Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.ui \
+    Main/DetaiPage/SubPage/Income/SubCtrls/billdataitemwithprocessbar.ui \
+    Main/DetaiPage/SubPage/Income/SubPage/billdetailitemeditsubpage.ui \
+    Main/DetaiPage/SubPage/More/morepage.ui \
+    Main/DetaiPage/SubPage/Shopping/shoppage.ui \
+    Main/DiscoveryPage/MainUi/discoverymaininterface.ui \
+    Main/DiscoveryPage/SubPage/persondetailinfosubpage.ui \
+    Main/DiscoveryPage/SubPage/personinfodisplaykit.ui \
+    Main/MainFrame/mainarea.ui \
+    Main/MinePage/MainUi/minewidagetinstackwidget.ui
 
 #设计Android数据库
 android{
@@ -139,3 +143,5 @@ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android-build/android_sources
 
 RESOURCES += \
     Pic.qrc
+
+
