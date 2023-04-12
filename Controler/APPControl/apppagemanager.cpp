@@ -77,22 +77,21 @@ void AppPageManager::receiveSignal(QString str)
     if(strList.size() >= 2){
         closeStr = strList[0];
         openStr = strList[1];
-        LOG("arrive 82line");
         LOG("closeStr:%s,openStr:%s",closeStr.toStdString().c_str(),openStr.toStdString().c_str());
     }
     if(closeStr == "MainArea"){
         if(mainarea != nullptr)
         {
-            LOG("arrive close mainarea! line 98");
             mainarea->close();
+            delete mainarea;
             mainarea = nullptr;
-           // delete mainarea;
+
         }
     }
     else if(closeStr == "LoginForm"){
         if(login != nullptr)
         {
-            LOG("arrive close LoginForm! line 91");\
+            LOG("arrive close LoginForm! line 91");
             login->accept();
         }
     }
