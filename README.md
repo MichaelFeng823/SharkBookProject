@@ -52,6 +52,12 @@
 <br/>19.我的子界面------目前只实现退出登录和修改密码功能<br/> 
 <br/>20.修改密码功能GIF展示<br/> 
 		![](https://github.com/MichaelFeng823/SharkBookProject/raw/main/GIF/ChangePassWord.gif)
-<br/>后续将接着维护和完善并拓展相关功能,欢迎各位同仁的指正和建议<br/> 
+<br/>21.网上找的美丽小姐姐图片API接口应用GIF展示<br/> 
+		![](https://github.com/MichaelFeng823/SharkBookProject/raw/main/GIF/API_LookBeautyGirl.gif)
+<br/>22.万年历API查询应用GIF展示<br/> 
+		![](https://github.com/MichaelFeng823/SharkBookProject/raw/main/GIF/API_PerpetualCalendar.gif)
+<br/>后续将接着维护和完善并拓展相关功能,欢迎各位同仁的指正和建议<br/>
+<br/>GitHub项目地址: https://github.com/MichaelFeng823/SharkBookProject <br/>
+<br/>能否发动您点赞的小手给予我一个支持，一个star，我将不胜感激<br/>  
 		
 
