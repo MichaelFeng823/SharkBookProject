@@ -1,8 +1,13 @@
 #include "budgetsubpage.h"
 #include "ui_budgetsubpage.h"
 #include <QPointer>
+#include <QStandardItemModel>
 #include "Kit/LogInfo/clog.h"
 #include "Main/DetaiPage/SubPage/Budget/addbudgetpane.h"
+#include "Controler/PublicApi/PublicDbFunc.h"
+#include "Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.h"
+
+using namespace ScreenFunc;
 
 BudGetSubPage::BudGetSubPage(QWidget *parent) :
     QWidget(parent),
@@ -18,13 +23,6 @@ BudGetSubPage::BudGetSubPage(QWidget *parent) :
     connect(ui->pushButton_AddBudget,&QPushButton::clicked,this,&BudGetSubPage::onAddBudgetClicked);
     setTitleByBudgetType();
     CheckBeforeOpen();
-//    m_MonthlBudgetWidget = new QWidget();    //月预算界面widget
-//    QLayout * layout = ui->backgroundwidget->layout();
-//    layout->addWidget(m_MonthlBudgetWidget);
-//    m_AnnualBudgetWidget = new QWidget();    //年预算界面widget
-//    layout->addWidget(m_AnnualBudgetWidget);
-//    m_MonthlBudgetWidget->setVisible(false);
-//    m_AnnualBudgetWidget->setVisible(false);
     ui->widget_AnnualTypeBudget->setVisible(false);
     ui->widget_MonthlyTypeBudget->setVisible(false);
     this->raise();
@@ -92,10 +90,6 @@ void BudGetSubPage::onRecieveSetBudgetType(TypeBudget type)
     m_TypeBudget = type;
     setTitleByBudgetType();
     CheckBeforeOpen();
-    //if(m_TypeBudget == TypeBudget::MonthlyBudget)
-    //    openMonthlyBudgetWidget();
-    //else if(m_TypeBudget == TypeBudget::YearBudget)
-    //    openAnnualBudgetWidget();
 }
 //收到关闭页面请求
 void BudGetSubPage::onRecieveCloseRequest(bool status)
@@ -115,23 +109,33 @@ void BudGetSubPage::onRecieveMenuRequest(bool status)
 //打开月预算界面
 void BudGetSubPage::openMonthlyBudgetWidget()
 {
-    ui->widget_AnnualTypeBudget->setVisible(false);
-    ui->widget_MonthlyTypeBudget->setVisible(true);
-    ui->bottomwidget->setVisible(false);
-//    m_MonthlBudgetWidget->setVisible(true);
-//    m_AnnualBudgetWidget->setVisible(false);
-   QGridLayout * layout = (QGridLayout*)ui->backgroundwidget->layout();
-   layout->setRowStretch(0,1);
-   layout->setRowStretch(1,0);
-   layout->setRowStretch(2,0);
-   layout->setRowStretch(3,20);
-   //layout->setRowStretch(1,1);
-   //layout->setRowStretch(1,1);
+   showMonthlyBudgetWidget();
+   if(m_IsInitMonthBudget)
+       initMonthlyBudgetWidgetContent();
 
-//    initMonthlyBudgetWidgetContent();
 }
  //打开年预算界面
 void BudGetSubPage::openAnnualBudgetWidget()
+{
+    showAnnualBudgetWidget();
+    if(m_IsInitAnnualBudget)
+        initAnnualBudgetWidgetContent();
+
+}
+//显示月预算界面
+void BudGetSubPage::showMonthlyBudgetWidget()
+{
+    ui->widget_AnnualTypeBudget->setVisible(false);
+    ui->widget_MonthlyTypeBudget->setVisible(true);
+    ui->bottomwidget->setVisible(false);
+    QGridLayout * layout = (QGridLayout*)ui->backgroundwidget->layout();
+    layout->setRowStretch(0,1);
+    layout->setRowStretch(1,0);
+    layout->setRowStretch(2,0);
+    layout->setRowStretch(3,20);
+}
+//显示年预算界面
+void BudGetSubPage::showAnnualBudgetWidget()
 {
     ui->widget_AnnualTypeBudget->setVisible(true);
     ui->widget_MonthlyTypeBudget->setVisible(false);
@@ -141,14 +145,6 @@ void BudGetSubPage::openAnnualBudgetWidget()
     layout->setRowStretch(1,0);
     layout->setRowStretch(2,20);
     layout->setRowStretch(3,0);
-    //layout->setRowStretch(1,1);
-    //layout->setRowStretch(1,1);
-
-//    m_MonthlBudgetWidget->setVisible(false);
-//    m_AnnualBudgetWidget->setVisible(true);
-//    QLayout * layout = ui->bottomwidget->layout();
-//    layout->setEnabled(false);
-//    initAnnualBudgetWidgetContent();
 }
 //打开添加预算界面
 void BudGetSubPage::openAddBudgetPane()
@@ -160,26 +156,42 @@ void BudGetSubPage::openAddBudgetPane()
 //初始化月预算界面内容
 void BudGetSubPage::initMonthlyBudgetWidgetContent()
 {
-     if(!m_MonthlBudgetWidget.isNull()){
-         QLabel * label = new QLabel("月预算界面");
-         label->setAlignment(Qt::AlignCenter);
-         QGridLayout * layout = new QGridLayout;
-         layout->addWidget(label);
-         m_MonthlBudgetWidget->setLayout(layout);
-         m_MonthlBudgetWidget->setStyleSheet("background:rgb(0,255,255);color:black;fontsize:30px;");
-     }
+     m_MonthBudgetTableview = new DetialTableview;
+     QGridLayout * layout = new QGridLayout;
+     layout->addWidget(m_MonthBudgetTableview);
+     layout->setMargin(0);
+     ui->widget_MonthlyTypeBudget->setLayout(layout);
+     initTableViewContent(m_MonthBudgetTableview,2);
+     m_IsInitMonthBudget = false;
+     LOG("初始化月预算界面内容");
 }
-//初始化月预算界面内容
+//初始化年预算界面内容
 void BudGetSubPage::initAnnualBudgetWidgetContent()
 {
-     if(!m_AnnualBudgetWidget.isNull()){
-         QLabel * label = new QLabel("年预算界面");
-         label->setAlignment(Qt::AlignCenter);
-         QGridLayout * layout = new QGridLayout;
-         layout->addWidget(label);
-         m_AnnualBudgetWidget->setLayout(layout);
-         m_AnnualBudgetWidget->setStyleSheet("background:rgb(255,0,255);color:black;fontsize:30px;");
-     }
+     m_AnnualBudgetTableview = new DetialTableview;
+     QGridLayout * layout = new QGridLayout;
+     layout->setMargin(0);
+     layout->addWidget(m_AnnualBudgetTableview);
+     ui->widget_AnnualTypeBudget->setLayout(layout);
+     initTableViewContent(m_AnnualBudgetTableview,2);
+     m_IsInitAnnualBudget = false;
+     LOG("初始化年预算界面内容");
+}
+//初始化表格内容
+void BudGetSubPage::initTableViewContent(DetialTableview * tableview,int rowcounts)
+{
+    QStandardItemModel * model = new QStandardItemModel();
+    tableview->setModel(model);
+    model->setColumnCount(1);
+    model->setRowCount(rowcounts);
+    tableview->setColumnWidth(0,getScreenSize().width());
+
+   for(int i = 0; i < rowcounts; i++){
+       tableview->setRowHeight(i,430);
+       QModelIndex index = model->index(i,0);
+       QPointer<BudgetSubItem> item = new BudgetSubItem(m_TypeBudget);
+       tableview->setIndexWidget(index,item);
+   }
 }
 //设置标题内容根据预算类型
 void BudGetSubPage::setTitleByBudgetType()
@@ -231,13 +243,13 @@ void BudGetSubPage::onAddBudgetClicked()
     if(m_TypeBudget == TypeBudget::MonthlyBudget){
         if(m_IsEmptyOfMonthltyBudget){
             openAddBudgetPane();
-            //m_IsEmptyOfMonthltyBudget = !m_IsEmptyOfMonthltyBudget;
+            m_IsEmptyOfMonthltyBudget = !m_IsEmptyOfMonthltyBudget;
         }
     }
     else if(m_TypeBudget == TypeBudget::YearBudget){
        if(m_IsEmptyOfAnuualBudget){
            openAddBudgetPane();
-           //m_IsEmptyOfAnuualBudget = !m_IsEmptyOfAnuualBudget;
+           m_IsEmptyOfAnuualBudget = !m_IsEmptyOfAnuualBudget;
        }
     }
     //CheckBeforeOpen();

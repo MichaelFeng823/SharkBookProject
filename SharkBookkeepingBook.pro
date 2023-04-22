@@ -40,7 +40,7 @@ SOURCES += \
     Main/DetaiPage/SubPage/Bill/SubCtrls/billdataitem.cpp \
     Main/DetaiPage/SubPage/Bill/billsubarea.cpp \
     Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.cpp \
-    Main/DetaiPage/SubPage/Budget/SubCtrls/budgetitemctrl.cpp \
+    Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.cpp \
     Main/DetaiPage/SubPage/Budget/addbudgetpane.cpp \
     Main/DetaiPage/SubPage/Budget/budgetmasksubpage.cpp \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.cpp \
@@ -83,7 +83,7 @@ HEADERS += \
     Main/DetaiPage/SubPage/Bill/SubCtrls/billdataitem.h \
     Main/DetaiPage/SubPage/Bill/billsubarea.h \
     Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.h \
-    Main/DetaiPage/SubPage/Budget/SubCtrls/budgetitemctrl.h \
+    Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.h \
     Main/DetaiPage/SubPage/Budget/addbudgetpane.h \
     Main/DetaiPage/SubPage/Budget/budgetmasksubpage.h \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.h \
@@ -109,6 +109,7 @@ FORMS += \
     Main/DetaiPage/SubPage/AssertManage/assetmanagerpage.ui \
     Main/DetaiPage/SubPage/Bill/billsubarea.ui \
     Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.ui \
+    Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.ui \
     Main/DetaiPage/SubPage/Budget/addbudgetpane.ui \
     Main/DetaiPage/SubPage/Budget/budgetmasksubpage.ui \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.ui \
