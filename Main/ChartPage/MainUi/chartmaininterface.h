@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QTimer>
 #include <QHostInfo>
+#include "BaseClass/basecustomwidget.h"
 
 namespace Ui {
 class ChartMainInterface;
@@ -14,7 +15,7 @@ enum DataType
     Url,
     Bytearray
 };
-class ChartMainInterface : public QWidget
+class ChartMainInterface : public BaseCustomWidget
 {
     Q_OBJECT
 
@@ -34,11 +35,8 @@ protected:
 
 public slots:
      void onRecvMsg(QByteArray data, QObject * obj); //当收到消息时的槽函数
-
      void onAutoUpdateSlot();                        //自动定时更新槽函数
-
      void onAutoDisplaySlot();                       //自动轮播图片槽函数
-
      void onLookupHost(QHostInfo host);              //查询网络连接状态槽函数
 
 private:
@@ -48,7 +46,8 @@ private:
     bool m_CurrentNetConnectionState = true;         //当前网络连接状态
     QTimer * m_AtuoUpdatePicTimer;                   //自动获取图片定时器
     QTimer * m_AtuoDisplayPicTimer;                  //自动轮播图片定时器
-
+    const int MaxReconnection = 10;
+    const int MaxStorePics = 10;
 };
 
 #endif // CHARTMAININTERFACE_H

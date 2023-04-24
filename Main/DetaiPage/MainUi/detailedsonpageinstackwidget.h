@@ -11,6 +11,7 @@
 #include "Main/DetaiPage/SubPage/Bill/SubCtrls/billdataitem.h"
 #include "BaseClass/detialtableview.h"
 #include "Controler/DataStruct/PublicDataStruct.h"
+#include "BaseClass/basecustomwidget.h"
 
 ///****************************************************************************
 /// @author  : MichaelFeng
@@ -26,7 +27,7 @@ namespace Ui {
 class DetailedSonPageInStackwidget;
 }
 
-class DetailedSonPageInStackwidget : public QWidget
+class DetailedSonPageInStackwidget : public BaseCustomWidget
 {
     Q_OBJECT
 
@@ -55,6 +56,8 @@ public slots:
     void onShopPageButtonClicked();                //打开购物返现界面槽函数
 
     void onMoreButtonClicked();                    //打开更多功能子界面槽函数
+
+
 
 protected:
     void buildUiLayout();     //构建UI布局
@@ -105,6 +108,7 @@ private:
     double m_Current_InNumber = 0.00;                //当前收入数据
     double m_Current_OutNumber = 0.00;               //当前支出数据
     InAndOutType m_currentOpenType;
+
 
 private:
     Ui::DetailedSonPageInStackwidget *ui;

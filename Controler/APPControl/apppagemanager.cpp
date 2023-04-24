@@ -116,6 +116,5 @@ void AppPageManager::receiveSignal(QString str)
             mainarea->show();
         };
     }
-
     return ;
 }

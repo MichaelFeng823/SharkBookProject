@@ -8,7 +8,7 @@ using namespace ReadWriteIni;
 using namespace DocPath;
 
 MinewidagetInStackWidget::MinewidagetInStackWidget(QWidget *parent) :
-    QWidget(parent),
+    BaseCustomWidget(parent),
     ui(new Ui::MinewidagetInStackWidget)
 {
     ui->setupUi(this);

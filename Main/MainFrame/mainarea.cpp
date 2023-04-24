@@ -45,6 +45,11 @@ void  MainArea::BuildStackWidgetContent()
     ui->stackedWidget->addWidget(chartmaininterface);
     ui->stackedWidget->addWidget(discoverymaininterface);
     ui->stackedWidget->addWidget(minewidget);
+
+    m_PageVector.append(detailesonpageinstackwidget);
+    m_PageVector.append(chartmaininterface);
+    m_PageVector.append(discoverymaininterface);
+    m_PageVector.append(minewidget);
 }
 void MainArea::receiveSignalStr(QString str)
 {
@@ -58,27 +63,28 @@ void  MainArea::setcontent(QString str)
 
 void MainArea::onFirstpageButtonClicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
-    setButtonClicked(0);
+    ui->stackedWidget->setCurrentIndex(PageType::DetailPage);
+    setButtonClicked(PageType::DetailPage);
+    setActiveWindowState(PageType::DetailPage);
 }
 
 void MainArea::onSecondpageButtonClicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
-    setButtonClicked(1);
+    ui->stackedWidget->setCurrentIndex((int)PageType::ChartPage);
+    setButtonClicked(PageType::ChartPage);
+    setActiveWindowState(PageType::ChartPage);
 }
 void MainArea::onThridpageButtonClicked()
 {
-    ui->stackedWidget->setCurrentIndex(2);
-    setButtonClicked(2);
+    ui->stackedWidget->setCurrentIndex((int)PageType::Discovery);
+    setButtonClicked((int)PageType::Discovery);
+    setActiveWindowState(PageType::Discovery);
 }
 void MainArea::onFourpageButtonClicked()
 {
-    if(ui->stackedWidget->count() > 3)
-    {
-        ui->stackedWidget->setCurrentIndex(3);
-        setButtonClicked(3);
-    }
+    ui->stackedWidget->setCurrentIndex((int)PageType::MinePage);
+    setButtonClicked(PageType::MinePage);
+    setActiveWindowState(PageType::MinePage);
 }
 
 void MainArea::onBookkeepButtonClicked()
@@ -117,6 +123,16 @@ void MainArea::setButtonClicked(int btnindex)
              m_ButtomButtonList[i]->setEnabled(true);
         }
     }
+}
+
+void MainArea::setActiveWindowState(PageType page)
+{
+    for(int index = 0; index <= PageType::MinePage; index++){
+        if(m_PageVector[index] != nullptr)
+              m_PageVector[index]->setActiveWindow(false);
+    }
+    if(m_PageVector[(int)page] != nullptr)
+         m_PageVector[(int)page]->setActiveWindow(true);
 }
 
 MainArea::~MainArea()

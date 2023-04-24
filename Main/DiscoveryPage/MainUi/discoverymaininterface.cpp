@@ -21,7 +21,7 @@ QString DiscoveryMainInterface::comparedChar = "";               //被比较的�
 QString DiscoveryMainInterface::comparedNumberChar = "";         //被比较的数字字符串
 
 DiscoveryMainInterface::DiscoveryMainInterface(QWidget *parent) :
-    QWidget(parent),
+    BaseCustomWidget(parent),
     ui(new Ui::DiscoveryMainInterface)
 {
     ui->setupUi(this);

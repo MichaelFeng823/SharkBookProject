@@ -19,6 +19,7 @@ android: include(./android_openssl-master/openssl.pri)
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    BaseClass/basecustomwidget.cpp \
     BaseClass/circulardiagram.cpp \
     BaseClass/detialtableview.cpp \
     Controler/APPControl/apppagemanager.cpp \
@@ -57,6 +58,7 @@ SOURCES += \
     NetCore/msgqueue.cpp
 
 HEADERS += \
+    BaseClass/basecustomwidget.h \
     BaseClass/circulardiagram.h \
     BaseClass/detialtableview.h \
     Controler/APPControl/apppagemanager.h \

@@ -1,6 +1,7 @@
 #ifndef MAINAREA_H
 #define MAINAREA_H
 #include <QWidget>
+#include <QMap>
 #include "Main/MinePage/MainUi/minewidagetinstackwidget.h"
 #include "Main/DetaiPage/MainUi/detailedsonpageinstackwidget.h"
 #include "Main/BookPage/MainUi/bookkeepingselectarea.h"
@@ -19,6 +20,7 @@ class MainArea : public QWidget
 public:
     explicit MainArea(QWidget *parent = nullptr);
     ~MainArea();
+    enum PageType{DetailPage = 0,ChartPage,Discovery,MinePage};
 
 private:
     void  setcontent(QString str);
@@ -28,6 +30,8 @@ private:
     void initThis();
 
     void setButtonClicked(int btnindex);
+
+    void setActiveWindowState(PageType page);
 
 public slots:
     void onFirstpageButtonClicked();
@@ -56,8 +60,8 @@ private:
      MinewidagetInStackWidget * minewidget;
      BookkeepingSelectArea * bookkeepingselectarea = nullptr;
      QVector<QPushButton*> m_ButtomButtonList;
-
-    Ui::MainArea *ui;
+     QVector<BaseCustomWidget*> m_PageVector;
+     Ui::MainArea *ui;
 };
 
 #endif // MAINAREA_H

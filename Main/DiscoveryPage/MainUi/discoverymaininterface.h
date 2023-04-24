@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QStandardItemModel>
 #include "Controler/DataStruct/PublicDataStruct.h"
+#include "BaseClass/basecustomwidget.h"
 #include <QSqlDatabase>
 
 ///****************************************************************************
@@ -28,7 +29,7 @@ namespace Ui {
 class DiscoveryMainInterface;
 }
 
-class DiscoveryMainInterface : public QWidget
+class DiscoveryMainInterface : public BaseCustomWidget
 {
     Q_OBJECT
 
@@ -67,7 +68,7 @@ private:
     static QString comparedNumberChar;         //被比较的数字字符串
     Ui::DiscoveryMainInterface *ui;
     QStandardItemModel * model = nullptr;
-    QVector<MailTableStruct> m_maillist;  //通讯数据汇总
+    QVector<MailTableStruct> m_maillist;       //通讯数据汇总
 };
 
 #endif // DISCOVERYMAININTERFACE_H

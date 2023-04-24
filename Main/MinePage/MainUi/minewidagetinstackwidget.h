@@ -3,12 +3,13 @@
 
 #include <QWidget>
 #include "LoginAbout/ChangePassWord/changepasswordform.h"
+#include "BaseClass/basecustomwidget.h"
 
 namespace Ui {
 class MinewidagetInStackWidget;
 }
 
-class MinewidagetInStackWidget : public QWidget
+class MinewidagetInStackWidget : public BaseCustomWidget
 {
     Q_OBJECT
 
@@ -28,7 +29,6 @@ signals:
 private:
     ChangePassWordForm * form;
     Ui::MinewidagetInStackWidget *ui;
-
 };
 
 #endif // MINEWIDAGETINSTACKWIDGET_H

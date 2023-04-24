@@ -18,7 +18,7 @@ using namespace ScreenFunc;
 using namespace DataQuery;
 using namespace DocPath;
 DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
-    QWidget(parent),
+    BaseCustomWidget(parent),
     ui(new Ui::DetailedSonPageInStackwidget)
 {
     ui->setupUi(this);
