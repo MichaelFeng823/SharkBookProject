@@ -35,11 +35,11 @@
 
 5.登录后界面主要框架模块GIF展示
 
-![](GIF/ChangeDateQuery.gif)
+![](GIF/LookMainArea.gif)
 
 6.根据不同日期查询账单数据GIF展示
 
-![](GIF/LookMainArea.gif)
+![](GIF/ChangeDateQuery.gif)
 
 7.账单子页面模块GIF展示
 
