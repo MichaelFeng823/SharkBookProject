@@ -34,6 +34,9 @@ protected:
     void checkTypeBudget();         //检验当前预算类型
     void initSlots();               //初始化槽函数
 
+signals:
+    void sendSetBudgetData(TypeBudget,double);
+
 private:
     bool eventFilter(QObject *obj, QEvent *event); //事件过滤器
 

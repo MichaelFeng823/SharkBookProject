@@ -14,7 +14,6 @@ CircularDiagram::CircularDiagram(QWidget *parent) : QWidget(parent)
     this->setText(QString("剩余"));
     initFontStyle();
     initAnimation();
-
 }
 //初始化字体样式
 void CircularDiagram::initFontStyle()
@@ -38,7 +37,7 @@ void CircularDiagram::setAnimationEndValue(double value)
     if(animation == nullptr){
         initAnimation();}
     animation->setEndValue(value);
-    animation->start(QAbstractAnimation::DeleteWhenStopped);
+    animation->start(QAbstractAnimation::KeepWhenStopped);
 }
 void CircularDiagram::paintEvent(QPaintEvent *event)
 {

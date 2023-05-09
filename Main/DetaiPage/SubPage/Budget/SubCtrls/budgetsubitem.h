@@ -32,7 +32,11 @@ public:
     void setCurrentExpand(double expand){m_CurrentExpand = expand;}
     void setCurrentRemainBudget(double remainbudget){m_CurrentRemainBudget = remainbudget;}
     void setFreedPercent(double freepercent){m_FreedPercent = freepercent;}
+    void setBudgetData(int id,double budget,double expand);
+
+    void updateData();                   //更换数据显示
 protected:
+    void calculatePercent();             //计算百分比
     void checkBudgetType();              //检测预算类型
     void initMonthBudgetStyle();         //初始化月预算风格样式
     void initYearBudgetStyle();          //初始化年预算风格样式

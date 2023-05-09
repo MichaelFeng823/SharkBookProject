@@ -55,6 +55,7 @@ QPushButton
 	background-color: rgb(0, 203, 0);
 	border-radius: 8px;
 	font-family:'Microsoft YaHei';
+	color: rgb(255, 255, 255);
 }
 QPushButton::pressed
 {
@@ -71,14 +72,14 @@ QPushButton::hover
 	font-family:'Microsoft YaHei';
 	color: rgb(255, 255, 255);
 }
-
+/*
 QPushButton::release
 {
 	background-color: rgb(0, 203, 0);
 	border-radius: 5px;
 	font-family:'Microsoft YaHei';
 	color: rgb(229, 229, 229);
-}
+}*/
 QLineEdit
 {
 	font-family:'Microsoft YaHei';
@@ -153,7 +154,13 @@ QCheckBox
        </spacer>
       </item>
       <item row="1" column="1">
-       <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,2,1,10,2">
+       <layout class="QGridLayout" name="gridLayout_2" columnstretch="2,2,0,10,2">
+        <property name="topMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>15</number>
+        </property>
         <property name="spacing">
          <number>0</number>
         </property>
@@ -200,6 +207,9 @@ QCheckBox
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 22pt &quot;微软雅黑&quot;;</string>
           </property>
           <property name="text">
            <string>用户名:</string>
@@ -248,7 +258,13 @@ QCheckBox
        </spacer>
       </item>
       <item row="3" column="1">
-       <layout class="QGridLayout" name="gridLayout_5" columnstretch="2,2,1,10,2">
+       <layout class="QGridLayout" name="gridLayout_5" columnstretch="2,2,0,10,2">
+        <property name="topMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>15</number>
+        </property>
         <item row="0" column="0">
          <spacer name="horizontalSpacer_6">
           <property name="orientation">
@@ -269,6 +285,9 @@ QCheckBox
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 22pt &quot;微软雅黑&quot;;</string>
           </property>
           <property name="text">
            <string>密码 ：</string>

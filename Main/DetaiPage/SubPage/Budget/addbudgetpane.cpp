@@ -52,6 +52,8 @@ void AddBudgetPane::onButtonOkClicked()
 {
     QString str = ui->lineEdit->text();
     double resultNum = str.toDouble();
+    sendSetBudgetData(m_TypeBudget,resultNum);
+    this->close();
     LOG("最后结果为:%lf",resultNum);
 }
 //数字输入操作区按钮点击槽函数
