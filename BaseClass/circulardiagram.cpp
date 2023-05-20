@@ -3,6 +3,7 @@
 #include <QResizeEvent>
 #include "Kit/LogInfo/clog.h"
 
+
 CircularDiagram::CircularDiagram(QWidget *parent) : QWidget(parent)
 {
     this->setFreedRingColor(QColor(250,217,86));
@@ -11,7 +12,8 @@ CircularDiagram::CircularDiagram(QWidget *parent) : QWidget(parent)
     this->setTextColor(QColor(149,149,151));
     this->setNumColor(QColor(52,52,52));
     setAnimationEndValue(0.9);
-    this->setText(QString("剩余"));
+    this->setCenterText(QString("剩余"));
+
     initFontStyle();
     initAnimation();
 }
@@ -36,6 +38,7 @@ void CircularDiagram::setAnimationEndValue(double value)
 {
     if(animation == nullptr){
         initAnimation();}
+    this->setCenterText(QString("剩余"));
     animation->setEndValue(value);
     animation->start(QAbstractAnimation::KeepWhenStopped);
 }

@@ -51,7 +51,7 @@ public:
     void setTextFont(QFont font){m_TextFont = font;}
     void setNumFont(QFont font){m_NumFont = font;}
 
-    void setText(QString text){m_Text = text;}
+    void setCenterText(QString text){m_Text = text;}
     void setNum(QString num){m_Num = num;}
 
     void setStartAnglePosition(int angle){m_StartAnglePosition = angle * 16;}

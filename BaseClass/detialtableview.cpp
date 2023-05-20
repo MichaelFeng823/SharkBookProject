@@ -20,7 +20,8 @@ DetialTableview::DetialTableview(QWidget *parent)
     this->setEditTriggers(QAbstractItemView::NoEditTriggers); // 设置不可编辑
     this->setMouseTracking(true);
     QScroller * vterbar = QScroller::scroller(this);
-    vterbar->grabGesture(this,QScroller::LeftMouseButtonGesture);
+    vterbar->grabGesture(this,QScroller::TouchGesture);
     this->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+    //this->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
 }
 

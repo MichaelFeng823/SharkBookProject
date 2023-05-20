@@ -219,4 +219,16 @@
         <file>image/Expand_2_On_SubPage.jpg</file>
         <file>image/Expand_1_On_SubPage.jpg</file>
     </qresource>
+    <qresource prefix="/girls">
+        <file>image/girls/1.jpg</file>
+        <file>image/girls/2.jpg</file>
+        <file>image/girls/3.jpg</file>
+        <file>image/girls/4.jpg</file>
+        <file>image/girls/5.jpg</file>
+        <file>image/girls/6.jpg</file>
+        <file>image/girls/7.jpg</file>
+        <file>image/girls/8.jpg</file>
+        <file>image/girls/9.jpg</file>
+        <file>image/girls/10.jpg</file>
+    </qresource>
 </RCC>

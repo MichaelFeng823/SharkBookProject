@@ -5,6 +5,8 @@
 #include "BaseClass/circulardiagram.h"
 #include "Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.h"
 #include "Controler/DataStruct/PublicDataStruct.h"
+#include "BaseClass/picitem.h"
+#include "Main/ChartPage/SubPage/photoframe.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -16,11 +18,17 @@ int main(int argc, char *argv[])
    //LOG("%s",Chinese2Pinyin::getFullChars(input).toStdString().c_str());
    //多音字,暂不支持
    //LOG("%s",Chinese2Pinyin::getCamelChars(input).at(0).toStdString().c_str());
-    QWidget * w = new QWidget();
-    BudgetSubItem * demo = new BudgetSubItem(TypeBudget::YearBudget);
-    demo->setParent(w);
-    demo->setGeometry(0,0,1080,430);
+    //QWidget * w = new QWidget();
+    //w->setStyleSheet("background-color:rgb(0,0,0);");
+    //PicItem * demo = new PicItem();
+    //demo->setStyleSheet("background-color:rgb(0,0,0);");
+    //demo->setParent(w);
+    //demo->move(0,0);
+    //w->show();
+    PhotoFrame * w = new PhotoFrame();
     w->show();
+
+
 
     //CircularDiagram * demo = new CircularDiagram();
     //demo->setGeometry(0,0,1920,1080);

@@ -12,22 +12,26 @@
 #include <Kit/LogInfo/clog.h>
 #include "Controler/GlobalInfo/PublicUerInfo.h"
 #include "NetCore/msgqueue.h"
-
-
+#include "Controler/PublicApi/PublicDbFunc.h"
+#include <QMouseEvent>
+#include <QPainter>
+using namespace ScreenFunc;
+int ChartMainInterface::m_DefaultWidth = 1080;
 ChartMainInterface::ChartMainInterface(QWidget *parent) :
     BaseCustomWidget(parent),
     ui(new Ui::ChartMainInterface)
 {
     ui->setupUi(this);
-    //ui->label->setScaledContents(true);
+    PhotoFrame * photo = new PhotoFrame();
+    photo->setPicVector(&m_PicVector);
+    QGridLayout * layout = new QGridLayout;
+    layout->addWidget(photo);
+    layout->setMargin(0);
+    layout->setSpacing(0);
+    ui->backgroundwidget->setLayout(layout);
+    m_DefaultWidth = getScreenSize().width();
     m_AtuoUpdatePicTimer = new QTimer;
     m_AtuoUpdatePicTimer->start();
-
-
-    m_AtuoDisplayPicTimer = new QTimer;
-    m_AtuoDisplayPicTimer->start(200);
-
-    connect(m_AtuoDisplayPicTimer,&QTimer::timeout,this,&ChartMainInterface::onAutoDisplaySlot);
     connect(m_AtuoUpdatePicTimer,&QTimer::timeout,this,&ChartMainInterface::checkNetWorkOnline);
     connect(MSGQUEUE, SIGNAL(SignalRecvMsg(QByteArray,QObject *)), this, SLOT(onRecvMsg(QByteArray, QObject *)));
 }
@@ -52,33 +56,8 @@ void ChartMainInterface::onAutoUpdateSlot()
         else{
             QMessageBox::warning(0,"警告","无网络使用权限");
         }
-         m_AtuoUpdatePicTimer->setInterval(25000);
+         m_AtuoUpdatePicTimer->setInterval(10000);
     }
-}
-//自动轮播图片槽函数
-void ChartMainInterface::onAutoDisplaySlot()
-{
-    if(isActiveWindow()){
-        if(!m_PicVector.isEmpty()){
-            //LOG("加载显示图片");
-            LOG("当前容器图片数量:%d",m_PicVector.size());
-            if(!loadPicture(m_PicVector.first())){
-                 m_AtuoDisplayPicTimer->setInterval(1000);
-                 m_PicVector.pop_front();
-                 return;
-            }
-            m_AtuoDisplayPicTimer->setInterval(3000);
-            if(m_PicVector.size() > 1)
-                m_PicVector.pop_front();
-        }
-        else{
-            LOG("当前容器里没有图片");
-        }
-    }
-    else{
-        //LOG("当前Window is not Active");
-    }
-
 }
 //当收到消息时的槽函数
 void ChartMainInterface::onRecvMsg(QByteArray data, QObject * obj)
@@ -87,22 +66,12 @@ void ChartMainInterface::onRecvMsg(QByteArray data, QObject * obj)
         return;
     //请求返回的结果
     QString datastr = QString::fromLocal8Bit(data);
-    LOG("datasize:%d",data.size());
+    //LOG("datasize:%d",data.size());
     DataType type = checkDataType(data);
     if(type == DataType::Url)
         return;
     else if(type == DataType::Bytearray)
         m_PicVector.append(data);
-}
-//加载图片
-bool ChartMainInterface::loadPicture(QByteArray data)
-{
-    QPixmap pix;
-    bool state = pix.loadFromData(data);
-    if(state)
-        ui->label->setPixmap(pix.scaledToWidth(ui->label->width()));
-    //LOG("state:%d",state);
-    return state;
 }
 //检查收到数据内容
 DataType ChartMainInterface::checkDataType(QByteArray data)
@@ -156,7 +125,6 @@ void ChartMainInterface::onLookupHost(QHostInfo host)
 {
     if(m_ReConnectionCounts > MaxReconnection){
         m_AtuoUpdatePicTimer->stop();
-        m_AtuoDisplayPicTimer->stop();
         return;
     }
     if (host.error() != QHostInfo::NoError) {
@@ -175,6 +143,4 @@ void ChartMainInterface::onLookupHost(QHostInfo host)
         onAutoUpdateSlot();
     }
 }
-
-
 

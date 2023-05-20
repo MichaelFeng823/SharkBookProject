@@ -5,7 +5,6 @@
 #include "Kit/LogInfo/clog.h"
 #include "Main/DetaiPage/SubPage/Budget/addbudgetpane.h"
 #include "Controler/PublicApi/PublicDbFunc.h"
-#include <QThread>
 
 
 using namespace ScreenFunc;
@@ -100,6 +99,7 @@ void BudGetSubPage::onRecieveCloseRequest(bool status)
     if(status){
         LOG("关闭页面");
         this->close();
+        delete  this;
     }
 }
 //收到打开菜单请求
@@ -112,18 +112,17 @@ void BudGetSubPage::onRecieveMenuRequest(bool status)
 //打开月预算界面
 void BudGetSubPage::openMonthlyBudgetWidget()
 {
-   showMonthlyBudgetWidget();
    if(m_IsInitMonthBudget)
        initMonthlyBudgetWidgetContent();
+   showMonthlyBudgetWidget();
 
 }
  //打开年预算界面
 void BudGetSubPage::openAnnualBudgetWidget()
 {
-    showAnnualBudgetWidget();
     if(m_IsInitAnnualBudget)
         initAnnualBudgetWidgetContent();
-
+    showAnnualBudgetWidget();
 }
 //显示月预算界面
 void BudGetSubPage::showMonthlyBudgetWidget()
@@ -222,7 +221,6 @@ void BudGetSubPage::updateDataOnPage()
     QVector<QPointer<BudgetSubItem>> iter = m_BudgetItemMap[m_TypeBudget];
     for(int i = 0; i < iter.size(); i++){
         iter[i]->updateData();
-        QThread::msleep(50);
     }
 }
 //设置标题内容根据预算类型

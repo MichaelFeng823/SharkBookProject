@@ -22,6 +22,8 @@ SOURCES += \
     BaseClass/basecustomwidget.cpp \
     BaseClass/circulardiagram.cpp \
     BaseClass/detialtableview.cpp \
+    BaseClass/photolistview.cpp \
+    BaseClass/picitem.cpp \
     Controler/APPControl/apppagemanager.cpp \
     Controler/DataControl/databaseobj.cpp \
     Kit/Calendar/SubCtrls/scrollareakit.cpp \
@@ -34,6 +36,7 @@ SOURCES += \
     Main/BookPage/SubCtrls/bookkeepinginputkit.cpp \
     Main/BookPage/SubCtrls/menuicon.cpp \
     Main/ChartPage/MainUi/chartmaininterface.cpp \
+    Main/ChartPage/SubPage/photoframe.cpp \
     Main/DetaiPage/MainUi/SubCtrls/calendarkit.cpp \
     Main/DetaiPage/MainUi/SubCtrls/inandoutkit.cpp \
     Main/DetaiPage/MainUi/detailedsonpageinstackwidget.cpp \
@@ -61,6 +64,8 @@ HEADERS += \
     BaseClass/basecustomwidget.h \
     BaseClass/circulardiagram.h \
     BaseClass/detialtableview.h \
+    BaseClass/photolistview.h \
+    BaseClass/picitem.h \
     Controler/APPControl/apppagemanager.h \
     Controler/DataControl/databaseobj.h \
     Controler/DataStruct/PublicDataStruct.h \
@@ -78,6 +83,7 @@ HEADERS += \
     Main/BookPage/SubCtrls/bookkeepinginputkit.h \
     Main/BookPage/SubCtrls/menuicon.h \
     Main/ChartPage/MainUi/chartmaininterface.h \
+    Main/ChartPage/SubPage/photoframe.h \
     Main/DetaiPage/MainUi/SubCtrls/calendarkit.h \
     Main/DetaiPage/MainUi/SubCtrls/inandoutkit.h \
     Main/DetaiPage/MainUi/detailedsonpageinstackwidget.h \
@@ -107,6 +113,7 @@ FORMS += \
     Main/BookPage/MainUi/bookkeepingselectarea.ui \
     Main/BookPage/SubCtrls/bookkeepinginputkit.ui \
     Main/ChartPage/MainUi/chartmaininterface.ui \
+    Main/ChartPage/SubPage/photoframe.ui \
     Main/DetaiPage/MainUi/detailedsonpageinstackwidget.ui \
     Main/DetaiPage/SubPage/AssertManage/assetmanagerpage.ui \
     Main/DetaiPage/SubPage/Bill/billsubarea.ui \
