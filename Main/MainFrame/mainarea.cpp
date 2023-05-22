@@ -66,6 +66,8 @@ void MainArea::onFirstpageButtonClicked()
     ui->stackedWidget->setCurrentIndex(PageType::DetailPage);
     setButtonClicked(PageType::DetailPage);
     setActiveWindowState(PageType::DetailPage);
+    if(m_PageVector[(int)(PageType::ChartPage)] != nullptr)
+        static_cast<ChartMainInterface*>(m_PageVector[(int)(PageType::ChartPage)])->setActiveWindow(false);
 }
 
 void MainArea::onSecondpageButtonClicked()
@@ -73,18 +75,24 @@ void MainArea::onSecondpageButtonClicked()
     ui->stackedWidget->setCurrentIndex((int)PageType::ChartPage);
     setButtonClicked(PageType::ChartPage);
     setActiveWindowState(PageType::ChartPage);
+    if(m_PageVector[(int)(PageType::ChartPage)] != nullptr)
+        static_cast<ChartMainInterface*>(m_PageVector[(int)(PageType::ChartPage)])->setActiveWindow(true);
 }
 void MainArea::onThridpageButtonClicked()
 {
     ui->stackedWidget->setCurrentIndex((int)PageType::Discovery);
     setButtonClicked((int)PageType::Discovery);
     setActiveWindowState(PageType::Discovery);
+    if(m_PageVector[(int)(PageType::ChartPage)] != nullptr)
+        static_cast<ChartMainInterface*>(m_PageVector[(int)(PageType::ChartPage)])->setActiveWindow(false);
 }
 void MainArea::onFourpageButtonClicked()
 {
     ui->stackedWidget->setCurrentIndex((int)PageType::MinePage);
     setButtonClicked(PageType::MinePage);
     setActiveWindowState(PageType::MinePage);
+    if(m_PageVector[(int)(PageType::ChartPage)] != nullptr)
+        static_cast<ChartMainInterface*>(m_PageVector[(int)(PageType::ChartPage)])->setActiveWindow(false);
 }
 
 void MainArea::onBookkeepButtonClicked()

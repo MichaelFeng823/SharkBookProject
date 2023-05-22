@@ -22,7 +22,7 @@ ChartMainInterface::ChartMainInterface(QWidget *parent) :
     ui(new Ui::ChartMainInterface)
 {
     ui->setupUi(this);
-    PhotoFrame * photo = new PhotoFrame();
+    photo = new PhotoFrame();
     photo->setPicVector(&m_PicVector);
     QGridLayout * layout = new QGridLayout;
     layout->addWidget(photo);
@@ -39,6 +39,13 @@ ChartMainInterface::ChartMainInterface(QWidget *parent) :
 ChartMainInterface::~ChartMainInterface()
 {
     delete ui;
+}
+//设置当前Active状态
+void ChartMainInterface::setActiveWindow(bool state)
+{
+    LOG("ChartMainInterface::setActiveWindow");
+    m_IsActiveWindow = state;
+    photo->setActiveWindow(state);
 }
 //自动定时更新槽函数
 void ChartMainInterface::onAutoUpdateSlot()

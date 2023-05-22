@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QStandardItemModel>
 #include <QTimer>
-
+#include <BaseClass/basecustomwidget.h>
 ///****************************************************************************
 /// @author  : MichaelFeng
 /// @date    : 2023/05/16
@@ -20,7 +20,7 @@ namespace Ui {
 class PhotoFrame;
 }
 
-class PhotoFrame : public QWidget
+class PhotoFrame : public  BaseCustomWidget
 {
     Q_OBJECT
 

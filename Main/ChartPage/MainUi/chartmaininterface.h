@@ -20,11 +20,10 @@ enum DataType
 class ChartMainInterface : public BaseCustomWidget
 {
     Q_OBJECT
-
 public:
     explicit ChartMainInterface(QWidget *parent = nullptr);
     ~ChartMainInterface();
-
+    void setActiveWindow(bool state);                //设置当前Active状态
 protected:
     bool amplifyloadPicture();                       //双击放大或缩小加载图片
     DataType checkDataType(QByteArray data);         //检查收到数据内容

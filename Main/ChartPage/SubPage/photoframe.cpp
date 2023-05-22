@@ -7,7 +7,7 @@
 using namespace ScreenFunc;
 
 PhotoFrame::PhotoFrame(QWidget *parent) :
-    QWidget(parent),
+    BaseCustomWidget(parent),
     ui(new Ui::PhotoFrame)
 {
     ui->setupUi(this);
@@ -124,6 +124,9 @@ void PhotoFrame::onManualDisplayClicked()
 }
 void PhotoFrame::onAutoDisplayStart()
 {
+    LOG("isActiveWindow = %d",isActiveWindow());
+    if(!isActiveWindow())
+        return;
     m_CurrentIndex = ui->tableViewPreview->currentIndex().column();
     ++m_CurrentIndex;
     QModelIndex index = model->index(0,m_CurrentIndex);
@@ -149,10 +152,13 @@ void PhotoFrame::onAutoDisplayStart()
 //当收到改变图片请求
 void PhotoFrame::onReceiveChangePicRequest()
 {
+    m_CurrentIndex = ui->tableViewPreview->currentIndex().column();
     QPushButton * button = static_cast<QPushButton*>(sender());
     QVariant var = button->property("PicData");
     ui->PicGraphicsView->SetImage(var.value<QImage>());
     ui->PicGraphicsView->setPosAndSize(0,0,getScreenSize().width(),ui->PicGraphicsView->size().height());
+    if(colcounts - m_CurrentIndex < 10)
+        addPic();
 }
 //当收到PicItemState时
 void PhotoFrame::onReceivePicItemState(bool state)

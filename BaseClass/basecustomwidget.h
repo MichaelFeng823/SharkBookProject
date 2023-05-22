@@ -20,9 +20,9 @@ public:
 public:
      void setActiveWindow(bool state){m_IsActiveWindow = state;}  //设置当前Active状态
      bool isActiveWindow(){return m_IsActiveWindow;}
-signals:
-private:
+protected:
      bool m_IsActiveWindow = false;                   //当前是否是Active状态
+     signals:
 };
 
 #endif // BASECUSTOMWIDGET_H
