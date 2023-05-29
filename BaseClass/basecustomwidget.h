@@ -18,7 +18,7 @@ class BaseCustomWidget : public QWidget
 public:
     explicit BaseCustomWidget(QWidget *parent = nullptr);
 public:
-     void setActiveWindow(bool state){m_IsActiveWindow = state;}  //设置当前Active状态
+     virtual void setActiveWindow(bool state){m_IsActiveWindow = state;}  //设置当前Active状态
      bool isActiveWindow(){return m_IsActiveWindow;}
 protected:
      bool m_IsActiveWindow = false;                   //当前是否是Active状态

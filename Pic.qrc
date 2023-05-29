@@ -134,6 +134,7 @@
         <file>image/HousingLoanCalculateButtonIcon_InMorePage.jpg</file>
         <file>image/MangeAssetKonwlageButtonIcon_InMorePage.jpg</file>
         <file>image/ShopingButtonIcon_InMorePage.jpg</file>
+        <file>image/GirlPicButtonIcon_InMorePage.jpg</file>
     </qresource>
     <qresource prefix="/AssetsManager">
         <file>image/AssetButtonIcon_Normal.jpg</file>

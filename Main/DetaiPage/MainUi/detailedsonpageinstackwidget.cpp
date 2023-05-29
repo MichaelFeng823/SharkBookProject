@@ -11,7 +11,7 @@
 #include "Main/DetaiPage/SubPage/Bill/billsubarea.h"
 #include "Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.h"
 #include "Main/DetaiPage/SubPage/AssertManage/assetmanagerpage.h"
-#include "Main/DetaiPage/SubPage/More/morepage.h"
+#include "Main/DetaiPage/SubPage/More/MainUi/morepage.h"
 #include "Main/DetaiPage/SubPage/Shopping/shoppage.h"
 #include <QPointer>
 using namespace ScreenFunc;

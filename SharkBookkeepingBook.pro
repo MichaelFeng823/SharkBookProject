@@ -37,7 +37,7 @@ SOURCES += \
     Main/BookPage/SubCtrls/bookkeepinginputkit.cpp \
     Main/BookPage/SubCtrls/menuicon.cpp \
     Main/ChartPage/MainUi/chartmaininterface.cpp \
-    Main/ChartPage/SubPage/photoframe.cpp \
+    Main/ChartPage/Other/selectscrollbar.cpp \
     Main/DetaiPage/MainUi/SubCtrls/calendarkit.cpp \
     Main/DetaiPage/MainUi/SubCtrls/inandoutkit.cpp \
     Main/DetaiPage/MainUi/detailedsonpageinstackwidget.cpp \
@@ -51,7 +51,9 @@ SOURCES += \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.cpp \
     Main/DetaiPage/SubPage/Income/SubCtrls/billdataitemwithprocessbar.cpp \
     Main/DetaiPage/SubPage/Income/SubPage/billdetailitemeditsubpage.cpp \
-    Main/DetaiPage/SubPage/More/morepage.cpp \
+    Main/DetaiPage/SubPage/More/MainUi/morepage.cpp \
+    Main/DetaiPage/SubPage/More/SubPage/girlpicwidget.cpp \
+    Main/DetaiPage/SubPage/More/SubCtrls/photoframe.cpp \
     Main/DetaiPage/SubPage/Shopping/shoppage.cpp \
     Main/DiscoveryPage/MainUi/discoverymaininterface.cpp \
     Main/DiscoveryPage/SubPage/persondetailinfosubpage.cpp \
@@ -84,7 +86,7 @@ HEADERS += \
     Main/BookPage/SubCtrls/bookkeepinginputkit.h \
     Main/BookPage/SubCtrls/menuicon.h \
     Main/ChartPage/MainUi/chartmaininterface.h \
-    Main/ChartPage/SubPage/photoframe.h \
+    Main/ChartPage/Other/selectscrollbar.h \
     Main/DetaiPage/MainUi/SubCtrls/calendarkit.h \
     Main/DetaiPage/MainUi/SubCtrls/inandoutkit.h \
     Main/DetaiPage/MainUi/detailedsonpageinstackwidget.h \
@@ -98,7 +100,9 @@ HEADERS += \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.h \
     Main/DetaiPage/SubPage/Income/SubCtrls/billdataitemwithprocessbar.h \
     Main/DetaiPage/SubPage/Income/SubPage/billdetailitemeditsubpage.h \
-    Main/DetaiPage/SubPage/More/morepage.h \
+    Main/DetaiPage/SubPage/More/MainUi/morepage.h \
+    Main/DetaiPage/SubPage/More/SubPage/girlpicwidget.h \
+    Main/DetaiPage/SubPage/More/SubCtrls/photoframe.h \
     Main/DetaiPage/SubPage/Shopping/shoppage.h \
     Main/DiscoveryPage/MainUi/discoverymaininterface.h \
     Main/DiscoveryPage/SubPage/persondetailinfosubpage.h \
@@ -114,7 +118,6 @@ FORMS += \
     Main/BookPage/MainUi/bookkeepingselectarea.ui \
     Main/BookPage/SubCtrls/bookkeepinginputkit.ui \
     Main/ChartPage/MainUi/chartmaininterface.ui \
-    Main/ChartPage/SubPage/photoframe.ui \
     Main/DetaiPage/MainUi/detailedsonpageinstackwidget.ui \
     Main/DetaiPage/SubPage/AssertManage/assetmanagerpage.ui \
     Main/DetaiPage/SubPage/Bill/billsubarea.ui \
@@ -125,7 +128,9 @@ FORMS += \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.ui \
     Main/DetaiPage/SubPage/Income/SubCtrls/billdataitemwithprocessbar.ui \
     Main/DetaiPage/SubPage/Income/SubPage/billdetailitemeditsubpage.ui \
-    Main/DetaiPage/SubPage/More/morepage.ui \
+    Main/DetaiPage/SubPage/More/MainUi/morepage.ui \
+    Main/DetaiPage/SubPage/More/SubPage/girlpicwidget.ui \
+    Main/DetaiPage/SubPage/More/SubCtrls/photoframe.ui \
     Main/DetaiPage/SubPage/Shopping/shoppage.ui \
     Main/DiscoveryPage/MainUi/discoverymaininterface.ui \
     Main/DiscoveryPage/SubPage/persondetailinfosubpage.ui \

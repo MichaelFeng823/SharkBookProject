@@ -6,7 +6,6 @@
 #include "Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.h"
 #include "Controler/DataStruct/PublicDataStruct.h"
 #include "BaseClass/picitem.h"
-#include "Main/ChartPage/SubPage/photoframe.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

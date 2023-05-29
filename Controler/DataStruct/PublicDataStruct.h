@@ -26,6 +26,13 @@ enum TypeBudget
   YearBudget
 };
 
+enum ChartSelectType
+{
+    week = 1,
+    month,
+    year
+};
+
 struct BillTableStruct
 {
     int billNo;     //账单号
