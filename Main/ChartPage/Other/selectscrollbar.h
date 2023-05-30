@@ -6,6 +6,16 @@
 #include <QPushButton>
 #include <QDate>
 #include <QStandardItemModel>
+///****************************************************************************
+/// @author  : MichaelFeng
+/// @date    : 2023-5-30
+/// @file    : selectscrollbar.h
+/// @brief   : 图表界面滚动条选择类
+///----------------------------------------------------------------------------
+///                           Change History
+///----------------------------------------------------------------------------
+///
+///****************************************************************************
 class SelectScrollBar:public PhotoListView
 {
     Q_OBJECT
@@ -26,6 +36,9 @@ private:
     int m_WeekNum;                  //周数
     int m_MonthNum;                 //月数
     int m_YearNum = 2;              //年数
+signals:
+    void ItemClicked(ChartSelectType,int);
+
 };
 
 #endif // SELECTSCROLLBAR_H

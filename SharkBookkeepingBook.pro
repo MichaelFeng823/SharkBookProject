@@ -37,6 +37,8 @@ SOURCES += \
     Main/BookPage/SubCtrls/bookkeepinginputkit.cpp \
     Main/BookPage/SubCtrls/menuicon.cpp \
     Main/ChartPage/MainUi/chartmaininterface.cpp \
+    Main/ChartPage/Other/chartmasksubpage.cpp \
+    Main/ChartPage/Other/chartmodel.cpp \
     Main/ChartPage/Other/selectscrollbar.cpp \
     Main/DetaiPage/MainUi/SubCtrls/calendarkit.cpp \
     Main/DetaiPage/MainUi/SubCtrls/inandoutkit.cpp \
@@ -86,6 +88,8 @@ HEADERS += \
     Main/BookPage/SubCtrls/bookkeepinginputkit.h \
     Main/BookPage/SubCtrls/menuicon.h \
     Main/ChartPage/MainUi/chartmaininterface.h \
+    Main/ChartPage/Other/chartmasksubpage.h \
+    Main/ChartPage/Other/chartmodel.h \
     Main/ChartPage/Other/selectscrollbar.h \
     Main/DetaiPage/MainUi/SubCtrls/calendarkit.h \
     Main/DetaiPage/MainUi/SubCtrls/inandoutkit.h \
@@ -118,6 +122,7 @@ FORMS += \
     Main/BookPage/MainUi/bookkeepingselectarea.ui \
     Main/BookPage/SubCtrls/bookkeepinginputkit.ui \
     Main/ChartPage/MainUi/chartmaininterface.ui \
+    Main/ChartPage/Other/chartmasksubpage.ui \
     Main/DetaiPage/MainUi/detailedsonpageinstackwidget.ui \
     Main/DetaiPage/SubPage/AssertManage/assetmanagerpage.ui \
     Main/DetaiPage/SubPage/Bill/billsubarea.ui \

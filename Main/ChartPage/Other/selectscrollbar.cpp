@@ -36,7 +36,7 @@ void SelectScrollBar::initWeekCtrls()
     model->clear();
     model->setRowCount(1);
     model->setColumnCount(m_WeekNum);
-    this->setRowHeight(0,getScreenSize().height()/22);
+    this->setRowHeight(0,getScreenSize().height()/21);
     for(int i = 0; i < m_WeekNum; i++){
         QModelIndex index = model->index(0,i);
         this->setColumnWidth(i,getScreenSize().width()/5);
@@ -51,7 +51,7 @@ void SelectScrollBar::initMonthCtrls()
     model->clear();
     model->setRowCount(1);
     model->setColumnCount(m_MonthNum);
-    this->setRowHeight(0,getScreenSize().height()/22);
+    this->setRowHeight(0,getScreenSize().height()/21);
     for(int i = 0; i < m_MonthNum; i++){
         QModelIndex index = model->index(0,i);
         this->setColumnWidth(i,getScreenSize().width()/5);
@@ -67,7 +67,7 @@ void SelectScrollBar::initYearCtrls()
     model->clear();
     model->setRowCount(1);
     model->setColumnCount(m_YearNum);
-    this->setRowHeight(0,getScreenSize().height()/22);
+    this->setRowHeight(0,getScreenSize().height()/21);
     for(int i = 0;i < m_YearNum; i++,year++){
         QModelIndex index = model->index(0,i);
         this->setColumnWidth(i,getScreenSize().width()/5);
@@ -91,5 +91,10 @@ QPushButton * SelectScrollBar::initButtonItem(int id)
         str = QString("%1年").arg(id);
     }
     button->setText(str);
+    button->setProperty("id",id);
+    connect(button,&QPushButton::clicked,this,[=](){
+        QPushButton * button = static_cast<QPushButton*>(sender());
+        emit ItemClicked(m_CurrentType,button->property("id").toInt());
+    });
     return button;
 }

@@ -8,6 +8,7 @@
 #include <QButtonGroup>
 #include "BaseClass/basecustomwidget.h"
 #include "Main/ChartPage/Other/selectscrollbar.h"
+#include "Main/ChartPage/Other/chartmodel.h"
 
 namespace Ui {
 class ChartMainInterface;
@@ -38,6 +39,12 @@ private:
 private:
      Ui::ChartMainInterface *ui;
      QButtonGroup * buttongroup_in_chart = nullptr;           //图表页面中的按钮组
+     SelectScrollBar * weekbar;
+     ChartModel * weekmodel;
+     SelectScrollBar * monthbar;
+     ChartModel * monthmodel;
+     SelectScrollBar * yearbar;
+     ChartModel * yearmodel;
 };
 
 #endif // CHARTMAININTERFACE_H
