@@ -15,7 +15,7 @@
 #include "Controler/PublicApi/PublicDbFunc.h"
 #include <QMouseEvent>
 #include <QPainter>
-
+#include "Main/ChartPage/Other/chartmasksubpage.h"
 using namespace ScreenFunc;
 ChartMainInterface::ChartMainInterface(QWidget *parent) :
     BaseCustomWidget(parent),
@@ -29,6 +29,7 @@ ChartMainInterface::ChartMainInterface(QWidget *parent) :
     initWeekPageCtrls();
     initMonthPageCtrls();
     initYearPageCtrls();
+    connect(ui->pushButton_TypeChoose,&QPushButton::clicked,this,&ChartMainInterface::on_TypeChoose_Clicked);
     buttongroup_in_chart->button(ChartSelectType::week)->click();
 }
 
@@ -71,6 +72,53 @@ void ChartMainInterface::on_ButtonGroup_In_Chart_Clicked(int pagetype)
             break;};
     }
 }
+//当选中类型转换按钮时的槽函数 //收到展开或者关闭的信号槽函数
+void ChartMainInterface::on_TypeChoose_Clicked()
+{
+    if(isExpandOrClose){
+        m_Mask = new ChartMaskSubPage(m_Type,this);
+        connect(m_Mask,&ChartMaskSubPage::sendButtonType,this,&ChartMainInterface::on_ReceiveTypeSignal);
+        m_Mask->hide();
+        QPoint pos = ui->titlewidget->pos();
+        m_Mask->move(pos.x(),pos.y()+ui->titlewidget->height());
+        m_Mask->show();
+    }
+    else{
+        m_Mask->close();
+        m_Mask->deleteLater();
+    }
+    isExpandOrClose = !isExpandOrClose;
+}
+//当收到类型信号时
+void ChartMainInterface::on_ReceiveTypeSignal(InOrOut type)
+{
+    m_Type = type;
+    if(m_Type == InOrOut::Expand)
+        ui->pushButton_TypeChoose->setText("支出V");
+    else if(m_Type == InOrOut::Income)
+        ui->pushButton_TypeChoose->setText("收入V");
+    isExpandOrClose = true;
+}
+//当收到SelectScrollBar信号时
+void ChartMainInterface::on_ReceiveSelectScorllBarSignal(ChartSelectType type,int id)
+{
+    LOG("on_ReceiveSelectScorllBarSignal");
+    LOG("id:%d",id);
+    switch (type){
+        case ChartSelectType::week :{
+           weekmodel->setId(id);
+           break;
+        }
+        case ChartSelectType::month : {
+            monthmodel->setId(id);
+            break;
+        }
+        case ChartSelectType::year : {
+            yearmodel->setId(id);
+            break;
+        }
+    }
+}
 //设置按钮点击后的样式
 void ChartMainInterface::setButtonStyleAfterClicked(QPushButton * button)
 {
@@ -93,6 +141,7 @@ void ChartMainInterface::initWeekPageCtrls()
 {
     weekbar = new SelectScrollBar(ChartSelectType::week);
     weekmodel = new ChartModel(ChartSelectType::week);
+    weekmodel->setId(22);
     QGridLayout * weeklayout = new QGridLayout;
     weeklayout->addWidget(weekbar,0,0);
     weeklayout->addWidget(weekmodel,1,0);
@@ -101,11 +150,13 @@ void ChartMainInterface::initWeekPageCtrls()
     weeklayout->setRowStretch(0,1);
     weeklayout->setRowStretch(1,8);
     ui->weekchartwidget->setLayout(weeklayout);
+    connect(weekbar,&SelectScrollBar::ItemClicked,this,&ChartMainInterface::on_ReceiveSelectScorllBarSignal);
 }
 void ChartMainInterface::initMonthPageCtrls()
 {
     monthbar = new SelectScrollBar(ChartSelectType::month);
     monthmodel = new ChartModel(ChartSelectType::month);
+    monthmodel->setId(4);
     QGridLayout * monthlayout = new QGridLayout;
     monthlayout->addWidget(monthbar,0,0);
     monthlayout->addWidget(monthmodel,1,0);
@@ -114,6 +165,7 @@ void ChartMainInterface::initMonthPageCtrls()
     monthlayout->setRowStretch(0,1);
     monthlayout->setRowStretch(1,8);
     ui->monthchartwidget->setLayout(monthlayout);
+    connect(monthbar,&SelectScrollBar::ItemClicked,this,&ChartMainInterface::on_ReceiveSelectScorllBarSignal);
 }
 void ChartMainInterface::initYearPageCtrls()
 {
@@ -127,6 +179,7 @@ void ChartMainInterface::initYearPageCtrls()
     yearlayout->setRowStretch(0,1);
     yearlayout->setRowStretch(1,8);
     ui->yearchartwidget->setLayout(yearlayout);
+    connect(yearbar,&SelectScrollBar::ItemClicked,this,&ChartMainInterface::on_ReceiveSelectScorllBarSignal);
 }
 void ChartMainInterface::initWeekLayout()
 {

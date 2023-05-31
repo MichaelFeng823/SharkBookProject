@@ -28,6 +28,9 @@ private:
     void initMonthCtrls();          //初始化月控件
     void initYearCtrls();           //初始化年控件
     QPushButton * initButtonItem(int); //初始化table item
+    void setButtonNormal(QPushButton * button); //设置按钮正常状态
+    void setButtonClicked(QPushButton * button); //设置按钮点击状态
+    void setDefaultClicked();       //设置默认选中
 private:
     ChartSelectType m_CurrentType;  //当前类型
     QDate m_CurrentDate;            //当前日期
@@ -36,6 +39,10 @@ private:
     int m_WeekNum;                  //周数
     int m_MonthNum;                 //月数
     int m_YearNum = 2;              //年数
+    int m_DefaultIndex = 0;         //默认index
+    QList<QPushButton*> buttonlist; //按钮集合
+public slots:
+    void onButtonClicked();         //按钮点击槽函数
 signals:
     void ItemClicked(ChartSelectType,int);
 
