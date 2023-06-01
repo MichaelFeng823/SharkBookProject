@@ -21,6 +21,7 @@ class SelectScrollBar:public PhotoListView
     Q_OBJECT
 public:
     SelectScrollBar(ChartSelectType type = ChartSelectType::week,QWidget * parent = nullptr);
+    void setDefaultClicked();       //设置默认选中
 
 private:
     void initCtrls();               //初始化控件内容
@@ -30,7 +31,6 @@ private:
     QPushButton * initButtonItem(int); //初始化table item
     void setButtonNormal(QPushButton * button); //设置按钮正常状态
     void setButtonClicked(QPushButton * button); //设置按钮点击状态
-    void setDefaultClicked();       //设置默认选中
 private:
     ChartSelectType m_CurrentType;  //当前类型
     QDate m_CurrentDate;            //当前日期

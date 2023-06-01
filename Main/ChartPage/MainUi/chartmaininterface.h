@@ -11,6 +11,18 @@
 #include "Main/ChartPage/Other/selectscrollbar.h"
 #include "Main/ChartPage/Other/chartmodel.h"
 #include "Main/ChartPage/Other/chartmasksubpage.h"
+#include "BaseClass/detialtableview.h"
+
+///****************************************************************************
+/// @author  : MichaelFeng
+/// @date    : 2023-06-01
+/// @file    : chartmaininterface.h
+/// @brief   : 图表主界面
+///----------------------------------------------------------------------------
+///                           Change History
+///----------------------------------------------------------------------------
+///
+///****************************************************************************
 
 namespace Ui {
 class ChartMainInterface;
@@ -43,6 +55,7 @@ private:
 private:
      InOrOut m_Type = InOrOut::Expand;                        //当前预算类型
      bool isExpandOrClose = true;
+     bool isChartAreaFirstShow = true;                        //是否是图表界面第一次显示
 private:
      Ui::ChartMainInterface *ui;
      QButtonGroup * buttongroup_in_chart = nullptr;           //图表页面中的按钮组
@@ -52,6 +65,9 @@ private:
      ChartModel * monthmodel;
      SelectScrollBar * yearbar;
      ChartModel * yearmodel;
+     DetialTableview * weektable;
+     DetialTableview * monthtable;
+     DetialTableview * yeartable;
      QPointer<ChartMaskSubPage> m_Mask;
 };
 

@@ -30,7 +30,7 @@ ChartMainInterface::ChartMainInterface(QWidget *parent) :
     initMonthPageCtrls();
     initYearPageCtrls();
     connect(ui->pushButton_TypeChoose,&QPushButton::clicked,this,&ChartMainInterface::on_TypeChoose_Clicked);
-    buttongroup_in_chart->button(ChartSelectType::week)->click();
+
 }
 
 ChartMainInterface::~ChartMainInterface()
@@ -42,6 +42,15 @@ void ChartMainInterface::setActiveWindow(bool state)
 {
     //LOG("ChartMainInterface::setActiveWindow %d",state);
     m_IsActiveWindow = state;
+    if(isChartAreaFirstShow){
+        buttongroup_in_chart->button(ChartSelectType::week)->click();
+        weekbar->setDefaultClicked();
+        buttongroup_in_chart->button(ChartSelectType::month)->click();
+        monthbar->setDefaultClicked();
+        buttongroup_in_chart->button(ChartSelectType::year)->click();
+        yearbar->setDefaultClicked();
+        buttongroup_in_chart->button(ChartSelectType::week)->click();
+    }
 }
 //初始化图表中的按钮组
 void ChartMainInterface::initButtonGroupInChartPage()
@@ -61,14 +70,17 @@ void ChartMainInterface::on_ButtonGroup_In_Chart_Clicked(int pagetype)
         case ChartSelectType::week:{
             setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
             ui->stackedWidget->setCurrentWidget(ui->weekpage);
+
             break;}
         case ChartSelectType::month:{
             setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
             ui->stackedWidget->setCurrentWidget(ui->monthpage);
+
             break;};
         case ChartSelectType::year:{
             setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
             ui->stackedWidget->setCurrentWidget(ui->yearpage);
+
             break;};
     }
 }
@@ -107,14 +119,17 @@ void ChartMainInterface::on_ReceiveSelectScorllBarSignal(ChartSelectType type,in
     switch (type){
         case ChartSelectType::week :{
            weekmodel->setId(id);
+           weekmodel->setBillInfo(*new QList<BillTableStruct>());
            break;
         }
         case ChartSelectType::month : {
             monthmodel->setId(id);
+            monthmodel->setBillInfo(*new QList<BillTableStruct>());
             break;
         }
         case ChartSelectType::year : {
             yearmodel->setId(id);
+            yearmodel->setBillInfo(*new QList<BillTableStruct>());
             break;
         }
     }
@@ -142,6 +157,7 @@ void ChartMainInterface::initWeekPageCtrls()
     weekbar = new SelectScrollBar(ChartSelectType::week);
     weekmodel = new ChartModel(ChartSelectType::week);
     weekmodel->setId(22);
+
     QGridLayout * weeklayout = new QGridLayout;
     weeklayout->addWidget(weekbar,0,0);
     weeklayout->addWidget(weekmodel,1,0);
@@ -151,6 +167,13 @@ void ChartMainInterface::initWeekPageCtrls()
     weeklayout->setRowStretch(1,8);
     ui->weekchartwidget->setLayout(weeklayout);
     connect(weekbar,&SelectScrollBar::ItemClicked,this,&ChartMainInterface::on_ReceiveSelectScorllBarSignal);
+    //-------------------------------------------------------------------------------------------------------
+    QGridLayout * weektablelayout = new QGridLayout;
+    DetialTableview * weektable = new DetialTableview();
+    weektablelayout->addWidget(weektable);
+    weektablelayout->setSpacing(0);
+    weektablelayout->setMargin(0);
+    ui->weekdatarankwidget->setLayout(weektablelayout);
 }
 void ChartMainInterface::initMonthPageCtrls()
 {
@@ -166,6 +189,14 @@ void ChartMainInterface::initMonthPageCtrls()
     monthlayout->setRowStretch(1,8);
     ui->monthchartwidget->setLayout(monthlayout);
     connect(monthbar,&SelectScrollBar::ItemClicked,this,&ChartMainInterface::on_ReceiveSelectScorllBarSignal);
+
+
+    QGridLayout * monthtablelayout = new QGridLayout;
+    DetialTableview * monthtable = new DetialTableview();
+    monthtablelayout->addWidget(monthtable);
+    monthtablelayout->setSpacing(0);
+    monthtablelayout->setMargin(0);
+    ui->monthdatarankwidget->setLayout(monthtablelayout);
 }
 void ChartMainInterface::initYearPageCtrls()
 {
@@ -180,6 +211,13 @@ void ChartMainInterface::initYearPageCtrls()
     yearlayout->setRowStretch(1,8);
     ui->yearchartwidget->setLayout(yearlayout);
     connect(yearbar,&SelectScrollBar::ItemClicked,this,&ChartMainInterface::on_ReceiveSelectScorllBarSignal);
+
+    QGridLayout * yeartablelayout = new QGridLayout;
+    DetialTableview * yeartable = new DetialTableview();
+    yeartablelayout->addWidget(yeartable);
+    yeartablelayout->setSpacing(0);
+    yeartablelayout->setMargin(0);
+    ui->yeardatarankwidget->setLayout(yeartablelayout);
 }
 void ChartMainInterface::initWeekLayout()
 {
