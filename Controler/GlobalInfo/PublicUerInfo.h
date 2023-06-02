@@ -15,6 +15,11 @@ class SYSTEMSTATE{
 public:
     inline static bool NETWORKSTATE;
 };
+class GLOBALDATA{
+public:
+    inline static QVector<QString> expandituremenuvector;         //记账支出菜单容器
+    inline static QVector<QString> incomemenuvector;              //记账收入菜单容器
+};
 enum InAndOutType
 {
     InType = 1,

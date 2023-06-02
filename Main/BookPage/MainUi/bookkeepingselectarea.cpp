@@ -234,7 +234,7 @@ void BookkeepingSelectArea::initIncomeMenuButton()
 void BookkeepingSelectArea::onExpanditurePageClicked()
 {
     initExpandMenuButtonStyle();
-    m_InOrOut = InAndOutType::OutType;
+    m_InOrOut = InOrOut::Expand;
     ui->expenditurebutton->setStyleSheet("border:none;border-top:1px;border-color:rgb(0,0,0);color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:22pt;");
     ui->incomebutton->setStyleSheet("border:none;border-top:1px;border-color:rgb(0,0,0);color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:20pt;");
     ui->stackedWidget->setCurrentIndex(0);
@@ -251,7 +251,7 @@ void BookkeepingSelectArea::onExpanditurePageClicked()
 void BookkeepingSelectArea::onIncomePageClicked()
 {
     initIncomeMenuButtonStyle();
-    m_InOrOut = InAndOutType::InType;
+    m_InOrOut = InOrOut::Income;
     ui->expenditurebutton->setStyleSheet("border:none;border-top:1px;border-color:rgb(0,0,0);color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:20pt;");
     ui->incomebutton->setStyleSheet("border:none;border-top:1px;border-color:rgb(0,0,0);color:rgb(0,0,0);font-family:'Microsoft YaHei';font-size:22pt;");
     ui->stackedWidget->setCurrentIndex(1);

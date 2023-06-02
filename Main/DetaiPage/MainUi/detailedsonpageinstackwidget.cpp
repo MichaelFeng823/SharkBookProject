@@ -17,6 +17,7 @@
 using namespace ScreenFunc;
 using namespace DataQuery;
 using namespace DocPath;
+using namespace PublicSort;
 DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
     BaseCustomWidget(parent),
     ui(new Ui::DetailedSonPageInStackwidget)
@@ -110,7 +111,7 @@ DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
      config.beginGroup("expanditure");
      for(int i = 1; i <= expanditurecounts;i++){
           QString value = config.value(QString("menuname_%1").arg(QString::number(i))).toString();
-          expandituremenuvector.append(value);
+          GLOBALDATA::expandituremenuvector.append(value);
      }
      QStringList menulist = config.childKeys();
      config.endGroup();
@@ -118,7 +119,7 @@ DetailedSonPageInStackwidget::DetailedSonPageInStackwidget(QWidget *parent) :
      config.beginGroup("income");
      for(int i = expanditurecounts; i <expanditurecounts+incomecounts;i++){
           QString value = config.value(QString("menuname_%1").arg(QString::number(i))).toString();
-          incomemenuvector.append(value);
+          GLOBALDATA::incomemenuvector.append(value);
      }
      menulist = config.childKeys();
      config.endGroup();
@@ -130,7 +131,7 @@ void DetailedSonPageInStackwidget::initTableview()
      model->setColumnCount(1);
      model->setRowCount(m_BillList.size());
      tableview->setColumnWidth(0,getScreenSize().width());
-     std::sort(m_BillList.begin(),m_BillList.end(),DetailedSonPageInStackwidget::sortBillInfoByDate);
+     std::sort(m_BillList.begin(),m_BillList.end(),PublicSort::sortByTime);
      if(m_BillList.isEmpty())
          tableview->setStyleSheet("QTableView, QHeaderView, QTableView::item {background: white;} QTableView::item:selected { /*被选中的index*/color: black;background: white;} QTableView{border-image:url(:/public/image/tableview_NoData.jpg);}");
      else
@@ -143,14 +144,14 @@ void DetailedSonPageInStackwidget::initTableview()
         item->setDate(m_BillList[i].date);
         item->setTitlePayNum(m_BillList[i].moneyAmount);
         if(m_BillList[i].InOrOut == InAndOutType::InType){
-            if( m_BillList[i].typeId - expandituremenuvector.size() <= incomemenuvector.size()){
-                m_BillList[i].PayType = incomemenuvector[m_BillList[i].typeId];
+            if( m_BillList[i].typeId - GLOBALDATA::expandituremenuvector.size() <= GLOBALDATA::incomemenuvector.size()){
+                m_BillList[i].PayType = GLOBALDATA::incomemenuvector[m_BillList[i].typeId];
                 m_BillList[i].IconPath = QString(":/BillPage/image/Bill_Income_%1.jpg").arg(m_BillList[i].typeId);
             }
         }
         else if (m_BillList[i].InOrOut == InAndOutType::OutType){
-            if(m_BillList[i].typeId <= expandituremenuvector.size()){
-                m_BillList[i].PayType = expandituremenuvector[m_BillList[i].typeId-1];
+            if(m_BillList[i].typeId <= GLOBALDATA::expandituremenuvector.size()){
+                m_BillList[i].PayType = GLOBALDATA::expandituremenuvector[m_BillList[i].typeId-1];
                 m_BillList[i].IconPath = QString(":/BillPage/image/BillPage_Expand_%1.jpg").arg(m_BillList[i].typeId);
             }
         }
@@ -247,11 +248,6 @@ void DetailedSonPageInStackwidget::UpdateBillContent()
     getBilldata();                        //获取账单数据
     initTableview();                      //初始化账单表格内容
     initInAndOutKitContent();             //初始化收入支出控件内;
-}
-//通过日期排序账单信息
-bool DetailedSonPageInStackwidget::sortBillInfoByDate(const BillTableStruct & billfirst,const BillTableStruct & billsecond)
-{
-    return billfirst.date > billsecond.date;
 }
 //刷新账单详情界面
 void DetailedSonPageInStackwidget::UpdateBillDetailPage()

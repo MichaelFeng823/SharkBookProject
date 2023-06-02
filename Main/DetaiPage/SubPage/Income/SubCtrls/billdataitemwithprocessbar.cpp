@@ -90,6 +90,11 @@ void BillDataItemWithProcessBar::setDate(QDate date)
     //m_BillItemInfo.date = date;
     ui->label_Date->setText(QString("%1年%2月%3日").arg(date.year()).arg(date.month()).arg(date.day()));
 }
+//隐藏日期
+void BillDataItemWithProcessBar::hideDate()
+{
+     ui->label_Date->hide();
+}
 BillDataItemWithProcessBar::~BillDataItemWithProcessBar()
 {
     delete ui;

@@ -202,7 +202,7 @@ border:none;</string>
       <item row="1" column="0">
        <widget class="QStackedWidget" name="stackedWidget">
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="weekpage">
          <widget class="QWidget" name="weekdatarankwidget" native="true">
@@ -215,7 +215,8 @@ border:none;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(194, 194, 194);</string>
+           <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
           </property>
          </widget>
          <widget class="QWidget" name="weekchartwidget" native="true">
@@ -243,7 +244,8 @@ border:none;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(194, 194, 194);</string>
+           <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
           </property>
          </widget>
          <widget class="QWidget" name="monthchartwidget" native="true">
@@ -271,7 +273,8 @@ border:none;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(194, 194, 194);</string>
+           <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
           </property>
          </widget>
          <widget class="QWidget" name="yearchartwidget" native="true">

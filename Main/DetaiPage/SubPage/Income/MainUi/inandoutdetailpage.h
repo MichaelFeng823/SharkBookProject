@@ -70,10 +70,6 @@ private:
     double calculatePercent(double moneynum);   //计算占比比值
 
     void customSort();                       //自定义排序
-
-    static bool sortByMoney(const BillTableStruct & billfirst,const BillTableStruct & billsecond);                      //通过金额排序
-
-    static bool sortByTime(const BillTableStruct & billfirst,const BillTableStruct & billsecond);                       //通过时间排序
 private:
     Ui::InAndOutDetailPage *ui;
     QStandardItemModel * model;              //表格模型

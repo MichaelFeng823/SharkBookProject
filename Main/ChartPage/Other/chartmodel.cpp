@@ -22,23 +22,37 @@ void ChartModel::setId(int id)
         case ChartSelectType::month : {
             m_CurrentMonthNum = id;
             monthDataEndIndex = monthMap[m_CurrentMonthNum];
-//            if(m_CurrentMonthNum == QDate::currentDate().month()){
-//                monthDataEndIndex = QDate::currentDate().daysInMonth();
-//            }
             getdateByMonthNum();
         }
         case ChartSelectType::year : {
             m_CurrentYearNum = id;
-//            if(QDate::currentDate().year() == m_CurrentYearNum)
-//                yearDataEndIndex = QDate::currentDate().month();
         }
     }
     update();
 }
 //设置账单数据
-void ChartModel::setBillInfo(QList<BillTableStruct> info)
+void ChartModel::setBillInfo(QVector<BillTableStruct> info)
 {
+    billinfo.clear();
     billinfo = info;
+    switch (m_CurrentType){
+        case ChartSelectType::week :{
+            calculateWeekBill();
+            break;
+        }
+        case ChartSelectType::month : {
+            calculateMonthBill();
+            break;
+        }
+        case ChartSelectType::year : {
+            calculateYearBill();
+            break;
+        }
+    }
+}
+//刷新加载数据
+void ChartModel::updateLoadData()
+{
     switch (m_CurrentType){
         case ChartSelectType::week :{
             calculateWeekBill();
@@ -60,8 +74,9 @@ void ChartModel::calculateWeekBill()
     bindWeekData();                  //1.绑定筛选数据
     m_Max = getWeekMax();            //2.求出数据的MAX
     calculateWeekDotPosition();      //3.计算数据点对应的pos
+    calculateWeekTotalAndAverage();  //4.计算总数和平均值
     update();
-    sortWeekDotsTopThree();          //4.计算升序排序每个数据点中金额前三的数据
+    sortWeekDotsTopThree();          //5.计算升序排序每个数据点中金额前三的数据
 }
 //计算月账单
 void ChartModel::calculateMonthBill()
@@ -69,6 +84,7 @@ void ChartModel::calculateMonthBill()
     bindMonthData();
     m_Max = getMonthMax();
     calculateMonthDotPosition();
+    calculateMonthTotalAndAverage();
     update();
     sortMonthDotsTopThree();
 }
@@ -78,18 +94,24 @@ void ChartModel::calculateYearBill()
     bindYearData();
     m_Max = getYearMax();
     calculateYearDotPosition();
+    calculateYearTotalAndAverage();
     update();
     sortYearDotsTopThree();
 }
 //绑定周数据
 void ChartModel::bindWeekData()
 {
+    isHaveData = false;
     for(int i = 0; i < 7; i++){
         //1.先确定好每个点对应的数据结构中的id和日期
         week_dots[i].id = i+1;
         week_dots[i].date = m_WeekDate[i];
+        m_WeekData[i] = 0;
+        week_dots[i].isnotEmpty = false;
+        week_dots[i].message.clear();
         for(int j = 0; j < billinfo.size(); j++){
-            if(billinfo[j].date == m_WeekDate[i] && m_type == billinfo[j].typeId){
+            if(billinfo[j].date == m_WeekDate[i] && m_type == billinfo[j].InOrOut){
+                isHaveData = true;
                 //2.算出每天的金额总数
                 m_WeekData[i] += billinfo[j].moneyAmount;
                 week_dots[i].isnotEmpty = true;
@@ -107,17 +129,22 @@ void ChartModel::bindWeekData()
 //绑定月数据
 void ChartModel::bindMonthData()
 {
+    isHaveData = false;
     month_dots.clear();
+    int count = 0;
     for(int i = 0; i < monthDataEndIndex; i++){
         //1.先确定好每个点对应的数据结构中的id和日期
         DotData data;
         data.id = i+1;
+        m_MonthData[i] = 0;
         for(int j = 0; j < billinfo.size(); j++){
             if(billinfo[j].date.year() == QDate::currentDate().year() && billinfo[j].date.month() == m_CurrentMonthNum
-                    && m_type == billinfo[j].typeId && billinfo[j].date.daysInMonth() == i+1){
+                    && m_type == billinfo[j].InOrOut && billinfo[j].date.day() == i+1){
+                count++;
+                isHaveData = true;
                 //2.算出每天的金额总数
                 m_MonthData[i] += billinfo[j].moneyAmount;
-                month_dots[i].isnotEmpty = true;
+                data.isnotEmpty = true;
                 MaxThreeMessage message;
                 message.date = billinfo[j].date;
                 message.Amount = billinfo[j].moneyAmount;
@@ -129,16 +156,22 @@ void ChartModel::bindMonthData()
         }
         month_dots.append(data);
     }
+    LOG("count:%d -------------------------------------------------",count);
 }
 //绑定年数据
 void ChartModel::bindYearData()
 {
+    isHaveData = false;
     for(int i = 0; i < 12; i++){
         //1.先确定好每个点对应的数据结构中的id和日期
         year_dots[i].id = i+1;
+        m_YearData[i] = 0;
+        year_dots[i].isnotEmpty = false;
+        year_dots[i].message.clear();
         for(int j = 0; j < billinfo.size(); j++){
             if(billinfo[j].date.year() == m_CurrentYearNum && billinfo[j].date.month() == i+1
-                    && m_type == billinfo[j].typeId){
+                    && m_type == billinfo[j].InOrOut){
+                isHaveData = true;
                 //2.算出每月的金额总数
                 m_YearData[i] += billinfo[j].moneyAmount;
                 year_dots[i].isnotEmpty = true;
@@ -156,10 +189,10 @@ void ChartModel::bindYearData()
 //获取周Max
 float ChartModel::getWeekMax()
 {
-    int Max = 0;
+    int Max = 1;
     for(int i = 0; i < 7; i++){
-        if(m_WeekData[i] > m_Max)
-            m_Max = m_WeekData[i];
+        if(m_WeekData[i] > Max)
+            Max = m_WeekData[i];
     }
     //4.获取周数据的Max
     return Max;
@@ -167,20 +200,20 @@ float ChartModel::getWeekMax()
 //获取月Max
 float ChartModel::getMonthMax()
 {
-    int Max = 0;
+    int Max = 1;
     for(int i = 0; i < monthDataEndIndex; i++){
-        if(m_MonthData[i] > m_Max)
-            m_Max = m_MonthData[i];
+        if(m_MonthData[i] > Max)
+            Max = m_MonthData[i];
     }
     return Max;
 }
 //获取年Max
 float ChartModel::getYearMax()
 {
-    int Max = 0;
+    int Max = 1;
     for(int i = 0; i < 12; i++){
-        if(m_YearData[i] > m_Max)
-            m_Max = m_YearData[i];
+        if(m_YearData[i] > Max)
+            Max = m_YearData[i];
     }
     return Max;
 }
@@ -191,7 +224,9 @@ void ChartModel::calculateWeekDotPosition()
     for(int i = 0; i < 7; i++){
         week_dots[i].x = 30+40+ i*(length);
         week_dots[i].y = m_BottomPos - (m_height  * m_WeekData[i] / m_Max);
-        week_dots[i].y = m_BottomPos;
+        LOG("m_height:%d",m_height);
+        LOG("m_WeekData[i]:%s",QString::number(m_WeekData[i]).toStdString().c_str());
+        LOG("m_Max:%s",QString::number(m_Max).toStdString().c_str());
     }
 }
 //计算月数据点的坐标
@@ -201,7 +236,7 @@ void ChartModel::calculateMonthDotPosition()
     for(int i = 0; i < monthDataEndIndex; i++){
         month_dots[i].x = 30+14+ i*length;
         month_dots[i].y = m_BottomPos - m_height  * m_MonthData[i] / m_Max;
-        month_dots[i].y = m_BottomPos;
+        //month_dots[i].y = m_BottomPos;
     }
 }
 //计算年数据点的坐标
@@ -211,8 +246,35 @@ void ChartModel::calculateYearDotPosition()
     for(int i = 0; i < 12; i++){
         year_dots[i].x = 30+20+i*length;
         year_dots[i].y = m_BottomPos - m_height  * m_YearData[i] / m_Max;
-        year_dots[i].y = m_BottomPos;
+        //year_dots[i].y = m_BottomPos;
     }
+}
+//计算周总数和平均值
+void ChartModel::calculateWeekTotalAndAverage()
+{
+    m_Total = 0;
+    for(int i = 0; i < 7; i++){
+        m_Total += m_WeekData[i];
+    }
+    m_Average = m_Total / 7;
+}
+//计算月总数和平均值
+void ChartModel::calculateMonthTotalAndAverage()
+{
+     m_Total = 0;
+    for(int i = 0; i < monthDataEndIndex; i++){
+        m_Total += m_MonthData[i];
+    }
+    m_Average = m_Total / monthDataEndIndex;
+}
+//计算年总数和平均值
+void ChartModel::calculateYearTotalAndAverage()
+{
+    m_Total = 0;
+    for(int i = 0; i < 12; i++){
+        m_Total += m_YearData[i];
+    }
+    m_Average = m_Total / 12;
 }
 //排序每日周数据前三
 void ChartModel::sortWeekDotsTopThree()
@@ -310,10 +372,15 @@ void ChartModel::drawTextNum(QPainter * painter)
     painter->setFont(ft);
     painter->setPen(QPen(QColor(114,114,114)));
     painter->save();
-    QString str1 = QString("总支出:%1").arg(m_Total);
-    QString str2 = QString("平均值:%2").arg(m_Average);
+    QString type;
+    m_type == InOrOut::Expand ? type = "总支出": type = "总收入";
+    QString str1 = QString("%1: %2").arg(type).arg(QString::number(m_Total,'f',2));
+    QString str2 = QString("平均值: %1").arg(QString::number(m_Average,'f',2));
+    QString str3 = QString::number(m_Max,'f',2);
     painter->drawText(30,height()/12,str1);
     painter->drawText(30,height()/12*2.2,str2);
+    if(isHaveData)
+        painter->drawText(width()-140,m_TopPos-20,str3);
     painter->restore();
 }
 //画线
@@ -326,7 +393,8 @@ void ChartModel::drawLine(QPainter * painter)
 
     painter->setPen(QPen(QColor(0,0,0)));
     painter->save();
-    painter->drawLine(topline);
+    if(isHaveData)
+        painter->drawLine(topline);
     painter->drawLine(bottomLine);
     painter->restore();
 }

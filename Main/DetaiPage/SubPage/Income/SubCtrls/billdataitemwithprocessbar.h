@@ -29,6 +29,8 @@ public:
 
     void setDate(QDate date);                             //设置日期
 
+    void hideDate();                                      //隐藏日期
+
     void setBillNo(int billno){m_BillItemInfo.billNo = billno;} //设置BillNo
 
     void setBillRemark(QString str){m_BillItemInfo.remarks = str;}                            //设置账单备注

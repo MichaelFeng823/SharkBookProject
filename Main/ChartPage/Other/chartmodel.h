@@ -24,7 +24,9 @@ public:
     ChartModel(ChartSelectType type,QWidget * parent = nullptr);
 public:
     void setId(int id);
-    void setBillInfo(QList<BillTableStruct> info);
+    void setBillInfo(QVector<BillTableStruct> info);
+    void setInOrOutType(InOrOut type){m_type = type;};
+    void updateLoadData();
 private:
     struct MaxThreeMessage
     {
@@ -80,6 +82,9 @@ private:
     void sortYearDotsTopThree();    //排序每日年数据前三
     void sortMaxThreeMessage(DotData & dot); //将每个数据点中的消费数据按金额排升序
     static bool customsort(MaxThreeMessage previous,MaxThreeMessage next);   //自定义排序
+    void calculateWeekTotalAndAverage();  //计算周总数和平均值
+    void calculateMonthTotalAndAverage(); //计算周总数和平均值
+    void calculateYearTotalAndAverage();  //计算周总数和平均值
 private:
     ChartSelectType m_CurrentType;  //当前类型
     InOrOut m_type = InOrOut::Expand; //当前类型
@@ -88,12 +93,13 @@ private:
     int m_CurrentYearNum;           //当前年数
     QLineF topline;                 //顶部横线
     QLineF bottomLine;              //底部横线
-    int m_Total = 0;                //总支出/总收入
-    int m_Average = 0;              //平均值
+    float m_Total = 0;                //总支出/总收入
+    float m_Average = 0;              //平均值
     float m_Max = 0;                //金额最大值
     int m_TopPos = 0;               //
     int m_BottomPos = 0;            //
     int m_height = 0;               //
+    bool isHaveData = false;        //是否有数据
 
     QString m_WeekCoordinate[7];    //周数据坐标容器[3-21,3-22,3-23,3-24,3-25,3-26]
     QDate m_WeekDate[7];                //周日期数据容器
@@ -109,7 +115,7 @@ private:
     DotData week_dots[7];           //周数据数组
     QList<DotData> month_dots;      //月数据数组
     DotData year_dots[12];          //年数据数组
-    QList<BillTableStruct> billinfo;//账单数据
+    QVector<BillTableStruct> billinfo;//账单数据
     //-------------------------------------------------------------------------------------------------------//
     float m_WeekData[7] = {0};      //周数据容器
     float m_MonthData[31] = {0};    //月数据容器

@@ -7,6 +7,7 @@
 #include <algorithm>
 #include "Main/DetaiPage/SubPage/Income/SubPage/billdetailitemeditsubpage.h"
 using namespace  ScreenFunc;
+using namespace  PublicSort;
 
 InAndOutDetailPage::InAndOutDetailPage(QVector<BillTableStruct> BillList,QDate date,double num,InAndOutType inandouttype,QWidget *parent) :
     QWidget(parent),
@@ -107,22 +108,11 @@ void InAndOutDetailPage::setTitleName(InAndOutType type)
 void InAndOutDetailPage::customSort()
 {
     if(m_sorttype == SortType::sortByMoney){
-        std::sort(m_BillList.begin(),m_BillList.end(),InAndOutDetailPage::sortByMoney);
+        std::sort(m_BillList.begin(),m_BillList.end(),PublicSort::sortByMoney);
     }
     else if(m_sorttype == SortType::sortByTime){
-        std::sort(m_BillList.begin(),m_BillList.end(),InAndOutDetailPage::sortByTime);
+        std::sort(m_BillList.begin(),m_BillList.end(),PublicSort::sortByTime);
     }
-}
- //通过金额排序
-bool InAndOutDetailPage::sortByMoney(const BillTableStruct & billfirst,const BillTableStruct & billsecond)
-{
-    return billfirst.moneyAmount > billsecond.moneyAmount;
-}
-
-//通过时间排序
-bool InAndOutDetailPage::sortByTime(const BillTableStruct & billfirst,const BillTableStruct & billsecond)
-{
-    return billfirst.date > billsecond.date;
 }
 //去除不同类型的数据
 void InAndOutDetailPage::removeDifferentFromInAndOutType()

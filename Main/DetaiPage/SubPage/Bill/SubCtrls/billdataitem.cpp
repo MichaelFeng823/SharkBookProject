@@ -60,8 +60,8 @@ void BillDataItem::buildUiLayout()
     outterLayout.addWidget(detailWidget,1,0);
     outterLayout.setSpacing(0);
     outterLayout.setMargin(0);
-    outterLayout.setRowStretch(0,4);
-    outterLayout.setRowStretch(1,6);
+    outterLayout.setRowStretch(0,3);
+    outterLayout.setRowStretch(1,7);
 
     //构建完成
     this->setLayout(&outterLayout);
@@ -70,8 +70,8 @@ void BillDataItem::buildUiLayout()
 void BillDataItem::buildUiStyle()
 {
     //设置Title部分样式
-    m_labelPayDate->setStyleSheet("color:rgb(140,140,140);font-size:12pt;");
-    m_labelPayNum->setStyleSheet("color:rgb(140,140,140);font-size:12pt;padding-right:30px");
+    m_labelPayDate->setStyleSheet("color:rgb(140,140,140);font-size:12pt;padding-left:40px;");
+    m_labelPayNum->setStyleSheet("color:rgb(140,140,140);font-size:12pt;padding-right:30px;");
     titleWidget->setStyleSheet("QWidget{background:rgb(255,255,255);border-bottom:1px ;border-color: rgba(140,140,140,120);border-style: solid;}");
     //设置下面部分样式
     IconLabel->setStyleSheet("border-image: url(:/PayTypeIcon/image/EatTypeIcon.jpg);");

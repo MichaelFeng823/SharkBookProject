@@ -191,50 +191,48 @@ namespace DataQuery {
                 billtable.typeId = type;
                 billtable.InOrOut = inorout;
                 billList.append(billtable);
-                LOG("get bill data!");
-                LOG("queryCounts:%d",queryCounts);
             }
         }
         LOG("queryCounts:%d",queryCounts);
         LOG("the sql is:%s",sql.toStdString().c_str());
         return queryCounts;
     }
-
-//    inline int billQueryofWeek(QSqlQuery & query,int UserId,QDate currentdate,int weeknum,QVector<BillTableStruct> & billList){
-//        billList.clear();
-//        int queryCounts = 0;
-//        QString sql = QString("select * from BillTable where UserId = %1 and Year = %2 and Month = %3;").arg(UserId).arg(currentdate.year()).arg(month);
-//        query.prepare(sql);
-//        if(!query.exec()){
-//            LOG("File:%sLine:%d",__FILE__,__LINE__);
-//            LOG("billQueryofMonth Error:query.exec() = False");
-//            LOG("the sql is:%s",sql.toStdString().c_str());
-//        }
-//        else{
-//            while(query.next()){
-//                queryCounts++;
-//                BillTableStruct billtable;
-//                billtable.billNo = query.value("BillNo").toInt();
-//                int year = query.value("Year").toInt();
-//                int month = query.value("Month").toInt();
-//                int day = query.value("Day").toInt();
-//                int type = query.value("TypeId").toInt();
-//                int inorout = query.value("InOrOut").toInt();
-//                billtable.date.setDate(year,month,day);
-//                billtable.moneyAmount = query.value("MoneyAmount").toDouble();
-//                billtable.remarks = query.value("Remark").toString();
-//                billtable.userId = query.value("UserId").toInt();
-//                billtable.typeId = type;
-//                billtable.InOrOut = inorout;
-//                billList.append(billtable);
-//                LOG("get bill data!");
-//                LOG("queryCounts:%d",queryCounts);
-//            }
-//        }
-//        LOG("queryCounts:%d",queryCounts);
-//        LOG("the sql is:%s",sql.toStdString().c_str());
-//        return queryCounts;
-//    }
+    inline int billQueryofWeek(QSqlQuery & query,int UserId,QVector<QDate> datelist,QVector<BillTableStruct> & billList){
+        billList.clear();
+        int queryCounts = 0;
+        for(int i = 0; i < datelist.size(); i++){
+            QString sql = QString("select * from BillTable where UserId = %1 and Year = %2 and Month = %3 and Day = %4").arg(UserId)
+                    .arg(datelist[i].year()).arg(datelist[i].month()).arg(datelist[i].day());
+            query.prepare(sql);
+            if(!query.exec()){
+                LOG("File:%sLine:%d",__FILE__,__LINE__);
+                LOG("billQueryofMonth Error:query.exec() = False");
+                LOG("the sql is:%s",sql.toStdString().c_str());
+            }
+            else{
+                while(query.next()){
+                    queryCounts++;
+                    BillTableStruct billtable;
+                    billtable.billNo = query.value("BillNo").toInt();
+                    int year = query.value("Year").toInt();
+                    int month = query.value("Month").toInt();
+                    int day = query.value("Day").toInt();
+                    int type = query.value("TypeId").toInt();
+                    int inorout = query.value("InOrOut").toInt();
+                    billtable.date.setDate(year,month,day);
+                    billtable.moneyAmount = query.value("MoneyAmount").toDouble();
+                    billtable.remarks = query.value("Remark").toString();
+                    billtable.userId = query.value("UserId").toInt();
+                    billtable.typeId = type;
+                    billtable.InOrOut = inorout;
+                    billList.append(billtable);
+                }
+            }
+            LOG("the sql is:%s",sql.toStdString().c_str());
+        }
+        LOG("queryCounts:%d",queryCounts);
+        return queryCounts;
+    }
 
     //通讯录数据查询
     inline int mailQurey(QSqlQuery & query,int UserId,QVector<MailTableStruct> & mailList)
@@ -601,6 +599,19 @@ namespace ReadWriteIni {
                config.endGroup();
                return true;
            }
+    }
+}
+
+namespace PublicSort{
+    //通过金额排序
+    inline static bool sortByMoney(const BillTableStruct & billfirst,const BillTableStruct & billsecond)
+    {
+         return billfirst.moneyAmount > billsecond.moneyAmount;
+    }
+    //通过时间排序
+    inline static bool sortByTime(const BillTableStruct & billfirst,const BillTableStruct & billsecond)
+    {
+        return billfirst.date > billsecond.date;
     }
 }
 
