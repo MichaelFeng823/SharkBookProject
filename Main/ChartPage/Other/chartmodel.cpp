@@ -1,6 +1,8 @@
 #include "chartmodel.h"
 #include "Controler/PublicApi/PublicDbFunc.h"
 #include <QResizeEvent>
+
+
 using namespace  ScreenFunc;
 
 ChartModel::ChartModel(ChartSelectType type,QWidget * parent):m_CurrentType(type)
@@ -10,6 +12,7 @@ ChartModel::ChartModel(ChartSelectType type,QWidget * parent):m_CurrentType(type
     initMonthMap();
     initOther();
     update();
+    this->installEventFilter(this);
 }
 //设置 周数 / 月数 / 年数
 void ChartModel::setId(int id)
@@ -602,4 +605,64 @@ void ChartModel::initOther()
 {
     brushGroup[0] = QBrush(QColor(255,255,255));
     brushGroup[1] = QBrush(QColor(249,219,97));
+}
+//事件过滤器
+bool ChartModel::eventFilter(QObject *obj, QEvent *event)
+{
+    QMouseEvent * mouseevent = dynamic_cast<QMouseEvent*>(event);
+    if(event->type() == QMouseEvent::MouseButtonPress){
+        if(mouseevent->button() == Qt::LeftButton){
+            if(dotwindow != nullptr){
+                dotwindow->close();
+                delete dotwindow;
+            }
+            judgmentPointPosition(mouseevent->pos());
+            dotwindow = new DotDetailDataWindow(DataState::HaveData,this);
+            dotwindow->setParent(this);
+            dotwindow->move(mouseevent->pos().x()-dotwindow->width()/2,mouseevent->pos().y());
+            dotwindow->raise();
+            dotwindow->show();
+        }
+
+    }else if(event->type() == QMouseEvent::MouseButtonRelease){
+        if(mouseevent->button() == Qt::LeftButton){
+            dotwindow->startTimer();
+        }
+    }
+     return QWidget::eventFilter(obj, event);
+}
+//判断点的位置
+void ChartModel::judgmentPointPosition(QPoint pos)
+{
+    switch (m_CurrentType){
+        case ChartSelectType::week :{
+           judgmentPointInWeekPosition(pos);
+           break;
+        }
+        case ChartSelectType::month : {
+           judgmentPointInMonthPosition(pos);
+           break;
+        }
+        case ChartSelectType::year : {
+           judgmentPointInYearPosition(pos);
+           break;
+        }
+    }
+}
+//判断点的在周的位置
+void ChartModel::judgmentPointInWeekPosition(QPoint pos)
+{
+
+
+}
+//判断点的在月的位置
+void ChartModel::judgmentPointInMonthPosition(QPoint pos)
+{
+
+}
+//判断点的在年的位置
+void ChartModel::judgmentPointInYearPosition(QPoint pos)
+{
+
+
 }

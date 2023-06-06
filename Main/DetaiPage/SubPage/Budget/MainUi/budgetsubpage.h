@@ -37,6 +37,7 @@ public slots:
     void onRecieveMenuRequest(bool);                    //收到打开菜单请求
     void onAddBudgetClicked();                          //点击添加预算槽函数
     void onRecieveBudgetBySet(TypeBudget,double);       //收到设置预算数据槽函数
+    void onReceiveModifyBudgetRequest(TypeBudget); //当收到修改预算请求时的槽函数
 
 protected:
     void CheckBeforeOpen();                             //打开页面前检测打开的该类型是否为空

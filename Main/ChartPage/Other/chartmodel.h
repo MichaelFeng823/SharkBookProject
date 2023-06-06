@@ -6,6 +6,8 @@
 #include <QMap>
 #include <QPainter>
 #include <QBrush>
+#include <QPointer>
+#include "Main/ChartPage/Other/dotdetaildatawindow.h"
 
 ///****************************************************************************
 /// @author  : MichaelFeng
@@ -85,6 +87,14 @@ private:
     void calculateWeekTotalAndAverage();  //计算周总数和平均值
     void calculateMonthTotalAndAverage(); //计算周总数和平均值
     void calculateYearTotalAndAverage();  //计算周总数和平均值
+
+    bool eventFilter(QObject *obj, QEvent *event) override;   //事件过滤器
+    void judgmentPointPosition(QPoint pos);                   //判断点的位置
+    void judgmentPointInWeekPosition(QPoint pos);             //判断点的在周的位置
+    void judgmentPointInMonthPosition(QPoint pos);            //判断点的在月的位置
+    void judgmentPointInYearPosition(QPoint pos);             //判断点的在年的位置
+private:
+    DotDetailDataWindow * dotwindow = nullptr;
 private:
     ChartSelectType m_CurrentType;  //当前类型
     InOrOut m_type = InOrOut::Expand; //当前类型

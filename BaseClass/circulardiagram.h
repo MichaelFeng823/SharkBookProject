@@ -20,7 +20,7 @@ enum CircleDirection
     anticlockwise           //逆时针
 };
 const int ACYCLE = 360*16;
-const int ANIMATIONTIME = 500;
+const int ANIMATIONTIME = 800;
 class CircularDiagram : public QWidget
 {
     Q_OBJECT
@@ -94,6 +94,7 @@ private:
     double m_FreedPercent;            //剩余占比
     int m_StartAnglePosition = 90*16; //开始的位置
     int m_EndAnglePosition;           //停止的位置
+    bool m_IsSurplus = true;          //是否有剩余
 
     CircleDirection m_Direction = CircleDirection::clockwise;      //方向
 };

@@ -22,6 +22,7 @@ protected:
     void setTypeBudget(TypeBudget type){m_TypeBudget = type;};
 
 private:
+    void paintEvent(QPaintEvent *event) override;  //重写绘画事件
     bool eventFilter(QObject *obj, QEvent *event); //事件过滤器
     void ckeckBudgetType();                        //检查预算类型
 

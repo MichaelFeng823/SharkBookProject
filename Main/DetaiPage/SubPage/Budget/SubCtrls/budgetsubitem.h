@@ -35,11 +35,18 @@ public:
     void setBudgetData(int id,double budget,double expand);
 
     void updateData();                   //更换数据显示
+
+signals:
+    void requestModify(TypeBudget);            //请求修改
+
+
 protected:
     void calculatePercent();             //计算百分比
     void checkBudgetType();              //检测预算类型
     void initMonthBudgetStyle();         //初始化月预算风格样式
     void initYearBudgetStyle();          //初始化年预算风格样式
+private:
+    bool eventFilter(QObject *obj, QEvent *event) override;   //事件过滤器
 private:
     Ui::BudgetSubItem *ui;
 

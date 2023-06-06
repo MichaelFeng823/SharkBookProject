@@ -39,6 +39,7 @@ SOURCES += \
     Main/ChartPage/MainUi/chartmaininterface.cpp \
     Main/ChartPage/Other/chartmasksubpage.cpp \
     Main/ChartPage/Other/chartmodel.cpp \
+    Main/ChartPage/Other/dotdetaildatawindow.cpp \
     Main/ChartPage/Other/selectscrollbar.cpp \
     Main/DetaiPage/MainUi/SubCtrls/calendarkit.cpp \
     Main/DetaiPage/MainUi/SubCtrls/inandoutkit.cpp \
@@ -48,6 +49,7 @@ SOURCES += \
     Main/DetaiPage/SubPage/Bill/billsubarea.cpp \
     Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.cpp \
     Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.cpp \
+    Main/DetaiPage/SubPage/Budget/SubCtrls/modifybudgetmask.cpp \
     Main/DetaiPage/SubPage/Budget/addbudgetpane.cpp \
     Main/DetaiPage/SubPage/Budget/budgetmasksubpage.cpp \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.cpp \
@@ -90,6 +92,7 @@ HEADERS += \
     Main/ChartPage/MainUi/chartmaininterface.h \
     Main/ChartPage/Other/chartmasksubpage.h \
     Main/ChartPage/Other/chartmodel.h \
+    Main/ChartPage/Other/dotdetaildatawindow.h \
     Main/ChartPage/Other/selectscrollbar.h \
     Main/DetaiPage/MainUi/SubCtrls/calendarkit.h \
     Main/DetaiPage/MainUi/SubCtrls/inandoutkit.h \
@@ -99,6 +102,7 @@ HEADERS += \
     Main/DetaiPage/SubPage/Bill/billsubarea.h \
     Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.h \
     Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.h \
+    Main/DetaiPage/SubPage/Budget/SubCtrls/modifybudgetmask.h \
     Main/DetaiPage/SubPage/Budget/addbudgetpane.h \
     Main/DetaiPage/SubPage/Budget/budgetmasksubpage.h \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.h \
@@ -128,6 +132,7 @@ FORMS += \
     Main/DetaiPage/SubPage/Bill/billsubarea.ui \
     Main/DetaiPage/SubPage/Budget/MainUi/budgetsubpage.ui \
     Main/DetaiPage/SubPage/Budget/SubCtrls/budgetsubitem.ui \
+    Main/DetaiPage/SubPage/Budget/SubCtrls/modifybudgetmask.ui \
     Main/DetaiPage/SubPage/Budget/addbudgetpane.ui \
     Main/DetaiPage/SubPage/Budget/budgetmasksubpage.ui \
     Main/DetaiPage/SubPage/Income/MainUi/inandoutdetailpage.ui \

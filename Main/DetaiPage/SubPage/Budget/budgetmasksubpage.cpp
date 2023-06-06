@@ -11,14 +11,23 @@ BudgetMaskSubpage::BudgetMaskSubpage(TypeBudget typebudget,QWidget *parent):
     ui(new Ui::BudgetMaskSubpage)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::FramelessWindowHint);
+    this->setAttribute(Qt::WA_TranslucentBackground);
     ui->widget_AnuallyBudget->installEventFilter(this);
     ui->widget_MonthlyBudget->installEventFilter(this);
-    this->setFixedSize(getScreenSize().width(),300);
+    this->setFixedSize(getScreenSize().width(),getScreenSize().height() * 0.95);
     ckeckBudgetType();
 }
 BudgetMaskSubpage::~BudgetMaskSubpage()
 {
     delete ui;
+}
+//重写绘画事件
+void BudgetMaskSubpage::paintEvent(QPaintEvent *event)
+{
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    painter.fillRect(this->rect(),QColor(0,0,0,125));
 }
 //事件过滤器
 bool BudgetMaskSubpage::eventFilter(QObject *obj, QEvent *event)

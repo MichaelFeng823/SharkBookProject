@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>429</width>
-    <height>149</height>
+    <height>409</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -20,7 +20,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgba(255, 255, 255,0);</string>
+   <string notr="true">background-color: rgba(255, 255, 255);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
@@ -41,9 +41,9 @@
    <item row="0" column="0">
     <widget class="QWidget" name="backgroundwidget" native="true">
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(0, 0, 0,0);</string>
+      <string notr="true">background-color: rgba(0,0,0,0);</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,8">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -61,18 +61,24 @@
       </property>
       <item>
        <widget class="QWidget" name="widget_MonthlyBudget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">#widget_MonthlyBudget
 {
 	border-bottom:1px ;
 	border-color: rgba(140,140,140,120);
 	border-style: solid;
-	background-color: rgb(217, 217, 217);
+	background-color: rgb(255, 255, 255);
 	color:rgb(0,0,0);
 }
 QLabel
 {
-	background-color: rgb(217, 217, 217);
+	background-color: rgb(255, 255, 255);
 	color:rgb(0,0,0);	
 }
 
@@ -124,8 +130,14 @@ QLabel
       </item>
       <item>
        <widget class="QWidget" name="widget_AnuallyBudget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>150</height>
+         </size>
+        </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(217, 217, 217);
+         <string notr="true">background-color: rgb(255, 255, 255);
 color:rgb(0,0,0);
 </string>
         </property>
@@ -171,6 +183,19 @@ color:rgb(0,0,0);
          </item>
         </layout>
        </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>300</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>

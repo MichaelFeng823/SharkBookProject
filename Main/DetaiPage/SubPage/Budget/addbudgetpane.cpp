@@ -1,6 +1,7 @@
 #include "addbudgetpane.h"
 #include "ui_addbudgetpane.h"
 #include "Controler/PublicApi/PublicDbFunc.h"
+#include <QPainter>
 
 using namespace ScreenFunc;
 AddBudgetPane::AddBudgetPane(TypeBudget type,QWidget *parent) :
@@ -8,21 +9,26 @@ AddBudgetPane::AddBudgetPane(TypeBudget type,QWidget *parent) :
     ui(new Ui::AddBudgetPane),m_TypeBudget(type)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::FramelessWindowHint);
+    this->setAttribute(Qt::WA_TranslucentBackground);
+    //this->setWindowFlag(Qt::Popup);
     ui->lineEdit->installEventFilter(this);
     ui->label_close->installEventFilter(this);
     ui->pushButton_Ok->setEnabled(false);
-    this->setWindowFlag(Qt::Popup);
-    this->setFixedSize(parent->width(),parent->height() * 0.5);
-    this->move(0,parent->height() * 0.5);
     checkTypeBudget();
     initSlots();
-    this->raise();
-    this->show();
 }
 
 AddBudgetPane::~AddBudgetPane()
 {
     delete ui;
+}
+//重写绘画事件
+void AddBudgetPane::paintEvent(QPaintEvent *event)
+{
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::HighQualityAntialiasing);
+    painter.fillRect(this->rect(),QColor(0,0,0,125));
 }
 //检验当前预算类型
 void AddBudgetPane::checkTypeBudget()

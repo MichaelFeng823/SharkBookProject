@@ -29,6 +29,7 @@ void CircularDiagram::initFontStyle()
 void CircularDiagram::initAnimation()
 {
     animation = new QPropertyAnimation(this,"m_FreedPercent");
+    animation->setEasingCurve(QEasingCurve::OutExpo);
     animation->setDuration(ANIMATIONTIME);
     animation->setStartValue(0.0);
     connect(animation, SIGNAL(valueChanged(const QVariant&)), this, SLOT(update()));
@@ -36,20 +37,27 @@ void CircularDiagram::initAnimation()
 //设置动画终点值
 void CircularDiagram::setAnimationEndValue(double value)
 {
-    if(animation == nullptr){
-        initAnimation();}
-    this->setCenterText(QString("剩余"));
-    animation->setEndValue(value);
+    double realValue = 0;
+    if(value >= 0){
+        m_IsSurplus = true;
+        realValue = value;
+        this->setCenterText(QString("剩余"));
+    }else{
+        m_IsSurplus = false;
+    }
+    if(animation == nullptr)
+        initAnimation();
+    animation->setEndValue(realValue);
     animation->start(QAbstractAnimation::KeepWhenStopped);
 }
 void CircularDiagram::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    this->setNum(QString::number(getFreedPercent()*100)+"%");
-    LOG("getFreedPercent:%s",QString::number(getFreedPercent()*100).toStdString().c_str());
-    painter.setRenderHint(QPainter::Antialiasing,true);
+    this->setNum(QString::number(getFreedPercent()*100,'f',1)+"%");
+    //LOG("getFreedPercent:%s",QString::number(getFreedPercent()*100).toStdString().c_str());
+    painter.setRenderHint(QPainter::HighQualityAntialiasing,true);
     int side = qMin(width(),height());
-    LOG("Width:%d,Height:%d",width(),height());
+    //LOG("Width:%d,Height:%d",width(),height());
     painter.translate(width()/2,height()/2);
     painter.scale(side/2/getOutterRadius(),side/2/getOutterRadius());
     drawCircle(&painter);
@@ -60,7 +68,7 @@ void CircularDiagram::resizeEvent(QResizeEvent *event)
 {
     this->resize(event->size());
     int outterRadius = qMin(width(),height())/2;
-    LOG("outterRadius:%d",outterRadius);
+    //LOG("outterRadius:%d",outterRadius);
     this->setOutterRadius(outterRadius);
     this->setInnerRadius(outterRadius-30);
 }
@@ -77,7 +85,7 @@ void CircularDiagram::drawInnerCircle(QPainter * painter)
     painter->drawEllipse(QPoint(0,0),getInnerRadius(),getInnerRadius());
     painter->save();
     painter->restore();
-    LOG("画中间内圆");
+    //LOG("画中间内圆");
 }
 void CircularDiagram::drawFreesRing(QPainter * painter)
 {
@@ -90,7 +98,7 @@ void CircularDiagram::drawFreesRing(QPainter * painter)
     painter->drawArc(QRect(-getInnerRadius()-getRingWidth()/2,-getInnerRadius()-getRingWidth()/2,getInnerRadius()*2+getRingWidth(),getInnerRadius()*2+getRingWidth()),m_StartAnglePosition,m_EndAnglePosition);
     painter->save();
     painter->restore();
-    LOG("画剩余圆");
+    //LOG("画剩余圆");
 }
 void CircularDiagram::drawUsedRing(QPainter * painter)
 {
@@ -99,16 +107,22 @@ void CircularDiagram::drawUsedRing(QPainter * painter)
     painter->save();
     painter->drawEllipse(QPoint(0,0),getOutterRadius(),getOutterRadius());
     painter->restore();
-    LOG("画已用圆环");
+    //LOG("画已用圆环");
 }
 void CircularDiagram::drawText(QPainter * painter)
 {
+    QRect rect = QRect(-getInnerRadius(),-15-getInnerRadius()/4,getInnerRadius()*2,m_TextFont.pixelSize());
+    if(!m_IsSurplus){
+        setTextColor(QColor(255,100,100));
+        setCenterText("已超支");
+        rect = QRect(-getInnerRadius(),-10-m_TextFont.pixelSize()/2,getInnerRadius()*2,getInnerRadius()/2);
+    }
     painter->setFont(m_TextFont);
     painter->setPen(m_textColor);
     painter->save();
-    painter->drawText(QRect(-getInnerRadius(),-10-getInnerRadius()/4,getInnerRadius()*2,getInnerRadius()/3),Qt::AlignCenter,m_Text);
+    painter->drawText(rect,Qt::AlignCenter,m_Text);
     painter->restore();
-    LOG("绘制文本");
+    //LOG("绘制文本");
 
 }
 void CircularDiagram::drawNum(QPainter * painter)
@@ -116,7 +130,8 @@ void CircularDiagram::drawNum(QPainter * painter)
     painter->setFont(m_NumFont);
     painter->setPen(m_numColor);
     painter->save();
-    painter->drawText(QRect(-getInnerRadius(),10,getInnerRadius()*2,getInnerRadius()/3),Qt::AlignCenter,m_Num);
+    if(m_IsSurplus)
+         painter->drawText(QRect(-getInnerRadius(),15,getInnerRadius()*2,getInnerRadius()/3),Qt::AlignCenter,m_Num);
     painter->restore();
 }
 

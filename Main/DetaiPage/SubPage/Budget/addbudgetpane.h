@@ -39,7 +39,7 @@ signals:
 
 private:
     bool eventFilter(QObject *obj, QEvent *event); //事件过滤器
-
+    void paintEvent(QPaintEvent *event) override;  //重写绘画事件
 private:
     Ui::AddBudgetPane *ui;
     TypeBudget m_TypeBudget;        //当前类型

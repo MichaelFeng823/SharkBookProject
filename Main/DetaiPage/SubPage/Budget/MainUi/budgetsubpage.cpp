@@ -5,6 +5,7 @@
 #include "Kit/LogInfo/clog.h"
 #include "Main/DetaiPage/SubPage/Budget/addbudgetpane.h"
 #include "Controler/PublicApi/PublicDbFunc.h"
+#include "Main/DetaiPage/SubPage/Budget/SubCtrls/modifybudgetmask.h"
 
 
 using namespace ScreenFunc;
@@ -24,11 +25,11 @@ BudGetSubPage::BudGetSubPage(QWidget *parent) :
     initDateIdContent();
     initMap();
     setTitleByBudgetType();
-    CheckBeforeOpen();
     ui->widget_AnnualTypeBudget->setVisible(false);
     ui->widget_MonthlyTypeBudget->setVisible(false);
     this->raise();
     this->show();
+    CheckBeforeOpen();
 }
 
 BudGetSubPage::~BudGetSubPage()
@@ -154,8 +155,12 @@ void BudGetSubPage::showAnnualBudgetWidget()
 void BudGetSubPage::openAddBudgetPane()
 {
     LOG("打开添加预算界面");
-    QPointer<AddBudgetPane> pointer;
-    pointer = new AddBudgetPane(m_TypeBudget,this);
+    QPointer<AddBudgetPane> pointer = new AddBudgetPane(m_TypeBudget,this);
+    pointer->setParent(this);
+    pointer->setFixedSize(this->width(),this->height());
+    pointer->move(0,0);
+    pointer->raise();
+    pointer->show();
     connect(pointer,&AddBudgetPane::sendSetBudgetData,this,&BudGetSubPage::onRecieveBudgetBySet);
 
 }
@@ -197,6 +202,7 @@ void BudGetSubPage::initTableViewContent(DetialTableview * tableview,int rowcoun
        tableview->setRowHeight(i,430);
        QModelIndex index = model->index(i,0);
        QPointer<BudgetSubItem> item = new BudgetSubItem(m_TypeBudget);
+       connect(item,&BudgetSubItem::requestModify,this,&BudGetSubPage::onReceiveModifyBudgetRequest);
        item->setBudgetData(m_DateId[int(m_TypeBudget)],m_Budget[(int)m_TypeBudget],m_Expand[int(m_TypeBudget)]);
        tableview->setIndexWidget(index,item);
        m_BudgetItemMap[m_TypeBudget].append(item);
@@ -302,6 +308,16 @@ void BudGetSubPage::onRecieveBudgetBySet(TypeBudget type,double data)
     m_Budget[(int)type] = data;
     CheckBeforeOpen();
     LOG("onRecieveBudgetBySet:%s",QString::number(data).toStdString().c_str());
+}
+//当收到修改预算请求时的槽函数
+void BudGetSubPage::onReceiveModifyBudgetRequest(TypeBudget type)
+{
+    QPointer<ModifyBudgetMask> pointer = new ModifyBudgetMask(type,this);
+    pointer->setParent(this);
+    pointer->setFixedSize(this->width(),this->height());
+    pointer->move(0,0);
+    pointer->raise();
+    pointer->show();
 }
 
 

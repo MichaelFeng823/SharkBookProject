@@ -1,6 +1,7 @@
 #include "budgetsubitem.h"
 #include "ui_budgetsubitem.h"
 #include "Kit/LogInfo/clog.h"
+#include <QMouseEvent>
 
 BudgetSubItem::BudgetSubItem(QWidget *parent) :
     QWidget(parent),
@@ -8,12 +9,13 @@ BudgetSubItem::BudgetSubItem(QWidget *parent) :
 {
     ui->setupUi(this);
 }
-
 BudgetSubItem::BudgetSubItem(TypeBudget type,QWidget *parent):
     QWidget(parent),
     ui(new Ui::BudgetSubItem),m_BudgetType(type)
 {
     ui->setupUi(this);
+    this->installEventFilter(this);
+    ui->EditButton->installEventFilter(this);
 }
 BudgetSubItem::~BudgetSubItem()
 {
@@ -41,12 +43,8 @@ void BudgetSubItem::updateData()
 //计算百分比
 void BudgetSubItem::calculatePercent()
 {
-    if(m_CurrentBudget < m_CurrentExpand){
-        setFreedPercent(0);
-        return;
-    }
     if(m_CurrentBudget <= 0){
-         setFreedPercent(0);
+         setFreedPercent(-1);
          return;
     }
     setCurrentRemainBudget(m_CurrentBudget - m_CurrentExpand);
@@ -73,4 +71,19 @@ void BudgetSubItem::initYearBudgetStyle()
     ui->MainTitle->setText(QString("%1年总预算").arg(m_CurrentId));
     ui->labeltext_CurrentBudget->setText(QString("本年预算"));
     ui->labeltext_CurrentExpand->setText(QString("本年支出"));
+}
+//事件过滤器
+bool BudgetSubItem::eventFilter(QObject *obj, QEvent *event)
+{
+    QMouseEvent * mouseevent = dynamic_cast<QMouseEvent*>(event);
+    if(event->type() == QMouseEvent::MouseButtonPress){
+        if(mouseevent->button() == Qt::LeftButton){
+        }
+
+    }else if(event->type() == QMouseEvent::MouseButtonRelease){
+        if(mouseevent->button() == Qt::LeftButton){
+            emit requestModify(m_BudgetType);
+        }
+    }
+    return QWidget::eventFilter(obj, event);
 }
