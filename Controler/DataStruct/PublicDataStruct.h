@@ -33,6 +33,25 @@ enum ChartSelectType
     year
 };
 
+struct MaxThreeMessage
+{
+    float Amount;
+    int   expandorincomeType;
+    QString PayType;
+    int typeId;
+    QDate date;
+};
+
+struct DotData
+{
+    int id = 0;
+    int x = 0;
+    int y = 0;
+    bool isnotEmpty = false;
+    QDate date;
+    QList<MaxThreeMessage> message;     //最大三比支出消息容器
+};
+
 struct BillTableStruct
 {
     int billNo;     //账单号

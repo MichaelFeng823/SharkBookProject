@@ -3,6 +3,7 @@
 #include <QWidget>
 #include <QPainter>
 #include <QTimer>
+#include "Controler/DataStruct/PublicDataStruct.h"
 ///****************************************************************************
 /// @author  : MichaelFeng
 /// @date    : 2023-06-05
@@ -18,9 +19,10 @@ class DotDetailDataWindow:public QWidget
 {
     Q_OBJECT
 public:
-    DotDetailDataWindow(DataState state,QWidget * parent = nullptr);
+    DotDetailDataWindow(InOrOut type,QWidget * parent = nullptr);
     void startTimer();                                             //启动定时器
     void stopTimer();                                              //关闭定时器
+    void setData(DotData data);                                    //设置数据
 private:
     void paintEvent(QPaintEvent *event) override;                  //重写绘画事件
     void drawThisInNoData(QPainter * painter);                     //绘制没有数据时候的窗体
@@ -28,10 +30,22 @@ private:
     void drawThisInHaveData(QPainter * painter);                   //绘制有数据时候的窗体
     void drawFrameRect(QRect rect,QPainter * painter);             //绘制窗体框架
     void drawTitleRect(QRect rect,QPainter * painter);             //绘制title Rect （最大三比交易）
+    void drawTitleText(QPoint pos,QPainter * painter);             //绘制title text
+    void drawMessageContent(QPainter *);                                     //绘制最大三比交易
+    void drawSingleMessageContent(QRect,MaxThreeMessage,QPainter*);          //绘制单条message content
+    void drawLoweTriangleRect(QPainter * painter);                 //绘制下三角当没有数据时
+    void drawCirclePic(QPoint pos,QString url,QPainter*painter);   //绘制圆形图片
     void initTimer();                                              //初始化定时器
+    void checkData();                                              //检测数据
+    void moveInNoData();                                           //在没有数据时移动
+    void moveInHaveData();                                         //在有数据时移动
+    QRect checkMessageSize();                                      //检测消息的条数
 private:
     DataState m_CurrentState;                                      //当前数据状态
+    InOrOut m_Type = InOrOut::Expand;                                                //支出还是收入
     QTimer * timer;                                                //定时器
+    DotData m_Data;                                                //设置数据
+    int trianglePos;                                               //下三角位置
 };
 
 #endif // DOTDETAILDATAWINDOW_H

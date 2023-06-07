@@ -30,23 +30,6 @@ public:
     void setInOrOutType(InOrOut type){m_type = type;};
     void updateLoadData();
 private:
-    struct MaxThreeMessage
-    {
-        float Amount;
-        int   expandorincomeType;
-        QString PayType;
-        QDate date;
-    };
-    struct DotData
-    {
-        int id = 0;
-        int x = 0;
-        int y = 0;
-        bool isnotEmpty = false;
-        QDate date;
-        QList<MaxThreeMessage> message;     //最大三比支出消息容器
-    };
-private:
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;        //重写绘画事件
     void drawTextNum(QPainter * painter);                //画文字和数字
@@ -89,10 +72,12 @@ private:
     void calculateYearTotalAndAverage();  //计算周总数和平均值
 
     bool eventFilter(QObject *obj, QEvent *event) override;   //事件过滤器
-    void judgmentPointPosition(QPoint pos);                   //判断点的位置
-    void judgmentPointInWeekPosition(QPoint pos);             //判断点的在周的位置
-    void judgmentPointInMonthPosition(QPoint pos);            //判断点的在月的位置
-    void judgmentPointInYearPosition(QPoint pos);             //判断点的在年的位置
+    DotData judgmentPointPosition(QPoint pos);                   //判断点的位置
+    DotData judgmentPointInWeekPosition(QPoint pos);          //判断点的在周的位置
+    DotData judgmentPointInMonthPosition(QPoint pos);         //判断点的在月的位置
+    DotData judgmentPointInYearPosition(QPoint pos);          //判断点的在年的位置
+    void buildDotWindow(DotData data);                        //创建一个数据窗口
+
 private:
     DotDetailDataWindow * dotwindow = nullptr;
 private:

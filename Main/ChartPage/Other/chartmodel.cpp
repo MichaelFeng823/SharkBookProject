@@ -123,6 +123,7 @@ void ChartModel::bindWeekData()
                 message.Amount = billinfo[j].moneyAmount;
                 message.expandorincomeType = billinfo[j].typeId;
                 message.PayType = billinfo[j].PayType;
+                message.typeId = billinfo[j].typeId;
                 //3.将数据添加到对应点的消息集合中
                 week_dots[i].message.append(message);
             }
@@ -153,13 +154,13 @@ void ChartModel::bindMonthData()
                 message.Amount = billinfo[j].moneyAmount;
                 message.expandorincomeType = billinfo[j].typeId;
                 message.PayType = billinfo[j].PayType;
+                message.typeId = billinfo[j].typeId;
                 //3.将数据添加到对应点的消息集合中
                 data.message.append(message);
             }
         }
         month_dots.append(data);
     }
-    LOG("count:%d -------------------------------------------------",count);
 }
 //绑定年数据
 void ChartModel::bindYearData()
@@ -183,6 +184,7 @@ void ChartModel::bindYearData()
                 message.Amount = billinfo[j].moneyAmount;
                 message.expandorincomeType = billinfo[j].typeId;
                 message.PayType = billinfo[j].PayType;
+                message.typeId = billinfo[j].typeId;
                 //3.将数据添加到对应点的消息集合中
                 year_dots[i].message.append(message);
             }
@@ -227,9 +229,6 @@ void ChartModel::calculateWeekDotPosition()
     for(int i = 0; i < 7; i++){
         week_dots[i].x = 30+40+ i*(length);
         week_dots[i].y = m_BottomPos - (m_height  * m_WeekData[i] / m_Max);
-        LOG("m_height:%d",m_height);
-        LOG("m_WeekData[i]:%s",QString::number(m_WeekData[i]).toStdString().c_str());
-        LOG("m_Max:%s",QString::number(m_Max).toStdString().c_str());
     }
 }
 //计算月数据点的坐标
@@ -612,18 +611,8 @@ bool ChartModel::eventFilter(QObject *obj, QEvent *event)
     QMouseEvent * mouseevent = dynamic_cast<QMouseEvent*>(event);
     if(event->type() == QMouseEvent::MouseButtonPress){
         if(mouseevent->button() == Qt::LeftButton){
-            if(dotwindow != nullptr){
-                dotwindow->close();
-                delete dotwindow;
-            }
-            judgmentPointPosition(mouseevent->pos());
-            dotwindow = new DotDetailDataWindow(DataState::HaveData,this);
-            dotwindow->setParent(this);
-            dotwindow->move(mouseevent->pos().x()-dotwindow->width()/2,mouseevent->pos().y());
-            dotwindow->raise();
-            dotwindow->show();
+            buildDotWindow(judgmentPointPosition(mouseevent->pos()));
         }
-
     }else if(event->type() == QMouseEvent::MouseButtonRelease){
         if(mouseevent->button() == Qt::LeftButton){
             dotwindow->startTimer();
@@ -631,38 +620,82 @@ bool ChartModel::eventFilter(QObject *obj, QEvent *event)
     }
      return QWidget::eventFilter(obj, event);
 }
-//判断点的位置
-void ChartModel::judgmentPointPosition(QPoint pos)
+//创建一个数据窗口
+void ChartModel::buildDotWindow(DotData data)
 {
+    LOG("buildDotWindow");
+    if(dotwindow != nullptr){
+        dotwindow->close();
+        delete dotwindow;
+    }
+    dotwindow = new DotDetailDataWindow(m_type,this);
+    dotwindow->setParent(this);
+    dotwindow->setData(data);
+    dotwindow->raise();
+    dotwindow->show();
+}
+//判断点的位置
+DotData ChartModel::judgmentPointPosition(QPoint pos)
+{
+    DotData data;
     switch (m_CurrentType){
         case ChartSelectType::week :{
-           judgmentPointInWeekPosition(pos);
+           data = judgmentPointInWeekPosition(pos);
            break;
         }
         case ChartSelectType::month : {
-           judgmentPointInMonthPosition(pos);
+           data = judgmentPointInMonthPosition(pos);
            break;
         }
         case ChartSelectType::year : {
-           judgmentPointInYearPosition(pos);
+           data = judgmentPointInYearPosition(pos);
            break;
         }
     }
+    return data;
 }
 //判断点的在周的位置
-void ChartModel::judgmentPointInWeekPosition(QPoint pos)
+DotData ChartModel::judgmentPointInWeekPosition(QPoint pos)
 {
-
-
+    int distance = 1000;
+    int index = 0;
+    for(int i = 0; i < 7; i++)
+    {
+        int length = qAbs(pos.x() - week_dots[i].x);
+        if(length < distance){
+            distance = length;
+            index = i;
+        }
+    }
+    return week_dots[index];
 }
 //判断点的在月的位置
-void ChartModel::judgmentPointInMonthPosition(QPoint pos)
+DotData ChartModel::judgmentPointInMonthPosition(QPoint pos)
 {
-
+    int distance = 1000;
+    int index = 0;
+    for(int i = 0; i < monthDataEndIndex; i++)
+    {
+        int length = qAbs(pos.x() - month_dots[i].x);
+        if(length < distance){
+            distance = length;
+            index = i;
+        }
+    }
+    return month_dots[index];
 }
 //判断点的在年的位置
-void ChartModel::judgmentPointInYearPosition(QPoint pos)
+DotData ChartModel::judgmentPointInYearPosition(QPoint pos)
 {
-
-
+    int distance = 1000;
+    int index = 0;
+    for(int i = 0; i < 12; i++)
+    {
+        int length = qAbs(pos.x() - week_dots[i].x);
+        if(length < distance){
+            distance = length;
+            index = i;
+        }
+    }
+    return year_dots[index];
 }

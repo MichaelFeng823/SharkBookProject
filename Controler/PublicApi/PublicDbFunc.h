@@ -155,8 +155,6 @@ namespace DataQuery {
                 billtable.typeId = type;
                 billtable.InOrOut = inorout;
                 billList.append(billtable);
-                LOG("get bill data!");
-                LOG("queryCounts:%d",queryCounts);
             }
         }
         LOG("queryCounts:%d",queryCounts);
@@ -228,7 +226,7 @@ namespace DataQuery {
                     billList.append(billtable);
                 }
             }
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            //LOG("the sql is:%s",sql.toStdString().c_str());
         }
         LOG("queryCounts:%d",queryCounts);
         return queryCounts;
