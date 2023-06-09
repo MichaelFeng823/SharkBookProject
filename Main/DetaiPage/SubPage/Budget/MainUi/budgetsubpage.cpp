@@ -172,7 +172,7 @@ void BudGetSubPage::initMonthlyBudgetWidgetContent()
      layout->addWidget(m_MonthBudgetTableview);
      layout->setMargin(0);
      ui->widget_MonthlyTypeBudget->setLayout(layout);
-     initTableViewContent(m_MonthBudgetTableview,3);
+     initTableViewContent(m_MonthBudgetTableview,1);
      m_IsInitMonthBudget = false;
      LOG("初始化月预算界面内容");
 }
@@ -184,7 +184,7 @@ void BudGetSubPage::initAnnualBudgetWidgetContent()
      layout->setMargin(0);
      layout->addWidget(m_AnnualBudgetTableview);
      ui->widget_AnnualTypeBudget->setLayout(layout);
-     initTableViewContent(m_AnnualBudgetTableview,3);
+     initTableViewContent(m_AnnualBudgetTableview,1);
      m_IsInitAnnualBudget = false;
      LOG("初始化年预算界面内容");
 }
@@ -201,7 +201,7 @@ void BudGetSubPage::initTableViewContent(DetialTableview * tableview,int rowcoun
    for(int i = 0; i < rowcounts; i++){
        tableview->setRowHeight(i,430);
        QModelIndex index = model->index(i,0);
-       QPointer<BudgetSubItem> item = new BudgetSubItem(m_TypeBudget);
+       QPointer<BudgetSubItem> item = new BudgetSubItem(m_TypeBudget,this);
        connect(item,&BudgetSubItem::requestModify,this,&BudGetSubPage::onReceiveModifyBudgetRequest);
        item->setBudgetData(m_DateId[int(m_TypeBudget)],m_Budget[(int)m_TypeBudget],m_Expand[int(m_TypeBudget)]);
        tableview->setIndexWidget(index,item);

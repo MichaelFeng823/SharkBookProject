@@ -108,7 +108,7 @@ border-style: solid;</string>
             <widget class="QLabel" name="label_TypeText">
              <property name="styleSheet">
               <string notr="true">color: rgb(0, 0, 0);
-font: 16pt &quot;微软雅黑&quot;;
+font: 14pt &quot;微软雅黑&quot;;
 border:none;</string>
              </property>
              <property name="text">

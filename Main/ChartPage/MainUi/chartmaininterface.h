@@ -79,8 +79,13 @@ private:
      QLabel * yearRankTitle;                                   //年月面排行版title
 private:
      InOrOut m_Type = InOrOut::Expand;                        //当前预算类型
+     ChartSelectType m_ChartType = ChartSelectType::week;     //当前界面
      bool isExpandOrClose = true;
      bool isChartAreaFirstShow = true;                        //是否是图表界面第一次显示
+     bool isWeekChartAreaFirstShow = true;                   //是否是周图表第一次显示
+     bool isMonthChartAreaFirstShow = true;                   //是否是周图表第一次显示
+     bool isYearChartAreaFirstShow = true;                   //是否是周图表第一次显示
+
      bool hasConnected = false;                               //获取数据库对象是否成功
      QSqlDatabase coon;                                       //数据库连接对象
      QVector<BillTableStruct> m_WeekList;

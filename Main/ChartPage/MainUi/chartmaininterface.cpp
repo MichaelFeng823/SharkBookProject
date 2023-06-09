@@ -49,26 +49,28 @@ void ChartMainInterface::setActiveWindow(bool state)
     m_IsActiveWindow = state;
     if(isChartAreaFirstShow && state){
         buttongroup_in_chart->button(ChartSelectType::week)->click();
-        weekbar->setDefaultClicked();
-        buttongroup_in_chart->button(ChartSelectType::month)->click();
-        monthbar->setDefaultClicked();
-        buttongroup_in_chart->button(ChartSelectType::year)->click();
-        yearbar->setDefaultClicked();
-        buttongroup_in_chart->button(ChartSelectType::week)->click();
         isChartAreaFirstShow = false;
     }
-    if(state)
+    if(!isChartAreaFirstShow && state)
          updatePage();
 }
 //更新整个页面
 void ChartMainInterface::updatePage()
 {
-    m_WeekList = getWeekBills(m_CurrentWeekId);
-    m_MonthList = getMonthBills(m_CurrentMonthId);
-    m_YearList = getYearBills(m_CurrentYearId);
-    updateWeekPage();
-    updateMonthPage();
-    updateYearPage();
+    switch (m_ChartType) {
+        case ChartSelectType::week:{
+            m_WeekList = getWeekBills(m_CurrentWeekId);
+            updateWeekPage();
+        }
+        case ChartSelectType::month:{
+            m_MonthList = getMonthBills(m_CurrentMonthId);
+            updateMonthPage();
+        }
+        case ChartSelectType::year:{
+            m_YearList = getYearBills(m_CurrentYearId);
+            updateYearPage();
+        }
+    }
 }
 //初始化图表中的按钮组
 void ChartMainInterface::initButtonGroupInChartPage()
@@ -86,19 +88,35 @@ void ChartMainInterface::on_ButtonGroup_In_Chart_Clicked(int pagetype)
         setButtonStyleOnNormal((QPushButton*)button);}
     switch (pagetype) {
         case ChartSelectType::week:{
-            setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
+            if(isWeekChartAreaFirstShow){
+                weekbar->setDefaultClicked();
+                isWeekChartAreaFirstShow = false;
+            }
             ui->stackedWidget->setCurrentWidget(ui->weekpage);
+            setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
             updateWeekPage();
+
+
             break;}
         case ChartSelectType::month:{
-            setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
+            if(isMonthChartAreaFirstShow){
+                monthbar->setDefaultClicked();
+                isMonthChartAreaFirstShow = false;
+            }
             ui->stackedWidget->setCurrentWidget(ui->monthpage);
+            setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
             updateMonthPage();
+
             break;};
         case ChartSelectType::year:{
-            setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
+            if(isYearChartAreaFirstShow){
+                yearbar->setDefaultClicked();
+                isYearChartAreaFirstShow = false;
+            }
             ui->stackedWidget->setCurrentWidget(ui->yearpage);
+            setButtonStyleAfterClicked((QPushButton*)buttongroup_in_chart->button(pagetype));
             updateYearPage();
+
             break;};
     }
 }
@@ -106,14 +124,16 @@ void ChartMainInterface::on_ButtonGroup_In_Chart_Clicked(int pagetype)
 void ChartMainInterface::updateWeekPage()
 {
     weekmodel->setBillInfo(m_WeekList);
-    weekmodel->updateLoadData();
+    weekmodel->update();
+    //weekmodel->updateLoadData();
     setRankInfo(statisticalClassification(m_WeekList),weektable,weekrankmodel);
 }
  //更新月页面
 void ChartMainInterface::updateMonthPage()
 {
     monthmodel->setBillInfo(m_MonthList);
-    monthmodel->updateLoadData();
+    monthmodel->update();
+    //monthmodel->updateLoadData();
     setRankInfo(statisticalClassification(m_MonthList),monthtable,monthrankmodel);
 
 }
@@ -121,7 +141,8 @@ void ChartMainInterface::updateMonthPage()
 void ChartMainInterface::updateYearPage()
 {
     yearmodel->setBillInfo(m_YearList);
-    yearmodel->updateLoadData();
+    yearmodel->update();
+    //yearmodel->updateLoadData();
     setRankInfo(statisticalClassification(m_YearList),yeartable,yearrankmodel);
 }
 //当选中类型转换按钮时的槽函数 //收到展开或者关闭的信号槽函数
@@ -188,12 +209,14 @@ void ChartMainInterface::modifyLoadRankDataType()
 //当收到SelectScrollBar信号时
 void ChartMainInterface::on_ReceiveSelectScorllBarSignal(ChartSelectType type,int id)
 {
+    m_ChartType = type;
     LOG("on_ReceiveSelectScorllBarSignal");
     LOG("id:%d",id);
     switch (type){
         case ChartSelectType::week :{
            m_CurrentWeekId = id;
            weekmodel->setId(id);
+           weekmodel->clearDotWindow();
            m_WeekList = getWeekBills(id);
            weekmodel->setBillInfo(m_WeekList);
            setRankInfo(statisticalClassification(m_WeekList),weektable,weekrankmodel);
@@ -202,6 +225,7 @@ void ChartMainInterface::on_ReceiveSelectScorllBarSignal(ChartSelectType type,in
         case ChartSelectType::month : {
             m_CurrentMonthId = id;
             monthmodel->setId(id);
+            monthmodel->clearDotWindow();
             m_MonthList = getMonthBills(id);
             monthmodel->setBillInfo(m_MonthList);
             setRankInfo(statisticalClassification(m_MonthList),monthtable,monthrankmodel);
@@ -210,6 +234,7 @@ void ChartMainInterface::on_ReceiveSelectScorllBarSignal(ChartSelectType type,in
         case ChartSelectType::year : {
             m_CurrentYearId = id;
             yearmodel->setId(id);
+            yearmodel->clearDotWindow();
             m_YearList = getYearBills(id);
             yearmodel->setBillInfo(m_YearList);
             setRankInfo(statisticalClassification(m_YearList),yeartable,yearrankmodel);
@@ -263,7 +288,7 @@ QVector<QDate> ChartMainInterface::getDateByWeekNum(int weeknum)
 //设置排行榜数据信息
 void ChartMainInterface::setRankInfo(QVector<BillTableStruct> list,DetialTableview * table,QStandardItemModel * model)
 {
-    LOG("list.size:%d",list.size());
+    //LOG("list.size:%d",list.size());
     model->clear();
     model->setColumnCount(1);
     model->setRowCount(list.size());
@@ -276,7 +301,7 @@ void ChartMainInterface::setRankInfo(QVector<BillTableStruct> list,DetialTablevi
         table->setStyleSheet("QTableView, QHeaderView, QTableView::item {background: white;} QTableView::item:selected { /*被选中的index*/color: black;background: white;}");
     }
    for(int i = 0; i < list.size(); i++){
-       LOG("list[i].InOrOut:%d",list[i].InOrOut);
+       //LOG("list[i].InOrOut:%d",list[i].InOrOut);
        if(list[i].InOrOut == m_Type){
            table->setRowHeight(i,getScreenSize().height()/12);
            QModelIndex index = model->index(i,0);

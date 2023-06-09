@@ -71,6 +71,14 @@ void ChartModel::updateLoadData()
         }
     }
 }
+//清除当前DotWindow;
+void ChartModel::clearDotWindow()
+{
+    if(dotwindow != nullptr){
+        delete  dotwindow;
+        dotwindow = nullptr;
+    }
+}
 //计算周账单
 void ChartModel::calculateWeekBill()
 {
@@ -628,7 +636,7 @@ void ChartModel::buildDotWindow(DotData data)
         dotwindow->close();
         delete dotwindow;
     }
-    dotwindow = new DotDetailDataWindow(m_type,this);
+    dotwindow = new DotDetailDataWindow(m_type,m_CurrentType,this);
     dotwindow->setParent(this);
     dotwindow->setData(data);
     dotwindow->raise();
@@ -691,7 +699,7 @@ DotData ChartModel::judgmentPointInYearPosition(QPoint pos)
     int index = 0;
     for(int i = 0; i < 12; i++)
     {
-        int length = qAbs(pos.x() - week_dots[i].x);
+        int length = qAbs(pos.x() - year_dots[i].x);
         if(length < distance){
             distance = length;
             index = i;

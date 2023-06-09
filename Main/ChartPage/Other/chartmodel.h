@@ -29,6 +29,7 @@ public:
     void setBillInfo(QVector<BillTableStruct> info);
     void setInOrOutType(InOrOut type){m_type = type;};
     void updateLoadData();
+    void clearDotWindow();                               //清除当前DotWindow;
 private:
     void resizeEvent(QResizeEvent *event) override;
     void paintEvent(QPaintEvent *event) override;        //重写绘画事件

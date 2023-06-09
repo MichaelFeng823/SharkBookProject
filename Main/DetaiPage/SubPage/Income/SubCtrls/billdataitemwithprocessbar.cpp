@@ -20,7 +20,7 @@ bool BillDataItemWithProcessBar::eventFilter(QObject *obj, QEvent *event)
       if(obj == this){
           if(event->type() == QEvent::MouseButtonPress){
               //设置Title部分样式
-              ui->label_TypeText->setStyleSheet("background-color: rgba(140,140,140,50);color: rgb(0, 0, 0);font-size:16pt;border:none;");
+              ui->label_TypeText->setStyleSheet("background-color: rgba(140,140,140,50);color: rgb(0, 0, 0);font-size:14pt;border:none;");
               ui->label_Percent->setStyleSheet("background-color: rgba(140,140,140,50);color: rgb(0, 0, 0);font-size:13pt;border:none;");
               ui->label_Moneynum->setStyleSheet("background-color: rgba(140,140,140,50);color: rgb(0, 0, 0);font-size:15pt;border:none;");
               ui->progressBar->setStyleSheet("QProgressBar::chunk\n"
@@ -39,7 +39,7 @@ bool BillDataItemWithProcessBar::eventFilter(QObject *obj, QEvent *event)
           }
 
           if(event->type() == QEvent::MouseButtonRelease){
-              ui->label_TypeText->setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);font-size:16pt;border:none;");
+              ui->label_TypeText->setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);font-size:14pt;border:none;");
               ui->label_Percent->setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);font-size:13pt;border:none;");
               ui->label_Moneynum->setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);font-size:15pt;border:none;");
               ui->progressBar->setStyleSheet("QProgressBar::chunk\n"

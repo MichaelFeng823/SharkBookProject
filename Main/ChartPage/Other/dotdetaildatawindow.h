@@ -19,7 +19,7 @@ class DotDetailDataWindow:public QWidget
 {
     Q_OBJECT
 public:
-    DotDetailDataWindow(InOrOut type,QWidget * parent = nullptr);
+    DotDetailDataWindow(InOrOut type,ChartSelectType charttype,QWidget * parent = nullptr);
     void startTimer();                                             //启动定时器
     void stopTimer();                                              //关闭定时器
     void setData(DotData data);                                    //设置数据
@@ -35,6 +35,9 @@ private:
     void drawSingleMessageContent(QRect,MaxThreeMessage,QPainter*);          //绘制单条message content
     void drawLoweTriangleRect(QPainter * painter);                 //绘制下三角当没有数据时
     void drawCirclePic(QPoint pos,QString url,QPainter*painter);   //绘制圆形图片
+    void drawDatePayTypeAmountText(QPoint pos,MaxThreeMessage message, QPainter*painter);    //绘制日期支付类型金额文本
+    void drawTextInBottom(QPoint pos,DotData data, QPainter * painter);                      //绘制底部的文本
+    void drawLowTriangleRectInHaveData(QPainter * painter);       //绘制左侧或者右侧三角当有数据时
     void initTimer();                                              //初始化定时器
     void checkData();                                              //检测数据
     void moveInNoData();                                           //在没有数据时移动
@@ -42,10 +45,14 @@ private:
     QRect checkMessageSize();                                      //检测消息的条数
 private:
     DataState m_CurrentState;                                      //当前数据状态
-    InOrOut m_Type = InOrOut::Expand;                                                //支出还是收入
+    InOrOut m_Type = InOrOut::Expand;                              //支出还是收入
+    ChartSelectType m_ChartSelectType;                             //当前类型
     QTimer * timer;                                                //定时器
     DotData m_Data;                                                //设置数据
-    int trianglePos;                                               //下三角位置
+    QPoint trianglePos;                                            //下三角位置
+    int m_triangleEndPosx;                                         //下三角尾部坐标x
+    int m_triangleEndPosy;                                         //下三角尾部坐标y
+    QRect mainRect;                                                //主体rect
 };
 
 #endif // DOTDETAILDATAWINDOW_H
