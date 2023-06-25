@@ -2,12 +2,15 @@
 #include "ui_billdataitemwithprocessbar.h"
 #include "Kit/LogInfo/clog.h"
 #include <QDate>
+#include <QTouchEvent>
+#include <QImageReader>
 
 BillDataItemWithProcessBar::BillDataItemWithProcessBar(BillTableStruct billinfo,QWidget *parent) :
     QWidget(parent),
     ui(new Ui::BillDataItemWithProcessBar),m_BillItemInfo(billinfo)
 {
     ui->setupUi(this);
+    this->setAttribute(Qt::WA_AcceptTouchEvents);
     this->installEventFilter(this);
     this->setTypeText(m_BillItemInfo.PayType);
     this->setMoneynum(m_BillItemInfo.moneyAmount);
@@ -17,6 +20,7 @@ BillDataItemWithProcessBar::BillDataItemWithProcessBar(BillTableStruct billinfo,
 }
 bool BillDataItemWithProcessBar::eventFilter(QObject *obj, QEvent *event)
 {
+
       if(obj == this){
           if(event->type() == QEvent::MouseButtonPress){
               //设置Title部分样式
@@ -38,6 +42,10 @@ bool BillDataItemWithProcessBar::eventFilter(QObject *obj, QEvent *event)
               LOG("m_BillItemInfo.date year:%d month:%d day:%d",m_BillItemInfo.date.year(),m_BillItemInfo.date.month(),m_BillItemInfo.date.day());
           }
 
+          if(event->type() == QEvent::MouseMove){
+              is_TouchScroll = true;
+          }
+
           if(event->type() == QEvent::MouseButtonRelease){
               ui->label_TypeText->setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);font-size:14pt;border:none;");
               ui->label_Percent->setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(0, 0, 0);font-size:13pt;border:none;");
@@ -50,7 +58,9 @@ bool BillDataItemWithProcessBar::eventFilter(QObject *obj, QEvent *event)
               ui->subwidget->setStyleSheet("background-color: rgb(255, 255, 255);border-bottom:1px ;border-color: rgba(140,140,140,120);border-style: solid;");
               ui->backgroundwidget->setStyleSheet("background-color: rgb(255, 255, 255);");
               this->setStyleSheet("background-color: rgb(255, 255, 255);");
-              getDetailBillInfo(m_BillItemInfo);         //发送调用信号
+              if(!is_TouchScroll)
+                   getDetailBillInfo(m_BillItemInfo);         //发送调用信号
+              is_TouchScroll = false;
               LOG("release!");
           }
       }
@@ -64,7 +74,16 @@ void BillDataItemWithProcessBar::setTypeText(QString typetext)
 //设置收费支出图标
 void BillDataItemWithProcessBar::setTypeIcon(QString typeiconurl)
 {
-    ui->label_TypeIcon->setStyleSheet(QString("#label_TypeIcon{border-image: url(%1);}").arg(typeiconurl));
+    //LOG("11111");
+//    QPixmap pix(typeiconurl);
+//    ui->label_TypeIcon->setPixmap(pix);
+       QImage image(typeiconurl);
+       //std::unique_ptr<QImageReader> imgRead(new QImageReader(typeiconurl));
+       //image = imgRead->read();
+       QPixmap pixmap = QPixmap::fromImage(image);
+       ui->label_TypeIcon->setPixmap(pixmap);
+
+    //ui->label_TypeIcon->setStyleSheet(QString("#label_TypeIcon{border-image: url(%1);}").arg(typeiconurl));
 }
  //设置收费支出金额
 void BillDataItemWithProcessBar::setMoneynum(double num)
@@ -93,7 +112,7 @@ void BillDataItemWithProcessBar::setDate(QDate date)
 //隐藏日期
 void BillDataItemWithProcessBar::hideDate()
 {
-     ui->label_Date->hide();
+     ui->label_Date->setText("");
 }
 BillDataItemWithProcessBar::~BillDataItemWithProcessBar()
 {

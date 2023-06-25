@@ -65,11 +65,7 @@ QLabel
       <item row="0" column="0">
        <widget class="QLabel" name="label_TypeIcon">
         <property name="styleSheet">
-         <string notr="true">#label_TypeIcon
-{
-	
-	border-image: url(:/BillPage/image/BillPage_Expand_1.jpg);
-}</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string/>

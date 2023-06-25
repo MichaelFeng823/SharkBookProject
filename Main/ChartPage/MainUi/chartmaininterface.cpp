@@ -126,7 +126,7 @@ void ChartMainInterface::updateWeekPage()
     weekmodel->setBillInfo(m_WeekList);
     weekmodel->update();
     //weekmodel->updateLoadData();
-    setRankInfo(statisticalClassification(m_WeekList),weektable,weekrankmodel);
+    //setRankInfo(statisticalClassification(m_WeekList),weektable,weekrankmodel);
 }
  //更新月页面
 void ChartMainInterface::updateMonthPage()
@@ -134,7 +134,7 @@ void ChartMainInterface::updateMonthPage()
     monthmodel->setBillInfo(m_MonthList);
     monthmodel->update();
     //monthmodel->updateLoadData();
-    setRankInfo(statisticalClassification(m_MonthList),monthtable,monthrankmodel);
+    //setRankInfo(statisticalClassification(m_MonthList),monthtable,monthrankmodel);
 
 }
 //更新年月面
@@ -143,7 +143,7 @@ void ChartMainInterface::updateYearPage()
     yearmodel->setBillInfo(m_YearList);
     yearmodel->update();
     //yearmodel->updateLoadData();
-    setRankInfo(statisticalClassification(m_YearList),yeartable,yearrankmodel);
+    //setRankInfo(statisticalClassification(m_YearList),yeartable,yearrankmodel);
 }
 //当选中类型转换按钮时的槽函数 //收到展开或者关闭的信号槽函数
 void ChartMainInterface::on_TypeChoose_Clicked()
@@ -288,6 +288,7 @@ QVector<QDate> ChartMainInterface::getDateByWeekNum(int weeknum)
 //设置排行榜数据信息
 void ChartMainInterface::setRankInfo(QVector<BillTableStruct> list,DetialTableview * table,QStandardItemModel * model)
 {
+    LOG("begin setRankInfo:time %d",QDateTime::currentDateTime().toTime_t());
     //LOG("list.size:%d",list.size());
     model->clear();
     model->setColumnCount(1);
@@ -311,6 +312,7 @@ void ChartMainInterface::setRankInfo(QVector<BillTableStruct> list,DetialTablevi
            table->setIndexWidget(index,item);
        }
    }
+   LOG("end setRankInfo:time %d",QDateTime::currentDateTime().toTime_t());
 }
 //计算占比比值
 double ChartMainInterface::calculatePercent(double moneynum,QVector<BillTableStruct>list)
@@ -325,6 +327,7 @@ double ChartMainInterface::calculatePercent(double moneynum,QVector<BillTableStr
 //按消费支出/收入类别统计分类
 QVector<BillTableStruct> ChartMainInterface::statisticalClassification(QVector<BillTableStruct> list)
 {
+
     QMap<int,BillTableStruct> sortmap;
     QVector<BillTableStruct> sortlist;
     for(int i = 0; i < list.size(); i++){

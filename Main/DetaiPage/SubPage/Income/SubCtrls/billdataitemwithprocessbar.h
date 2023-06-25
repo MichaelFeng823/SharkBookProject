@@ -47,6 +47,8 @@ private:
 private:
     Ui::BillDataItemWithProcessBar *ui;
     BillTableStruct m_BillItemInfo;                       //账单item信息
+    QPoint touchFirst;                                    //第一个触摸的点
+    bool is_TouchScroll = false;                          //是否在滑动
 
 };
 
