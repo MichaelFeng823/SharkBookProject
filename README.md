@@ -17,9 +17,9 @@
 
 1.登录界面 左侧为静态截图 右侧为功能GIF展示
 
-<img src="ProgramScreenShot/1.png" style="zoom: 50%;" />
+<img src="ProgramScreenShot/1.png" style="zoom: 33%;" />
 
-<img src="GIF/Login.gif" style="zoom:50%;" />
+<img src="GIF/Login.gif" style="zoom: 33%;" />
 
 2.自动登录GIF演示
 
