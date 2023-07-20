@@ -77,15 +77,19 @@
 
 <img src="GIF/ChangePassWord.gif" style="zoom:50%;" />
 
-17.网上找的美丽小姐姐图片API接口应用GIF展示
+17.切换用户登录功能展示
+
+.<img src="GIF/ReplaceUserLogin.gif" style="zoom:50%;" />
+
+18.网上找的美丽小姐姐图片API接口应用GIF展示
 
 <img src="GIF/API_LookBeautyGirl.gif" style="zoom:50%;" />
 
-18.以及对图片缩放移动查看等基本操作
+19.以及对图片缩放移动查看等基本操作
 
 <img src="GIF/PhotoFrameOperation.gif" style="zoom:50%;" />
 
-19.万年历API查询应用GIF展示
+20.万年历API查询应用GIF展示
 
 <img src="GIF/API_PerpetualCalendar.gif" style="zoom:50%;" />
 
