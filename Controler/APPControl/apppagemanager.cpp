@@ -51,6 +51,7 @@ int AppPageManager::initPage()
         LOG("退出登录");
         return 0;
      }
+     LOG("退出登录");
      return 0;
 }
 //获取用户信息在成功登录后
@@ -58,8 +59,10 @@ bool AppPageManager::getUserInfoAfterSuccessLogin()
 {
     if(login != nullptr){
         if(login->exec() == QDialog::Accepted){
+            LOG("return true");
             login = nullptr;
             return true;
+
         }
     }
     return false;
@@ -74,6 +77,7 @@ void AppPageManager::receiveSignal(QString str)
     if(!str.isEmpty()){
         strList = str.split("->");
     }
+
     if(strList.size() >= 2){
         closeStr = strList[0];
         openStr = strList[1];
@@ -85,28 +89,19 @@ void AppPageManager::receiveSignal(QString str)
             mainarea->close();
             delete mainarea;
             mainarea = nullptr;
-
         }
     }
-    else if(closeStr == "LoginForm"){
-        if(login != nullptr)
-        {
-            LOG("arrive close LoginForm! line 91");
-            login->accept();
-        }
-    }
-
     if(openStr == "LoginForm"){
         if(login == nullptr)
         {
             LOG("arrive new LoginForm! line 107");
-            login = new LoginForm();
+            login = new LoginForm;
             login->resize(getScreenSize());
             connect(login,&LoginForm::sendSignalToApppaagemanager,this,&AppPageManager::receiveSignal);
             getUserInfoAfterSuccessLogin();
         }
     }
-    else if(openStr == "MainArea"){
+    if(openStr == "MainArea"){
         if(mainarea == nullptr)
         {
             LOG("arrive new MainArea! line 116");
@@ -114,7 +109,17 @@ void AppPageManager::receiveSignal(QString str)
             connect(mainarea,&MainArea::sendSignalToApppagemanager,this,&AppPageManager::receiveSignal);
             mainarea->raise();
             mainarea->show();
+            LOG("arrive line 119");
         };
     }
-    return ;
+
+    if(closeStr == "LoginForm"){
+        if(login != nullptr)
+        {
+            LOG("arrive close LoginForm! line 91");
+            login->accept();
+        }
+    }
+    QCoreApplication::processEvents();
+    LOG("end----------------------------------");
 }

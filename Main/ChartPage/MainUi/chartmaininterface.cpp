@@ -75,7 +75,7 @@ void ChartMainInterface::updatePage()
 //初始化图表中的按钮组
 void ChartMainInterface::initButtonGroupInChartPage()
 {
-    buttongroup_in_chart = new QButtonGroup();
+    buttongroup_in_chart = new QButtonGroup(this);
     buttongroup_in_chart->addButton(ui->pushButton_Week,ChartSelectType::week);
     buttongroup_in_chart->addButton(ui->pushButton_Month,ChartSelectType::month);
     buttongroup_in_chart->addButton(ui->pushButton_Year,ChartSelectType::year);
@@ -220,6 +220,7 @@ void ChartMainInterface::on_ReceiveSelectScorllBarSignal(ChartSelectType type,in
            m_WeekList = getWeekBills(id);
            weekmodel->setBillInfo(m_WeekList);
            setRankInfo(statisticalClassification(m_WeekList),weektable,weekrankmodel);
+           QCoreApplication::processEvents();
            break;
         }
         case ChartSelectType::month : {
@@ -229,6 +230,7 @@ void ChartMainInterface::on_ReceiveSelectScorllBarSignal(ChartSelectType type,in
             m_MonthList = getMonthBills(id);
             monthmodel->setBillInfo(m_MonthList);
             setRankInfo(statisticalClassification(m_MonthList),monthtable,monthrankmodel);
+            QCoreApplication::processEvents();
             break;
         }
         case ChartSelectType::year : {
@@ -238,6 +240,7 @@ void ChartMainInterface::on_ReceiveSelectScorllBarSignal(ChartSelectType type,in
             m_YearList = getYearBills(id);
             yearmodel->setBillInfo(m_YearList);
             setRankInfo(statisticalClassification(m_YearList),yeartable,yearrankmodel);
+            QCoreApplication::processEvents();
             break;
         }
     }

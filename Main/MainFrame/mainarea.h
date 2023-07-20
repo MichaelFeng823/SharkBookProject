@@ -54,10 +54,10 @@ signals:
     void sendSignalToApppagemanager(QString);
 
 private:
-     DetailedSonPageInStackwidget * detailesonpageinstackwidget;
-     ChartMainInterface * chartmaininterface;
-     DiscoveryMainInterface * discoverymaininterface;
-     MinewidagetInStackWidget * minewidget;
+     DetailedSonPageInStackwidget * detailesonpageinstackwidget = nullptr;
+     ChartMainInterface * chartmaininterface = nullptr;
+     DiscoveryMainInterface * discoverymaininterface = nullptr;
+     MinewidagetInStackWidget * minewidget = nullptr;
      BookkeepingSelectArea * bookkeepingselectarea = nullptr;
      QVector<QPushButton*> m_ButtomButtonList;
      QVector<BaseCustomWidget*> m_PageVector;

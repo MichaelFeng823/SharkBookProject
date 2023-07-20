@@ -17,6 +17,7 @@ MainArea::MainArea(QWidget *parent) :
     connect(ui->pushButton_thirdpage,&QPushButton::clicked,this,&MainArea::onThridpageButtonClicked);
     connect(ui->pushButton_fourpage,&QPushButton::clicked,this,&MainArea::onFourpageButtonClicked);
     connect(ui->BookkeepButton,&QPushButton::clicked,this,&MainArea::onBookkeepButtonClicked);
+    LOG("MainArea()");
 }
 void MainArea::initThis()
 {
@@ -65,6 +66,7 @@ void MainArea::onFirstpageButtonClicked()
 {
     ui->stackedWidget->setCurrentIndex(PageType::DetailPage);
     setButtonClicked(PageType::DetailPage);
+    QCoreApplication::processEvents();
     setActiveWindowState(PageType::DetailPage);
 }
 
@@ -72,18 +74,21 @@ void MainArea::onSecondpageButtonClicked()
 {
     ui->stackedWidget->setCurrentIndex((int)PageType::ChartPage);
     setButtonClicked(PageType::ChartPage);
+    QCoreApplication::processEvents();
     setActiveWindowState(PageType::ChartPage);
 }
 void MainArea::onThridpageButtonClicked()
 {
     ui->stackedWidget->setCurrentIndex((int)PageType::Discovery);
     setButtonClicked((int)PageType::Discovery);
+    QCoreApplication::processEvents();
     setActiveWindowState(PageType::Discovery);
 }
 void MainArea::onFourpageButtonClicked()
 {
     ui->stackedWidget->setCurrentIndex((int)PageType::MinePage);
     setButtonClicked(PageType::MinePage);
+    QCoreApplication::processEvents();
     setActiveWindowState(PageType::MinePage);
 }
 
@@ -135,8 +140,16 @@ void MainArea::setActiveWindowState(PageType page)
          m_PageVector[(int)page]->setActiveWindow(true);
 }
 
+#define deleteObj(obj) if(obj != nullptr){delete obj; obj = nullptr;}
 MainArea::~MainArea()
 {
     LOG("MainArea::~MainArea()");
+    deleteObj(detailesonpageinstackwidget);
+    deleteObj(chartmaininterface);
+    deleteObj(discoverymaininterface);
+    deleteObj(minewidget);
+    deleteObj(bookkeepingselectarea);
+    m_ButtomButtonList.clear();
+    m_PageVector.clear();
     delete ui;
 }

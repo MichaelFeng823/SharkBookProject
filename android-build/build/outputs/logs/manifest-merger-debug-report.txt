@@ -67,6 +67,8 @@ ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:9
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:311-341
 	android:configChanges
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:19-188
+	android:theme
+		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:342-400
 	android:name
 		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:189-249
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
