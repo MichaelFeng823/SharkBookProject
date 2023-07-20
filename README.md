@@ -52,14 +52,19 @@
 <img src="GIF/EditExpandAndIncome.gif" style="zoom:50%;" />
 
 10.一条账单信息的大致修改编辑流程GIF展示 
+
 <img src="GIF/ModifyBillContent.gif" style="zoom:50%;" /> 
+
 11.图表界面如下所示高度还原原版
+
 <img src="GIF/LookChart.gif" style="zoom:50%;" /> 
+
 12.添加支出一条账目的流程GIF展示
 
 <img src="GIF/BookOneBill.gif" style="zoom:50%;" />
 
 13.发现页的额外加的通讯录功能界面----支持模糊查询(可根据人名以及拼音字母和电话号码搜索)
+
 14.点击通讯录功能界面个人详情后的个人详情信息界面----------支持编辑、删除、和添加通讯录信息功能
 
 <img src="GIF/LookTelBook.gif" style="zoom:50%;" />
