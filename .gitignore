@@ -8,6 +8,9 @@
 *.obj
 *.orig
 *.rej
+*.so
+*.a
+*.o
 *_pch.h.cpp
 *_resource.rc
 *.qm
@@ -28,6 +31,7 @@ qrc_*.cpp
 Thumbs.db
 *.res
 *.rc
+!/android_openssl-master/*
 /.qmake.cache
 /.qmake.stash
 
