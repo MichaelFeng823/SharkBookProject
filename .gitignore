@@ -1,16 +1,17 @@
-# This file is used to ignore files which are generated
++# This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 
 *~
 *.autosave
+*.a
 *.core
 *.moc
+*.o
 *.obj
 *.orig
 *.rej
 *.so
-*.a
-*.o
+*.so.*
 *_pch.h.cpp
 *_resource.rc
 *.qm
@@ -31,9 +32,9 @@ qrc_*.cpp
 Thumbs.db
 *.res
 *.rc
-!/android_openssl-master/*
 /.qmake.cache
 /.qmake.stash
+!/android_openssl-master/*
 
 # qtcreator generated files
 *.pro.user*
@@ -70,4 +71,3 @@ Thumbs.db
 # --------
 *.dll
 *.exe
-
