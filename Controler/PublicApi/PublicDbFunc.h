@@ -14,53 +14,51 @@ namespace SqlFunc {
     //用户登录检测
     inline int loginCheck(QSqlQuery & query,QString userName,QString Psd)
     {
-        int query_Id = -1;
+        int userId = -1;
         QString sql = QString("select UserID,UserName from Users where UserName = '%1' and UserPassword = '%2'").arg(userName).arg(Psd);
         query.prepare(sql);
         if(!query.exec()){
 
             LOG("LoginCheck Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("The sql is:%s",sql.toStdString().c_str());
         }
         else{
             if(query.next()){
-                 QString query_UserName = query.value("UserName").toString();
-                 query_Id = query.value("UserID").toInt();
-                 LOG("arrive 25 query_Id = %d,UserName = %s",query_Id,query_UserName.toStdString().c_str());
+                 QString userName = query.value("UserName").toString();
+                 userId = query.value("UserID").toInt();
+                 LOG("Success to find user,userid = %d,username = %s",userId,userName.toStdString().c_str());
             }
         }
-        return query_Id;
+        return userId;
     }
-    //用户登录检测
-    inline int loginCheck_ForName(QSqlQuery & query,QString userName)
+    //检测用户是否存在
+    inline bool checkUserExsits(QSqlQuery & query,QString userName)
     {
-        int query_Id = -1;
         QString sql = QString("select UserID from Users where UserName = '%1';").arg(userName);
         query.prepare(sql);
         if(!query.exec()){
-            LOG("File:%sLine:%d",__FILE__,__LINE__);
-            LOG("LoginCheck Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("Failed to check user is exsits");
+            LOG("The sql is:%s",sql.toStdString().c_str());
         }
         else{
             if(query.next())
-                query_Id = query.value("UserID").toInt();
+                return true;
         }
-        return query_Id;
+        return false;
     }
     //注册用户 userName 用户名 ， psd 用户密码  返回值(-2 用户已存在 -1 注册失败,1 注册成功)
     inline int registerUser(QSqlDatabase & database,QSqlQuery & query,QString userName,QString Psd)
     {
         int query_ret = -1;
-        if(loginCheck_ForName(query,userName) >= 0){
+        if(checkUserExsits(query,userName)){
             query_ret = -2;
             return query_ret;
         }
         QString sql = QString("insert into Users(UserName,UserPassword) values('%1','%2');").arg(userName).arg(Psd);
         query.prepare(sql);
         if(!query.exec()){
-            LOG("register_User Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("Failed to register user");
+            LOG("The sql is:%s",sql.toStdString().c_str());
             database.rollback();
         }
         else{
@@ -76,8 +74,8 @@ namespace SqlFunc {
         QString sql = QString("update Users set UserPassword = '%1' where UserName = '%2'").arg(newPassword).arg(Username);
         query.prepare(sql);
         if(!query.exec()){
-            LOG("update_Users Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("Failed to change password");
+            LOG("The sql is:%s",sql.toStdString().c_str());
             database.rollback();
         }
         else{
@@ -89,6 +87,21 @@ namespace SqlFunc {
 }
 
 namespace DataQuery {
+    //装载来自数据库的账单数据
+    inline void setBillDataFromDB(BillTableStruct & billtable,QSqlQuery query)
+    {
+        billtable.billNo = query.value("BillNo").toInt();
+        int year = query.value("Year").toInt();
+        int month = query.value("Month").toInt();
+        int day = query.value("Day").toInt();
+        billtable.date.setDate(year,month,day);
+        billtable.moneyAmount = query.value("MoneyAmount").toDouble();
+        billtable.remarks = query.value("Remark").toString();
+        billtable.userId = query.value("UserId").toInt();
+        billtable.typeId = query.value("TypeId").toInt();
+        billtable.InOrOut = query.value("InOrOut").toInt();
+    }
+
     //账单数据查询
     inline int billQurey(QSqlQuery & query,int UserId, QDate date, QVector<BillTableStruct> & billList)
     {
@@ -98,32 +111,16 @@ namespace DataQuery {
         query.prepare(sql);
         if(!query.exec()){
             LOG("File:%sLine:%d",__FILE__,__LINE__);
-            LOG("billQurey Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("Failed to query bill");
+            LOG("The sql is:%s",sql.toStdString().c_str());
+            return -1;
         }
-        else{
-            while(query.next()){
-                queryCounts++;
-                BillTableStruct billtable;
-                billtable.billNo = query.value("BillNo").toInt();
-                int year = query.value("Year").toInt();
-                int month = query.value("Month").toInt();
-                int day = query.value("Day").toInt();
-                int type = query.value("TypeId").toInt();
-                int inorout = query.value("InOrOut").toInt();
-                billtable.date.setDate(year,month,day);
-                billtable.moneyAmount = query.value("MoneyAmount").toDouble();
-                billtable.remarks = query.value("Remark").toString();
-                billtable.userId = query.value("UserId").toInt();
-                billtable.typeId = type;
-                billtable.InOrOut = inorout;
-                billList.append(billtable);
-                LOG("get bill data!");
-                LOG("queryCounts:%d",queryCounts);
-            }
+        while(query.next()){
+            queryCounts++;
+            BillTableStruct billtable;
+            setBillDataFromDB(billtable,query);
+            billList.append(billtable);
         }
-        LOG("queryCounts:%d",queryCounts);
-        LOG("the sql is:%s",sql.toStdString().c_str());
         return queryCounts;
     }
 
@@ -135,30 +132,17 @@ namespace DataQuery {
         query.prepare(sql);
         if(!query.exec()){
             LOG("File:%sLine:%d",__FILE__,__LINE__);
-            LOG("billQurey Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("Failed to query bill of year");
+            LOG("The sql is:%s",sql.toStdString().c_str());
+            return -1;
         }
-        else{
-            while(query.next()){
-                queryCounts++;
-                BillTableStruct billtable;
-                billtable.billNo = query.value("BillNo").toInt();
-                int year = query.value("Year").toInt();
-                int month = query.value("Month").toInt();
-                int day = query.value("Day").toInt();
-                int type = query.value("TypeId").toInt();
-                int inorout = query.value("InOrOut").toInt();
-                billtable.date.setDate(year,month,day);
-                billtable.moneyAmount = query.value("MoneyAmount").toDouble();
-                billtable.remarks = query.value("Remark").toString();
-                billtable.userId = query.value("UserId").toInt();
-                billtable.typeId = type;
-                billtable.InOrOut = inorout;
-                billList.append(billtable);
-            }
+
+        while(query.next()){
+            queryCounts++;
+            BillTableStruct billtable;
+            setBillDataFromDB(billtable,query);
+            billList.append(billtable);
         }
-        LOG("queryCounts:%d",queryCounts);
-        LOG("the sql is:%s",sql.toStdString().c_str());
         return queryCounts;
     }
 
@@ -170,29 +154,15 @@ namespace DataQuery {
         if(!query.exec()){
             LOG("File:%sLine:%d",__FILE__,__LINE__);
             LOG("billQueryofMonth Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("The sql is:%s",sql.toStdString().c_str());
+            return  -1;
         }
-        else{
-            while(query.next()){
-                queryCounts++;
-                BillTableStruct billtable;
-                billtable.billNo = query.value("BillNo").toInt();
-                int year = query.value("Year").toInt();
-                int month = query.value("Month").toInt();
-                int day = query.value("Day").toInt();
-                int type = query.value("TypeId").toInt();
-                int inorout = query.value("InOrOut").toInt();
-                billtable.date.setDate(year,month,day);
-                billtable.moneyAmount = query.value("MoneyAmount").toDouble();
-                billtable.remarks = query.value("Remark").toString();
-                billtable.userId = query.value("UserId").toInt();
-                billtable.typeId = type;
-                billtable.InOrOut = inorout;
-                billList.append(billtable);
-            }
+        while(query.next()){
+            queryCounts++;
+            BillTableStruct billtable;
+            setBillDataFromDB(billtable,query);
+            billList.append(billtable);
         }
-        LOG("queryCounts:%d",queryCounts);
-        LOG("the sql is:%s",sql.toStdString().c_str());
         return queryCounts;
     }
     inline int billQueryofWeek(QSqlQuery & query,int UserId,QVector<QDate> datelist,QVector<BillTableStruct> & billList){
@@ -204,34 +174,20 @@ namespace DataQuery {
             query.prepare(sql);
             if(!query.exec()){
                 LOG("File:%sLine:%d",__FILE__,__LINE__);
-                LOG("billQueryofMonth Error:query.exec() = False");
-                LOG("the sql is:%s",sql.toStdString().c_str());
+                LOG("Failed to query the bill of week");
+                LOG("The sql is:%s",sql.toStdString().c_str());
             }
             else{
                 while(query.next()){
                     queryCounts++;
                     BillTableStruct billtable;
-                    billtable.billNo = query.value("BillNo").toInt();
-                    int year = query.value("Year").toInt();
-                    int month = query.value("Month").toInt();
-                    int day = query.value("Day").toInt();
-                    int type = query.value("TypeId").toInt();
-                    int inorout = query.value("InOrOut").toInt();
-                    billtable.date.setDate(year,month,day);
-                    billtable.moneyAmount = query.value("MoneyAmount").toDouble();
-                    billtable.remarks = query.value("Remark").toString();
-                    billtable.userId = query.value("UserId").toInt();
-                    billtable.typeId = type;
-                    billtable.InOrOut = inorout;
+                    setBillDataFromDB(billtable,query);
                     billList.append(billtable);
                 }
             }
-            //LOG("the sql is:%s",sql.toStdString().c_str());
         }
-        LOG("queryCounts:%d",queryCounts);
         return queryCounts;
     }
-
     //通讯录数据查询
     inline int mailQurey(QSqlQuery & query,int UserId,QVector<MailTableStruct> & mailList)
     {
@@ -355,16 +311,14 @@ namespace DataInsert {
        query.prepare(sql);
        if(!query.exec()){
            LOG("File:%sLine:%d",__FILE__,__LINE__);
-           LOG(" MailTable Insert Error:query.exec() = False");
-           LOG("the sql is:%s",sql.toStdString().c_str());
+           LOG("Failed to insert into MailTable");
+           LOG("The sql is:%s",sql.toStdString().c_str());
            database.rollback();
        }
        else{
            queryResult = 1;
            database.commit();
        }
-       LOG("the sql is:%s",sql.toStdString().c_str());
-       LOG("the queryResult is:%d",queryResult);
 
        sql = QString("select last_insert_rowid() from MailTable;");
        int lastInsertRowId = -1;
@@ -421,17 +375,14 @@ namespace DataUpdate {
                 .arg(billStrcut.date.month()).arg(billStrcut.date.day()).arg(billStrcut.moneyAmount).arg(billStrcut.remarks).arg(billStrcut.userId).arg(billStrcut.typeId).arg(billStrcut.InOrOut).arg(billStrcut.billNo);
         query.prepare(sql);
         if(!query.exec()){
-            LOG("File:%sLine:%d",__FILE__,__LINE__);
-            LOG(" billUpdate Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("Failed to update bill info");
+            LOG("The sql is:%s",sql.toStdString().c_str());
             database.rollback();
         }
         else{
             queryResult = 1;
             database.commit();
         }
-        LOG("the sql is:%s",sql.toStdString().c_str());
-        LOG("the queryResult is:%d",queryResult);
         return queryResult;
     }
 
@@ -459,9 +410,8 @@ namespace DataUpdate {
 
        query.prepare(sql);
        if(!query.exec()){
-           LOG("File:%sLine:%d",__FILE__,__LINE__);
-           LOG("mailUpdate Error:query.exec() = False");
-           LOG("the sql is:%s",sql.toStdString().c_str());
+           LOG("Failed to update MailTable info");
+           LOG("The sql is:%s",sql.toStdString().c_str());
            database.rollback();
        }
        else{
@@ -478,9 +428,8 @@ namespace DataUpdate {
 
        query.prepare(sql);
        if(!query.exec()){
-           LOG("File:%sLine:%d",__FILE__,__LINE__);
-           LOG("mailUpdate Error:query.exec() = False");
-           LOG("the sql is:%s",sql.toStdString().c_str());
+           LOG("Failed to update MailDetailInfo");
+           LOG("The sql is:%s",sql.toStdString().c_str());
            queryResult = -1;
            database.rollback();
        }
@@ -488,9 +437,6 @@ namespace DataUpdate {
            queryResult = 1;
            database.commit();
        }
-
-       LOG("the sql is:%s",sql.toStdString().c_str());
-       LOG("the queryResult is:%d",queryResult);
        return queryResult;
    }
 }
@@ -503,17 +449,14 @@ namespace DataDelete {
         QString sql = QString("delete from  BillTable where BillNo = '%1';").arg(billStrcut.billNo);
         query.prepare(sql);
         if(!query.exec()){
-            LOG("File:%sLine:%d",__FILE__,__LINE__);
-            LOG(" billDelete Error:query.exec() = False");
-            LOG("the sql is:%s",sql.toStdString().c_str());
+            LOG("Failed to delete from BillTable");
+            LOG("The sql is:%s",sql.toStdString().c_str());
             database.rollback();
         }
         else{
             queryResult = 1;
             database.commit();
         }
-        LOG("the sql is:%s",sql.toStdString().c_str());
-        LOG("the queryResult is:%d",queryResult);
         return queryResult;
     }
     //通讯录数据删除
@@ -523,9 +466,8 @@ namespace DataDelete {
        QString sql = QString("delete from MailTable where MailId = '%1';").arg(mailStrcut.mailId);
        query.prepare(sql);
        if(!query.exec()){
-           LOG("File:%sLine:%d",__FILE__,__LINE__);
-           LOG(" MailTable Delete Error:query.exec() = False");
-           LOG("the sql is:%s",sql.toStdString().c_str());
+           LOG("Failed to delete info from MailTable");
+           LOG("The sql is:%s",sql.toStdString().c_str());
            database.rollback();
        }
        else{
@@ -533,21 +475,17 @@ namespace DataDelete {
            database.commit();
        }
 
-       sql = QString("delete from MailDetailInfo where MailInfoId = '%1'").arg(mailStrcut.maildetailinfo.mailInfoId);
+       sql = QString("delete from MailDetailInfo where MailInfoId = '%1';").arg(mailStrcut.maildetailinfo.mailInfoId);
        query.prepare(sql);
        if(!query.exec()){
-           LOG("File:%sLine:%d",__FILE__,__LINE__);
-           LOG(" MailDetailInfo Delete Error:query.exec() = False");
-           LOG("the sql is:%s",sql.toStdString().c_str());
+           LOG("Failed to delete info from MailDetailInfo");
+           LOG("The sql is:%s",sql.toStdString().c_str());
            database.rollback();
        }
        else{
            queryResult = 1;
            database.commit();
        }
-
-       LOG("the sql is:%s",sql.toStdString().c_str());
-       LOG("the queryResult is:%d",queryResult);
        return queryResult;
    }
 }
