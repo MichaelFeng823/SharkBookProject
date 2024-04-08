@@ -63,12 +63,12 @@ public:
 private:
     void paintEvent(QPaintEvent *event) override;
     void resizeEvent(QResizeEvent *event) override;
-    void drawCircle(QPainter * painter);
-    void drawInnerCircle(QPainter * painter);
-    void drawFreesRing(QPainter * painter);
-    void drawUsedRing(QPainter * painter);
-    void drawText(QPainter * painter);
-    void drawNum(QPainter * painter);
+    void drawCircle(QPainter & painter);
+    void drawInnerCircle(QPainter & painter);
+    void drawFreesRing(QPainter & painter);
+    void drawUsedRing(QPainter & painter);
+    void drawText(QPainter & painter);
+    void drawNum(QPainter & painter);
     void checkDirection();
 private:
     QColor m_backgroundColor;        //背景色

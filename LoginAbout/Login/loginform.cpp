@@ -87,7 +87,7 @@ void LoginForm::onLoginButtonPressed()
         LOG("RemmberPassState:%s",UserInfo::RemmberPassState.toStdString().c_str());
         LOG("AutoLogin:%s",UserInfo::AutoLogin.toStdString().c_str());
         rememberPass();
-        emit sendSignalToApppaagemanager(signalStr);
+        emit sendSignalToAppPageManager(signalStr);
         LOG("emit signalStr: %s",signalStr.toStdString().c_str());
     }
     else
@@ -127,7 +127,7 @@ void LoginForm::onRegisterButtonOPressed()
     registerwindow.raise();
     if(registerwindow.exec() == QDialog::Accepted)
     {
-        LOG("Success Rgeister!");
+        LOG("Success rgeister!");
     }
 }
 LoginForm::~LoginForm()

@@ -11,6 +11,7 @@ AppPageManager::AppPageManager(QObject *parent) : QObject(parent)
     SYSTEMSTATE::NETWORKSTATE = requestPermission("android.permission.INTERNET");
 }
 
+//获取用户单例对象
 AppPageManager * AppPageManager::instance()
 {
     if(!self){
@@ -39,17 +40,12 @@ int AppPageManager::initPage()
 {
      login = new LoginForm;
      login->resize(getScreenSize());
-     connect(login,&LoginForm::sendSignalToApppaagemanager,this,&AppPageManager::receiveSignal);
+     connect(login,&LoginForm::sendSignalToAppPageManager,this,&AppPageManager::receiveSignal);
 
      if(getUserInfoAfterSuccessLogin())
      {
-         LOG("arrive main.cpp 15line");
+         LOG("Arrive apppagemanager.cpp %d line",__LINE__);
          return QApplication::exec();
-     }
-     else
-     {
-        LOG("退出登录");
-        return 0;
      }
      LOG("退出登录");
      return 0;
@@ -70,7 +66,7 @@ bool AppPageManager::getUserInfoAfterSuccessLogin()
 //页面管理类 收到信号 字符串格式 "close *** page->open *** page"
 void AppPageManager::receiveSignal(QString str)
 {
-    LOG("Apppagemanager recieve signal message!\n content is :%s",str.toStdString().c_str());
+    LOG("AppPageManager recieve signal message!\n content is :%s",str.toStdString().c_str());
     QString openStr;
     QString closeStr;
     QStringList strList;
@@ -97,29 +93,28 @@ void AppPageManager::receiveSignal(QString str)
             LOG("arrive new LoginForm! line 107");
             login = new LoginForm;
             login->resize(getScreenSize());
-            connect(login,&LoginForm::sendSignalToApppaagemanager,this,&AppPageManager::receiveSignal);
+            connect(login,&LoginForm::sendSignalToAppPageManager,this,&AppPageManager::receiveSignal);
             getUserInfoAfterSuccessLogin();
         }
     }
     if(openStr == "MainArea"){
         if(mainarea == nullptr)
         {
-            LOG("arrive new MainArea! line 116");
+            LOG("Prepare new build class MainArea");
             mainarea = new MainArea();
             connect(mainarea,&MainArea::sendSignalToApppagemanager,this,&AppPageManager::receiveSignal);
             mainarea->raise();
             mainarea->show();
-            LOG("arrive line 119");
+            LOG("build MainArea Finished");
         };
     }
 
     if(closeStr == "LoginForm"){
         if(login != nullptr)
         {
-            LOG("arrive close LoginForm! line 91");
+            LOG("Prepare close LoginForm!");
             login->accept();
         }
     }
     QCoreApplication::processEvents();
-    LOG("end----------------------------------");
 }

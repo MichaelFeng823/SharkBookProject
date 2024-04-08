@@ -26,7 +26,7 @@ public:
 protected:
     bool rememberPass();
 signals:
-    void sendSignalToApppaagemanager(QString);
+    void sendSignalToAppPageManager(QString);
 
 public slots:
     void onLoginButtonPressed();      //登录按钮槽函数

@@ -75,13 +75,13 @@ void BudgetSubItem::initYearBudgetStyle()
 //事件过滤器
 bool BudgetSubItem::eventFilter(QObject *obj, QEvent *event)
 {
-    QMouseEvent * mouseevent = dynamic_cast<QMouseEvent*>(event);
+    QMouseEvent * mouseEvent = dynamic_cast<QMouseEvent*>(event);
     if(event->type() == QMouseEvent::MouseButtonPress){
-        if(mouseevent->button() == Qt::LeftButton){
+        if(mouseEvent->button() == Qt::LeftButton){
         }
 
     }else if(event->type() == QMouseEvent::MouseButtonRelease){
-        if(mouseevent->button() == Qt::LeftButton){
+        if(mouseEvent->button() == Qt::LeftButton){
             emit requestModify(m_BudgetType);
         }
     }
