@@ -36,9 +36,12 @@ signals:
 private:
     LoginForm * login = nullptr;
     MainArea * mainarea = nullptr;
+    QSqlDatabase coon;
+    bool hasConnected = false;                //数据库是否已连接
 private:
      AppPageManager(QObject *parent = nullptr);
      bool requestPermission(QString permission);              //请求系统权限
+     bool preLogin();
 
 
 private:

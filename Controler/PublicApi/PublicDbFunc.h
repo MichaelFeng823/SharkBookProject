@@ -273,7 +273,7 @@ namespace DataInsert {
         query.prepare(sql);
         if(!query.exec()){
             LOG("File:%sLine:%d",__FILE__,__LINE__);
-            LOG(" billInsert Error:query.exec() = False");
+            LOG("billInsert Error:query.exec() = False");
             LOG("the sql is:%s",sql.toStdString().c_str());
             database.rollback();
         }

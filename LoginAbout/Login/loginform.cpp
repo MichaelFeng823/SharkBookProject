@@ -98,8 +98,8 @@ void LoginForm::onLoginButtonPressed()
     }
 
 }
- bool LoginForm::rememberPass()
- {
+bool LoginForm::rememberPass()
+{
      if(ui->checkBox_Remmber_Password->isChecked()){
             QString username = ui->UserNamel_ineEdit->text();  //账号
             QString password = ui->UserPassword_lineEdit->text();  //密码
@@ -119,7 +119,7 @@ void LoginForm::onLoginButtonPressed()
      writeIni(Android_Local_Userini_dir,"config","remember_states", m_RememberPassword);
      writeIni(Android_Local_Userini_dir,"config","auto_states", m_AutoLogin);
      return true;
- }
+}
 //注册按钮槽函数
 void LoginForm::onRegisterButtonOPressed()
 {

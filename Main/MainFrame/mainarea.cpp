@@ -57,7 +57,7 @@ void MainArea::receiveSignalStr(QString str)
     LOG("MainArea Receive signalStr is %s",str.toStdString().c_str());
     emit sendSignalToApppagemanager(str);
 }
-void  MainArea::setcontent(QString str)
+void MainArea::setcontent(QString str)
 {
     //ui->label->setText(str);
 }
