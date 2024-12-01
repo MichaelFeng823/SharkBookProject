@@ -3,6 +3,7 @@ armeabi-v7a/circulardiagram.obj
 armeabi-v7a/detialtableview.obj
 armeabi-v7a/photolistview.obj
 armeabi-v7a/picitem.obj
+armeabi-v7a/vibrateringbutton.obj
 armeabi-v7a/apppagemanager.obj
 armeabi-v7a/databaseobj.obj
 armeabi-v7a/scrollareakit.obj
@@ -50,6 +51,7 @@ armeabi-v7a/moc_circulardiagram.obj
 armeabi-v7a/moc_detialtableview.obj
 armeabi-v7a/moc_photolistview.obj
 armeabi-v7a/moc_picitem.obj
+armeabi-v7a/moc_vibrateringbutton.obj
 armeabi-v7a/moc_apppagemanager.obj
 armeabi-v7a/moc_scrollareakit.obj
 armeabi-v7a/moc_calendar.obj

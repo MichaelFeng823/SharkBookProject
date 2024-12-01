@@ -1,195 +1,195 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
-INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
-INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
-INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
-INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:1-92:12
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:1-89:12
+INJECTED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:1-89:12
+INJECTED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:1-89:12
+INJECTED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:1-89:12
+INJECTED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:1-89:12
 	package
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:11-63
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:11-63
 	android:versionName
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:123-148
-		INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml
-		INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:123-148
+		INJECTED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml
+		INJECTED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml
 	xmlns:android
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:64-122
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:64-122
 	android:versionCode
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:149-172
-		INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml
-		INJECTED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:149-172
+		INJECTED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml
+		INJECTED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml
 	android:installLocation
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:2:173-203
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:2:173-203
 uses-sdk
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:5-73
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:3:5-73
 	android:targetSdkVersion
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:42-71
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:3:42-71
 	android:minSdkVersion
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:15-41
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:3:15-41
 uses-permission#android.permission.INTERNET
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:7:5-66
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:7:5-66
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:7:22-64
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:8:5-80
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:8:5-80
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:8:22-78
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.VIBRATE
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:9:22-63
 supports-screens
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:5-135
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:5-135
 	android:largeScreens
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:23-50
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:23-50
 	android:smallScreens
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:106-133
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:106-133
 	android:normalScreens
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:51-79
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:51-79
 	android:anyDensity
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:80-105
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:80-105
 application
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:5-86:19
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:5-87:19
 	android:extractNativeLibs
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:138-170
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:146-178
 	android:label
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:117-137
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:125-145
 	android:hardwareAccelerated
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:18-52
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:18-52
 	android:icon
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:171-200
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:179-208
 	android:networkSecurityConfig
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:201-261
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:209-269
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:53-116
-activity#org.qtproject.qt5.android.bindings.QtActivity
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:9-82:16
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:53-124
+activity#org.qtproject.example.SharkBookkeepingBook.MainActivity
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:9-83:16
 	android:screenOrientation
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:271-310
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:281-320
 	android:label
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:250-270
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:260-280
 	android:launchMode
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:311-341
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:321-351
 	android:configChanges
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:19-188
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:19-188
 	android:theme
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:342-400
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:352-388
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:189-249
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:189-259
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:18:13-21:29
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:19:17-68
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:20:17-68
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:19:25-66
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:20:17-76
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:21:17-76
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:20:27-74
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:21:27-74
 meta-data#android.app.lib_name
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:13-98
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:28:13-98
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:60-96
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:28:60-96
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:24-59
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:28:24-59
 meta-data#android.app.qt_sources_resource_id
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:13-112
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:29:13-112
 	android:resource
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:74-110
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:29:74-110
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:24-73
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:29:24-73
 meta-data#android.app.repository
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:13-87
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:30:13-87
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:62-85
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:30:62-85
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:24-61
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:30:24-61
 meta-data#android.app.qt_libs_resource_id
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:13-106
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:31:13-106
 	android:resource
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:71-104
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:31:71-104
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:24-70
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:31:24-70
 meta-data#android.app.bundled_libs_resource_id
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:13-116
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:32:13-116
 	android:resource
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:76-114
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:32:76-114
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:24-75
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:32:24-75
 meta-data#android.app.bundle_local_qt_libs
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:13-91
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:34:13-91
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:72-89
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:34:72-89
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:24-71
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:34:24-71
 meta-data#android.app.use_local_qt_libs
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:13-88
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:37:13-88
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:69-86
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:37:69-86
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:24-68
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:37:24-68
 meta-data#android.app.libs_prefix
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:13-100
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:38:13-100
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:63-98
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:38:63-98
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:24-62
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:38:24-62
 meta-data#android.app.load_local_libs_resource_id
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:13-122
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:39:13-122
 	android:resource
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:79-120
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:39:79-120
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:24-78
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:39:24-78
 meta-data#android.app.load_local_jars
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:13-102
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:40:13-102
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:67-100
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:40:67-100
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:24-66
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:40:24-66
 meta-data#android.app.static_init_classes
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:13-89
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:41:13-89
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:71-87
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:41:71-87
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:24-70
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:41:24-70
 meta-data#android.app.ministro_not_found_msg
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:13-122
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:45:13-122
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:24-70
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:45:24-70
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:71-120
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:45:71-120
 meta-data#android.app.ministro_needed_msg
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:13-116
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:46:13-116
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:24-67
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:46:24-67
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:68-114
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:46:68-114
 meta-data#android.app.fatal_error_msg
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:13-108
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:47:13-108
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:24-63
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:47:24-63
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:64-106
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:47:64-106
 meta-data#android.app.unsupported_android_version
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:13-132
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:48:13-132
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:24-75
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:48:24-75
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:76-130
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:48:76-130
 meta-data#android.app.background_running
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:13-92
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:67:13-92
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:70-90
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:67:70-90
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:24-69
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:67:24-69
 meta-data#android.app.auto_screen_scale_factor
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:13-99
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:71:13-99
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:76-97
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:71:76-97
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:24-75
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:71:24-75
 meta-data#android.app.extract_android_style
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:13-99
+ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:81:13-99
 	android:value
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:73-97
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:81:73-97
 	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:24-72
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:90:5-79
-	android:name
-		ADDED from E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:90:22-76
+		ADDED from E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:81:24-72

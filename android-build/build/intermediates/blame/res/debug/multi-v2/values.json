@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "E:\\Git-backup\\SharkBookProjectBak\\android-build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "E:\\Git-backup\\SharkBookProject\\android-build\\res\\values\\libs.xml",
+                    "source": "E:\\Git-backup\\SharkBookProjectBak\\android-build\\res\\values\\libs.xml",
                     "from": {
-                        "startLines": "9,-1,-1,-1",
-                        "startColumns": "4,-1,-1,-1",
-                        "startOffsets": "301,-1,-1,-1",
-                        "endLines": "12,-1,-1,-1",
-                        "endColumns": "12,-1,-1,-1",
-                        "endOffsets": "428,-1,-1,-1"
+                        "startLines": "9,24,14,2",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "301,856,436,57",
+                        "endLines": "12,26,22,4",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "428,1031,848,170"
                     },
                     "to": {
                         "startLines": "2,6,9,18",
@@ -25,9 +25,11 @@
                 {
                     "source": "T:\\Qt5.14.2_SetUpAddress\\5.14.2\\android\\src\\android\\java\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1"
+                        "startLines": "5,4,3,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "324,201,88,433",
+                        "endColumns": "107,121,111,97",
+                        "endOffsets": "427,318,195,526"
                     },
                     "to": {
                         "startLines": "21,22,23,24",

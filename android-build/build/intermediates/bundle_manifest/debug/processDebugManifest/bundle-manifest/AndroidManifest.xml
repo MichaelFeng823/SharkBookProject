@@ -7,7 +7,7 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="26" />
+        android:targetSdkVersion="29" />
 
     <!--
          The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
@@ -15,6 +15,7 @@
     -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <!--
          The following comment will be replaced upon deployment with default features based on the dependencies of the application.
@@ -27,12 +28,8 @@
         android:normalScreens="true"
         android:smallScreens="true" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <application
-        android:name="org.qtproject.qt5.android.bindings.QtApplication"
+        android:name="org.qtproject.example.SharkBookkeepingBook.MyApplication"
         android:debuggable="true"
         android:extractNativeLibs="true"
         android:hardwareAccelerated="true"
@@ -40,12 +37,12 @@
         android:label="鲨鱼记账"
         android:networkSecurityConfig="@xml/network_security_config" >
         <activity
-            android:name="org.qtproject.qt5.android.bindings.QtActivity"
+            android:name="org.qtproject.example.SharkBookkeepingBook.MainActivity"
             android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density"
             android:label="鲨鱼记账"
             android:launchMode="singleTop"
             android:screenOrientation="unspecified"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            android:theme="@android:style/Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

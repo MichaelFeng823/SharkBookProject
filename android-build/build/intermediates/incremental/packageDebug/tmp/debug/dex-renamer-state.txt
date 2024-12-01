@@ -1,4 +1,4 @@
-#Thu Jul 20 11:12:32 CST 2023
-base.0=E\:\\Git-backup\\SharkBookProject\\android-build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Sun Dec 01 19:03:41 CST 2024
+base.0=E\:\\Git-backup\\SharkBookProjectBak\\android-build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -25,6 +25,7 @@ SOURCES += \
     BaseClass/detialtableview.cpp \
     BaseClass/photolistview.cpp \
     BaseClass/picitem.cpp \
+    BaseClass/vibrateringbutton.cpp \
     Controler/APPControl/apppagemanager.cpp \
     Controler/DataControl/databaseobj.cpp \
     Kit/Calendar/SubCtrls/scrollareakit.cpp \
@@ -73,6 +74,7 @@ HEADERS += \
     BaseClass/detialtableview.h \
     BaseClass/photolistview.h \
     BaseClass/picitem.h \
+    BaseClass/vibrateringbutton.h \
     Controler/APPControl/apppagemanager.h \
     Controler/DataControl/databaseobj.h \
     Controler/DataStruct/PublicDataStruct.h \

@@ -71,7 +71,7 @@
          <number>0</number>
         </property>
         <item row="0" column="4">
-         <widget class="QPushButton" name="pushButton_fourpage">
+         <widget class="VibrateRingButton" name="pushButton_fourpage">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -100,7 +100,7 @@ QPushButton:disabled
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QPushButton" name="pushButton_secondpage">
+         <widget class="VibrateRingButton" name="pushButton_secondpage">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -128,7 +128,7 @@ QPushButton:disabled
          </widget>
         </item>
         <item row="0" column="3">
-         <widget class="QPushButton" name="pushButton_thirdpage">
+         <widget class="VibrateRingButton" name="pushButton_thirdpage">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -157,7 +157,7 @@ QPushButton:disabled
          </widget>
         </item>
         <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton_firstpage">
+         <widget class="VibrateRingButton" name="pushButton_firstpage">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -207,6 +207,13 @@ QPushButton:disabled
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>VibrateRingButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">BaseClass/vibrateringbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

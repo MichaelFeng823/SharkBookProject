@@ -6,251 +6,244 @@
 6    android:versionName="1.0" >
 7
 8    <uses-sdk
-8-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:5-73
+8-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:3:5-73
 9        android:minSdkVersion="21"
-9-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:15-41
-10        android:targetSdkVersion="26" />
-10-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:3:42-71
+9-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:3:15-41
+10        android:targetSdkVersion="29" />
+10-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:3:42-71
 11
 12    <!--
 13         The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
 14         Remove the comment if you do not require these default permissions.
 15    -->
 16    <uses-permission android:name="android.permission.INTERNET" />
-16-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:7:5-66
-16-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:7:22-64
+16-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:7:5-66
+16-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:7:22-64
 17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-17-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:8:5-80
-17-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:8:22-78
-18
-19    <!--
-20         The following comment will be replaced upon deployment with default features based on the dependencies of the application.
-21         Remove the comment if you do not require these default features.
-22    -->
-23
-24    <supports-screens
-24-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:5-135
-25        android:anyDensity="true"
-25-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:80-105
-26        android:largeScreens="true"
-26-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:23-50
-27        android:normalScreens="true"
-27-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:51-79
-28        android:smallScreens="true" />
-28-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:14:106-133
-29
-30    <uses-permission android:name="android.permission.INTERNET" />
-30-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:7:5-66
-30-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:7:22-64
-31    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-31-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:8:5-80
-31-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:8:22-78
-32    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-32-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:90:5-79
-32-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:90:22-76
-33
-34    <application
-34-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:5-86:19
-35        android:name="org.qtproject.qt5.android.bindings.QtApplication"
-35-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:53-116
-36        android:debuggable="true"
-37        android:extractNativeLibs="true"
-37-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:138-170
-38        android:hardwareAccelerated="true"
-38-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:18-52
-39        android:icon="@drawable/icon"
-39-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:171-200
-40        android:label="鲨鱼记账"
-40-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:117-137
-41        android:networkSecurityConfig="@xml/network_security_config" >
-41-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:16:201-261
-42        <activity
-42-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:9-82:16
-43            android:name="org.qtproject.qt5.android.bindings.QtActivity"
-43-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:189-249
-44            android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density"
-44-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:19-188
-45            android:label="鲨鱼记账"
-45-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:250-270
-46            android:launchMode="singleTop"
-46-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:311-341
-47            android:screenOrientation="unspecified"
-47-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:271-310
-48            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-48-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:17:342-400
-49            <intent-filter>
-49-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:18:13-21:29
-50                <action android:name="android.intent.action.MAIN" />
-50-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:19:17-68
-50-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:19:25-66
+17-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:8:5-80
+17-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:8:22-78
+18    <uses-permission android:name="android.permission.VIBRATE" />
+18-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:9:5-65
+18-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:9:22-63
+19
+20    <!--
+21         The following comment will be replaced upon deployment with default features based on the dependencies of the application.
+22         Remove the comment if you do not require these default features.
+23    -->
+24
+25    <supports-screens
+25-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:5-135
+26        android:anyDensity="true"
+26-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:80-105
+27        android:largeScreens="true"
+27-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:23-50
+28        android:normalScreens="true"
+28-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:51-79
+29        android:smallScreens="true" />
+29-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:15:106-133
+30
+31    <application
+31-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:5-87:19
+32        android:name="org.qtproject.example.SharkBookkeepingBook.MyApplication"
+32-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:53-124
+33        android:debuggable="true"
+34        android:extractNativeLibs="true"
+34-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:146-178
+35        android:hardwareAccelerated="true"
+35-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:18-52
+36        android:icon="@drawable/icon"
+36-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:179-208
+37        android:label="鲨鱼记账"
+37-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:125-145
+38        android:networkSecurityConfig="@xml/network_security_config" >
+38-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:17:209-269
+39        <activity
+39-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:9-83:16
+40            android:name="org.qtproject.example.SharkBookkeepingBook.MainActivity"
+40-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:189-259
+41            android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density"
+41-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:19-188
+42            android:label="鲨鱼记账"
+42-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:260-280
+43            android:launchMode="singleTop"
+43-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:321-351
+44            android:screenOrientation="unspecified"
+44-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:281-320
+45            android:theme="@android:style/Theme" >
+45-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:18:352-388
+46            <intent-filter>
+46-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:19:13-22:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:20:17-68
+47-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:20:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:21:17-76
+49-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:21:27-74
+50            </intent-filter>
 51
-52                <category android:name="android.intent.category.LAUNCHER" />
-52-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:20:17-76
-52-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:20:27-74
-53            </intent-filter>
-54
-55            <!-- Application arguments -->
-56            <!-- meta-data android:name="android.app.arguments" android:value="arg1 arg2 arg3"/ -->
-57            <!-- Application arguments -->
-58
+52            <!-- Application arguments -->
+53            <!-- meta-data android:name="android.app.arguments" android:value="arg1 arg2 arg3"/ -->
+54            <!-- Application arguments -->
+55
+56            <meta-data
+56-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:28:13-98
+57                android:name="android.app.lib_name"
+57-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:28:24-59
+58                android:value="SharkBookkeepingBook" />
+58-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:28:60-96
 59            <meta-data
-59-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:13-98
-60                android:name="android.app.lib_name"
-60-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:24-59
-61                android:value="SharkBookkeepingBook" />
-61-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:27:60-96
+59-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:29:13-112
+60                android:name="android.app.qt_sources_resource_id"
+60-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:29:24-73
+61                android:resource="@array/qt_sources" />
+61-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:29:74-110
 62            <meta-data
-62-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:13-112
-63                android:name="android.app.qt_sources_resource_id"
-63-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:24-73
-64                android:resource="@array/qt_sources" />
-64-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:28:74-110
+62-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:30:13-87
+63                android:name="android.app.repository"
+63-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:30:24-61
+64                android:value="default" />
+64-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:30:62-85
 65            <meta-data
-65-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:13-87
-66                android:name="android.app.repository"
-66-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:24-61
-67                android:value="default" />
-67-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:29:62-85
+65-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:31:13-106
+66                android:name="android.app.qt_libs_resource_id"
+66-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:31:24-70
+67                android:resource="@array/qt_libs" />
+67-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:31:71-104
 68            <meta-data
-68-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:13-106
-69                android:name="android.app.qt_libs_resource_id"
-69-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:24-70
-70                android:resource="@array/qt_libs" />
-70-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:30:71-104
-71            <meta-data
-71-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:13-116
-72                android:name="android.app.bundled_libs_resource_id"
-72-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:24-75
-73                android:resource="@array/bundled_libs" />
-73-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:31:76-114
-74            <!-- Deploy Qt libs as part of package -->
-75            <meta-data
-75-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:13-91
-76                android:name="android.app.bundle_local_qt_libs"
-76-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:24-71
-77                android:value="1" />
-77-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:33:72-89
-78
-79            <!-- Run with local libs -->
+68-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:32:13-116
+69                android:name="android.app.bundled_libs_resource_id"
+69-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:32:24-75
+70                android:resource="@array/bundled_libs" />
+70-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:32:76-114
+71            <!-- Deploy Qt libs as part of package -->
+72            <meta-data
+72-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:34:13-91
+73                android:name="android.app.bundle_local_qt_libs"
+73-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:34:24-71
+74                android:value="1" />
+74-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:34:72-89
+75
+76            <!-- Run with local libs -->
+77            <meta-data
+77-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:37:13-88
+78                android:name="android.app.use_local_qt_libs"
+78-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:37:24-68
+79                android:value="1" />
+79-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:37:69-86
 80            <meta-data
-80-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:13-88
-81                android:name="android.app.use_local_qt_libs"
-81-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:24-68
-82                android:value="1" />
-82-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:36:69-86
+80-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:38:13-100
+81                android:name="android.app.libs_prefix"
+81-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:38:24-62
+82                android:value="/data/local/tmp/qt/" />
+82-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:38:63-98
 83            <meta-data
-83-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:13-100
-84                android:name="android.app.libs_prefix"
-84-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:24-62
-85                android:value="/data/local/tmp/qt/" />
-85-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:37:63-98
+83-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:39:13-122
+84                android:name="android.app.load_local_libs_resource_id"
+84-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:39:24-78
+85                android:resource="@array/load_local_libs" />
+85-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:39:79-120
 86            <meta-data
-86-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:13-122
-87                android:name="android.app.load_local_libs_resource_id"
-87-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:24-78
-88                android:resource="@array/load_local_libs" />
-88-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:38:79-120
+86-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:40:13-102
+87                android:name="android.app.load_local_jars"
+87-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:40:24-66
+88                android:value="jar/QtAndroid.jar" />
+88-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:40:67-100
 89            <meta-data
-89-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:13-102
-90                android:name="android.app.load_local_jars"
-90-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:24-66
-91                android:value="jar/QtAndroid.jar" />
-91-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:39:67-100
-92            <meta-data
-92-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:13-89
-93                android:name="android.app.static_init_classes"
-93-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:24-70
-94                android:value="" />
-94-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:40:71-87
-95            <!-- Used to specify custom system library path to run with local system libs -->
-96            <!-- <meta-data android:name="android.app.system_libs_prefix" android:value="/system/lib/"/> -->
-97            <!-- Messages maps -->
+89-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:41:13-89
+90                android:name="android.app.static_init_classes"
+90-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:41:24-70
+91                android:value="" />
+91-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:41:71-87
+92            <!-- Used to specify custom system library path to run with local system libs -->
+93            <!-- <meta-data android:name="android.app.system_libs_prefix" android:value="/system/lib/"/> -->
+94            <!-- Messages maps -->
+95            <meta-data
+95-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:45:13-122
+96                android:name="android.app.ministro_not_found_msg"
+96-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:45:71-120
+97                android:value="@string/ministro_not_found_msg" />
+97-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:45:24-70
 98            <meta-data
-98-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:13-122
-99                android:name="android.app.ministro_not_found_msg"
-99-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:71-120
-100                android:value="@string/ministro_not_found_msg" />
-100-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:44:24-70
+98-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:46:13-116
+99                android:name="android.app.ministro_needed_msg"
+99-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:46:68-114
+100                android:value="@string/ministro_needed_msg" />
+100-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:46:24-67
 101            <meta-data
-101-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:13-116
-102                android:name="android.app.ministro_needed_msg"
-102-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:68-114
-103                android:value="@string/ministro_needed_msg" />
-103-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:45:24-67
+101-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:47:13-108
+102                android:name="android.app.fatal_error_msg"
+102-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:47:64-106
+103                android:value="@string/fatal_error_msg" />
+103-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:47:24-63
 104            <meta-data
-104-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:13-108
-105                android:name="android.app.fatal_error_msg"
-105-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:64-106
-106                android:value="@string/fatal_error_msg" />
-106-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:46:24-63
-107            <meta-data
-107-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:13-132
-108                android:name="android.app.unsupported_android_version"
-108-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:76-130
-109                android:value="@string/unsupported_android_version" />
-109-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:47:24-75
-110            <!-- Messages maps -->
-111
-112
-113            <!-- Splash screen -->
-114            <!--
-115                 Orientation-specific (portrait/landscape) data is checked first. If not available for current orientation,
-116                 then android.app.splash_screen_drawable. For best results, use together with splash_screen_sticky and
-117                 use hideSplashScreen() with a fade-out animation from Qt Android Extras to hide the splash screen when you
-118                 are done populating your window with content.
-119            -->
-120            <!-- meta-data android:name="android.app.splash_screen_drawable_portrait" android:resource="@drawable/logo_portrait" / -->
-121            <!-- meta-data android:name="android.app.splash_screen_drawable_landscape" android:resource="@drawable/logo_landscape" / -->
-122            <!-- meta-data android:name="android.app.splash_screen_drawable" android:resource="@drawable/logo"/ -->
-123            <!-- meta-data android:name="android.app.splash_screen_sticky" android:value="true"/ -->
-124            <!-- Splash screen -->
-125
-126
-127            <!-- Background running -->
-128            <!--
-129                 Warning: changing this value to true may cause unexpected crashes if the
-130                          application still try to draw after
-131                          "applicationStateChanged(Qt::ApplicationSuspended)"
-132                          signal is sent!
-133            -->
-134            <meta-data
-134-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:13-92
-135                android:name="android.app.background_running"
-135-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:24-69
-136                android:value="true" />
-136-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:66:70-90
-137            <!-- Background running -->
-138
-139
-140            <!-- auto screen scale factor -->
-141            <meta-data
-141-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:13-99
-142                android:name="android.app.auto_screen_scale_factor"
-142-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:24-75
-143                android:value="false" />
-143-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:70:76-97
-144            <!-- auto screen scale factor -->
-145
-146
-147            <!-- extract android style -->
-148            <!--
-149                 available android:values :
-150                * default - In most cases this will be the same as "full", but it can also be something else if needed, e.g., for compatibility reasons
-151                * full - useful QWidget & Quick Controls 1 apps
-152                * minimal - useful for Quick Controls 2 apps, it is much faster than "full"
-153                * none - useful for apps that don't use any of the above Qt modules
-154            -->
-155            <meta-data
-155-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:13-99
-156                android:name="android.app.extract_android_style"
-156-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:24-72
-157                android:value="default " />
-157-->E:\Git-backup\SharkBookProject\android-build\AndroidManifest.xml:80:73-97
-158            <!-- extract android style -->
-159        </activity>
-160
-161        <!-- For adding service(s) please check: https://wiki.qt.io/AndroidServices -->
-162
-163    </application>
-164
-165</manifest>
+104-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:48:13-132
+105                android:name="android.app.unsupported_android_version"
+105-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:48:76-130
+106                android:value="@string/unsupported_android_version" />
+106-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:48:24-75
+107            <!-- Messages maps -->
+108
+109
+110            <!-- Splash screen -->
+111            <!--
+112                 Orientation-specific (portrait/landscape) data is checked first. If not available for current orientation,
+113                 then android.app.splash_screen_drawable. For best results, use together with splash_screen_sticky and
+114                 use hideSplashScreen() with a fade-out animation from Qt Android Extras to hide the splash screen when you
+115                 are done populating your window with content.
+116            -->
+117            <!-- meta-data android:name="android.app.splash_screen_drawable_portrait" android:resource="@drawable/logo_portrait" / -->
+118            <!-- meta-data android:name="android.app.splash_screen_drawable_landscape" android:resource="@drawable/logo_landscape" / -->
+119            <!-- meta-data android:name="android.app.splash_screen_drawable" android:resource="@drawable/logo"/ -->
+120            <!-- meta-data android:name="android.app.splash_screen_sticky" android:value="true"/ -->
+121            <!-- Splash screen -->
+122
+123
+124            <!-- Background running -->
+125            <!--
+126                 Warning: changing this value to true may cause unexpected crashes if the
+127                          application still try to draw after
+128                          "applicationStateChanged(Qt::ApplicationSuspended)"
+129                          signal is sent!
+130            -->
+131            <meta-data
+131-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:67:13-92
+132                android:name="android.app.background_running"
+132-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:67:24-69
+133                android:value="true" />
+133-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:67:70-90
+134            <!-- Background running -->
+135
+136
+137            <!-- auto screen scale factor -->
+138            <meta-data
+138-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:71:13-99
+139                android:name="android.app.auto_screen_scale_factor"
+139-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:71:24-75
+140                android:value="false" />
+140-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:71:76-97
+141            <!-- auto screen scale factor -->
+142
+143
+144            <!-- extract android style -->
+145            <!--
+146                 available android:values :
+147                * default - In most cases this will be the same as "full", but it can also be something else if needed, e.g., for compatibility reasons
+148                * full - useful QWidget & Quick Controls 1 apps
+149                * minimal - useful for Quick Controls 2 apps, it is much faster than "full"
+150                * none - useful for apps that don't use any of the above Qt modules
+151            -->
+152            <meta-data
+152-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:81:13-99
+153                android:name="android.app.extract_android_style"
+153-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:81:24-72
+154                android:value="default " />
+154-->E:\Git-backup\SharkBookProjectBak\android-build\AndroidManifest.xml:81:73-97
+155            <!-- extract android style -->
+156        </activity>
+157
+158        <!-- For adding service(s) please check: https://wiki.qt.io/AndroidServices -->
+159
+160    </application>
+161
+162</manifest>
